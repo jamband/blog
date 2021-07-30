@@ -40,7 +40,7 @@ export const getStaticPaths = () => {
 
 export default function View(props: Props) {
   const router = useRouter();
-  const tag = router.query.tag?.toString();
+  const tag = router.query.tag?.toString() || "";
 
   return (
     <Page title={tag}>
