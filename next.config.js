@@ -1,4 +1,8 @@
+const env = process.env.NODE_ENV;
+const assetPrefix = process.env.ASSET_PREFIX;
+
 module.exports = {
-  assetPrefix: process.env.ASSET_PREFIX ? process.env.ASSET_PREFIX : "",
+  basePath: env === "production" && assetPrefix ? "/blog" : "",
+  assetPrefix: assetPrefix ?? "",
   trailingSlash: true,
 };
