@@ -1,0 +1,27 @@
+@import "tailwindcss/base";
+
+@layer base {
+  html,
+  body {
+    @apply text-gray-100 text-base bg-gray-900;
+  }
+
+  h1 {
+    @apply text-4xl mb-2 font-semibold;
+  }
+
+  h2 {
+    @apply text-3xl font-semibold;
+  }
+
+  p {
+    @apply mb-5;
+  }
+
+  a {
+    @apply underline;
+
+    text-decoration-thickness: 0.05em;
+    text-underline-offset: 0.25em;
+  }
+}

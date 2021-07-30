@@ -1,0 +1,41 @@
+@import "prism-themes/themes/prism-nord";
+
+.post {
+  @apply my-5;
+}
+
+.post h2 {
+  @apply mt-10 mb-5 pb-1 border-b border-gray-600 text-3xl;
+}
+
+.post ul {
+  @apply ml-3 list-inside list-disc;
+}
+
+.post ul + p {
+  @apply mt-5;
+}
+
+.post ol {
+  @apply ml-3 list-inside list-decimal;
+}
+
+.post ol a {
+  @apply pl-3;
+}
+
+.post code {
+  @apply block font-mono text-xs md:text-sm leading-5 md:leading-6;
+}
+
+.remark-highlight {
+  @apply mb-8 -mt-2;
+}
+
+.remark-highlight pre[data-file]::before {
+  content: attr(data-file);
+  top: -22px;
+  left: -18px;
+
+  @apply relative px-2 py-1 rounded-tl font-mono text-xxs md:text-xs text-gray-100 bg-gray-600;
+}
