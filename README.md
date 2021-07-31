@@ -1,7 +1,9 @@
-# blog
+# jamband/blog
 
 My personal blog.
 
+https://jamband.github.io/blog/
+
 ## License
 
-blog is licensed under the MIT license.
+jamband/blog is licensed under the MIT license.
