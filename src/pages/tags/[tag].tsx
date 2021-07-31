@@ -1,7 +1,9 @@
+import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { HomeLink } from "~/components/home-link";
 import { Tags } from "~/components/tags";
+import { APP_DESCRIPTION, APP_NAME, APP_URL } from "~/constants/app";
 import { Page } from "~/layouts/page";
 import { Post } from "~/types/post";
 import { getPostsByTag, getTags } from "~/utils/api";
@@ -45,6 +47,12 @@ export default function View(props: Props) {
   return (
     <Page title={tag}>
       <h2>Tags</h2>
+      <Head>
+        <meta name="description" content={APP_DESCRIPTION} />
+        <meta property="og:title" content={`${tag} ･ ${APP_NAME}`} />
+        <meta property="og:description" content={APP_DESCRIPTION} />
+        <meta property="og:url" content={`${APP_URL}tags/${tag}`} />
+      </Head>
       <Tags tags={props.tags} className="mb-8" decoration />
       <h2>
         Posts <span className="text-xs text-gray-400 tracking-widest">#</span>

@@ -1,6 +1,8 @@
 import { GetStaticProps } from "next";
+import Head from "next/head";
 import Link from "next/link";
 import { Tags } from "~/components/tags";
+import { APP_DESCRIPTION, APP_NAME, APP_URL } from "~/constants/app";
 import { Page } from "~/layouts/page";
 import { Post } from "~/types/post";
 import { getPosts, getTags } from "~/utils/api";
@@ -23,6 +25,12 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 export default function View(props: Props) {
   return (
     <Page title="">
+      <Head>
+        <meta name="description" content={APP_DESCRIPTION} />
+        <meta property="og:title" content={APP_NAME} />
+        <meta property="og:description" content={APP_DESCRIPTION} />
+        <meta property="og:url" content={APP_URL} />
+      </Head>
       <h2>Tags</h2>
       <Tags tags={props.tags} className="mb-8" />
       <h2>Posts</h2>
