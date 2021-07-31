@@ -24,8 +24,6 @@ jobs:
 
       - name: Build
         run: yarn build
-        env:
-          ASSET_PREFIX: /blog
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
