@@ -6,7 +6,7 @@ export const Tags: React.VFC<Props> = (props) => {
   const router = useRouter();
 
   const linkClass = (tag: string) => {
-    let selector = "mr-3";
+    let selector = "mr-4";
     if (props.decoration && router.query.tag === tag) {
       selector += " text-purple-400";
     }

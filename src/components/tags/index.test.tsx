@@ -16,10 +16,10 @@ beforeEach(() => {
 test("", () => {
   render(<Tags tags={["foo", "bar", "baz"]} />);
 
-  const anchors = screen.getAllByRole("link");
-  expect(anchors).toHaveLength(3);
-  expect(anchors[0]).toHaveAttribute("href", "/tags/foo");
-  expect(anchors[0]).toHaveClass("mr-3", { exact: true });
+  const links = screen.getAllByRole("link");
+  expect(links).toHaveLength(3);
+  expect(links[0]).toHaveAttribute("href", "/tags/foo");
+  expect(links[0]).toHaveClass("mr-4", { exact: true });
 });
 
 test("decoration: true", () => {
@@ -28,8 +28,8 @@ test("decoration: true", () => {
   });
   render(<Tags tags={["foo", "bar", "baz"]} decoration />);
 
-  const anchors = screen.getAllByRole("link");
-  expect(anchors).toHaveLength(3);
-  expect(anchors[0]).toHaveAttribute("href", "/tags/foo");
-  expect(anchors[0]).toHaveClass("mr-3 text-purple-400", { exact: true });
+  const links = screen.getAllByRole("link");
+  expect(links).toHaveLength(3);
+  expect(links[0]).toHaveAttribute("href", "/tags/foo");
+  expect(links[0]).toHaveClass("mr-4 text-purple-400", { exact: true });
 });

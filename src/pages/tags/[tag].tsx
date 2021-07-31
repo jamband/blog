@@ -53,7 +53,7 @@ export default function View(props: Props) {
         <meta property="og:description" content={APP_DESCRIPTION} />
         <meta property="og:url" content={`${APP_URL}tags/${tag}`} />
       </Head>
-      <Tags tags={props.tags} className="mb-8" decoration />
+      <Tags tags={props.tags} className="mb-7" decoration />
       <h2>
         Posts <span className="text-xs text-gray-400 tracking-widest">#</span>
         <span className="text-sm text-purple-400">{tag}</span>

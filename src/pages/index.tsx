@@ -32,7 +32,7 @@ export default function View(props: Props) {
         <meta property="og:url" content={APP_URL} />
       </Head>
       <h2>Tags</h2>
-      <Tags tags={props.tags} className="mb-8" />
+      <Tags tags={props.tags} className="mb-7" />
       <h2>Posts</h2>
       <ul>
         {props.posts.map((post) => (
