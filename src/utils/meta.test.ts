@@ -3,12 +3,22 @@ import { description } from "./meta";
 
 describe("description", () => {
   test("", () => {
-    const content = "<h1>Foo<h1><p>description...</p>";
+    const content = "<h2>Foo</h2><p>description...</p>";
     expect(description(content)).toBe("description...");
   });
 
   test("don't have a description section", () => {
-    const content = "<h1>Foo</h1>";
+    const content = "<h2>Foo</h2>";
     expect(description(content)).toBe(APP_DESCRIPTION);
+  });
+
+  test("multiple p tags", () => {
+    const content = "<p>description1...</p><p>description2...</p>";
+    expect(description(content)).toBe("description1...");
+  });
+
+  test("character limit", () => {
+    const content = `<p>${"a".repeat(100)}</p>`;
+    expect(description(content)).toBe("a".repeat(90));
   });
 });
