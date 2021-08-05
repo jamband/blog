@@ -1,5 +1,5 @@
 import { formatDate } from "~/utils/format";
-import { _Props } from "./types";
+import type { _Props } from "./types";
 
 export const Component: React.VFC<_Props> = (props) => (
   <header className="mb-8">

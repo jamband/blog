@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Tags } from "~/components/tags";
 import { APP_DESCRIPTION, APP_NAME, APP_URL } from "~/constants/app";
 import { Page } from "~/layouts/page";
-import { Post } from "~/types/post";
+import type { Post } from "~/types/post";
 import { getPosts, getTags } from "~/utils/api";
 import { formatDate } from "~/utils/format";
 
