@@ -1,6 +1,7 @@
+/** @type {import("@jest/types").Config.InitialOptions} */
 module.exports = {
   roots: ["<rootDir>/src/"],
-  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   transform: {
     "^.+\\.(ts|tsx)$": "babel-jest",
   },
