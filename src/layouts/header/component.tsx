@@ -8,7 +8,7 @@ export const Component: React.VFC<_Props> = (props) => (
       aria-label="Header navigation"
     >
       <Link href="/">
-        <a className="no-underline font-mono tracking-tight">
+        <a className="px-3 py-2 no-underline font-mono tracking-tight">
           <span className="text-xs text-gray-400">{props.name}/</span>
           {props.repository}
         </a>
