@@ -1,4 +1,4 @@
-import remark from "remark";
+import { remark } from "remark";
 import externalLinks from "remark-external-links";
 import gfm from "remark-gfm";
 import html from "remark-html";
