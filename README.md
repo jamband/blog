@@ -1,8 +1,6 @@
 # jamband/blog
 
-My personal blog.
-
-https://jamband.github.io/blog/
+[My personal blog](https://jamband.github.io/blog/)
 
 ## License
 
