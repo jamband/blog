@@ -32,11 +32,11 @@ export default function View(props: Props) {
         <meta property="og:url" content={APP_URL} />
       </Head>
       <h2>Tags</h2>
-      <Tags tags={props.tags} className="mb-7" />
+      <Tags tags={props.tags} className="mb-8" />
       <h2>Posts</h2>
       <ul>
         {props.posts.map((post) => (
-          <li key={post.slug} className="mb-5">
+          <li key={post.slug} className="mb-6">
             <div className="italic text-xs text-gray-400">
               {formatDate(post.date)}
             </div>
