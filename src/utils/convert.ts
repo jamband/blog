@@ -5,7 +5,7 @@ import html from "remark-html";
 
 export const markdownToHtml = async (file: string) => {
   const result = await remark()
-    .use(html)
+    .use(html, { sanitize: false })
     .use(gfm)
     .use(externalLinks)
     .use(require("remark-prism")) // eslint-disable-line
