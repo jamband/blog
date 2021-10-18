@@ -21,4 +21,9 @@ describe("description", () => {
     const content = `<p>${"a".repeat(100)}</p>`;
     expect(description(content)).toBe("a".repeat(90));
   });
+
+  test("include some tags", () => {
+    const content = `<p><a href="https://example.com">Foo</a> <strong>Bar</strong> Baz</p>`;
+    expect(description(content)).toBe("Foo Bar Baz");
+  });
 });
