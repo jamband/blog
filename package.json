@@ -5,9 +5,9 @@
     "build": "next build && next export",
     "tsc": "tsc",
     "lint": "next lint",
-    "prettier": "prettier --check .",
     "stylelint": "stylelint \"src/**/*.css\"",
-    "test": "jest",
+    "format": "prettier --check .",
+    "test": "jest -i",
     "clear": "rm -rf .next out",
     "clean": "rm -rf .next node_modules out"
   },
