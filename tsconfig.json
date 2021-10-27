@@ -14,7 +14,8 @@
     "paths": { "~/*": ["src/*"] },
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "strict": true
+    "strict": true,
+    "incremental": true
   },
   "include": ["jest.setup.ts", "next-env.d.ts", "src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules"]
