@@ -1,7 +1,5 @@
 module.exports = {
-  mode: "jit",
-  purge: ["./src/**/*.tsx"],
-  darkMode: false,
+  content: ["./src/**/*.tsx"],
   theme: {
     container: {
       padding: "1rem",

@@ -19,9 +19,6 @@
   }
 
   a {
-    @apply underline;
-
-    text-decoration-thickness: 0.05em;
-    text-underline-offset: 0.25em;
+    @apply underline decoration-[0.05em] underline-offset-[0.25em];
   }
 }
