@@ -8,9 +8,21 @@ export const Component: React.VFC<_Props> = (props) => (
       aria-label="Header navigation"
     >
       <Link href="/">
-        <a className="px-3 py-2 no-underline font-mono tracking-tight">
-          <span className="text-xs text-gray-400">{props.name}/</span>
-          {props.repository}
+        <a className="px-5 py-3 no-underline font-mono tracking-tight">
+          <span
+            className={`text-xs ${
+              props.isPost ? "text-gray-100 duration-1000" : "text-gray-400"
+            }`}
+          >
+            {props.name}/
+          </span>
+          <span
+            className={
+              props.isPost ? "text-pink-500 opacity-80 duration-1000" : ""
+            }
+          >
+            {props.repository}
+          </span>
         </a>
       </Link>
     </nav>

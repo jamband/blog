@@ -56,7 +56,7 @@ export default function View(props: Props) {
       <Tags tags={props.tags} className="mb-8" decoration />
       <h2>
         Posts <span className="text-xs text-gray-400 tracking-widest">#</span>
-        <span className="text-sm text-violet-400">{tag}</span>
+        <span className="text-sm text-pink-500">{tag}</span>
       </h2>
       <ul>
         {props.posts.map((post) => (
