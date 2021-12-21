@@ -1,0 +1,15 @@
+.initial {
+  @apply fixed top-0 left-0 z-50 h-1 w-0 bg-violet-500 opacity-0;
+}
+
+.start {
+  @apply w-[99%] bg-violet-500 opacity-50;
+
+  transition: width 10s cubic-bezier(0.1, 0.05, 0, 1);
+}
+
+.complete {
+  @apply w-full opacity-0;
+
+  transition: width 0.1s ease-out, opacity 0.5s ease 0.2s;
+}
