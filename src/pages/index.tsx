@@ -31,9 +31,9 @@ export default function View(props: Props) {
         <meta property="og:description" content={APP_DESCRIPTION} />
         <meta property="og:url" content={APP_URL} />
       </Head>
-      <h2>Tags</h2>
-      <Tags tags={props.tags} className="mb-8" />
-      <h2>Posts</h2>
+      <h2 className="mb-5">Tags</h2>
+      <Tags tags={props.tags} className="mb-14" />
+      <h2 className="mb-5">Posts</h2>
       <ul>
         {props.posts.map((post) => (
           <li key={post.slug} className="mb-6">
