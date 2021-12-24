@@ -10,6 +10,10 @@ jest.mock("~/layouts/header", () => ({
   Header: jest.fn(() => null),
 }));
 
+jest.mock("~/layouts/copyright", () => ({
+  Copyright: jest.fn(() => null),
+}));
+
 test("", () => {
   render(<Layout>foo</Layout>);
   expect(screen.getByText("foo")).toBeInTheDocument();

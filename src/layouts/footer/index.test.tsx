@@ -1,10 +1,13 @@
 /** @jest-environment jsdom */
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { Footer } from ".";
 
 test("", () => {
-  const { container } = render(<Footer />);
+  render(<Footer />);
 
-  const text = `\u00a9 ${new Date().getFullYear()}`;
-  expect(container).toHaveTextContent(text);
+  const aboutLink = screen.getByRole("link", { name: "About" });
+  expect(aboutLink).toHaveAttribute("href", "/about");
+
+  const contactLink = screen.getByRole("link", { name: "Contact" });
+  expect(contactLink).toHaveAttribute("href", "/contact");
 });
