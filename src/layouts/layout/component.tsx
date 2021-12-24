@@ -9,7 +9,7 @@ export const Component: React.VFC<_Props> = (props) => (
     <main className="flex-grow container mx-auto pt-28 pb-10">
       {props.children}
     </main>
-    <Copyright />
+    {props.isPost && <Copyright />}
     <Footer />
   </div>
 );

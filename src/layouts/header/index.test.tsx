@@ -16,12 +16,28 @@ beforeEach(() => {
 
 test("", () => {
   router.mockReturnValue({
-    pathname: "/2030/01/foo",
+    pathname: "/",
   });
 
   render(<Header />);
 
   const [name, repository] = APP_NAME.split("/");
   expect(screen.getByText(`${name}/`)).toBeInTheDocument();
-  expect(screen.getByText(repository)).toBeInTheDocument();
+
+  const repositoryElement = screen.getByText(repository);
+  expect(repositoryElement).not.toHaveClass();
+});
+
+test("repository element", () => {
+  router.mockReturnValue({
+    pathname: "/[year]/[month]/[slug]",
+  });
+
+  render(<Header />);
+
+  const [name, repository] = APP_NAME.split("/");
+  expect(screen.getByText(`${name}/`)).toBeInTheDocument();
+
+  const repositoryElement = screen.getByText(repository);
+  expect(repositoryElement).toHaveClass("text-pink-500");
 });
