@@ -9,7 +9,7 @@
     "format": "prettier --check .",
     "test": "jest -i",
     "clear": "rm -rf .next out",
-    "clean": "rm -rf .next node_modules out"
+    "clean": "rm -rf .next node_modules out tsconfig.tsbuildinfo"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
