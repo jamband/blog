@@ -3,11 +3,11 @@ import { Component } from "./component";
 import type { Props } from "./types";
 
 export const Tags: React.VFC<Props> = (props) => {
-  const router = useRouter();
+  const { query } = useRouter();
 
   const linkClass = (tag: string) => {
     let selector = "mr-4";
-    if (props.decoration && router.query.tag === tag) {
+    if (props.decoration && query.tag === tag) {
       selector += " text-pink-500";
     }
     return selector;

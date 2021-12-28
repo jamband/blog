@@ -14,6 +14,9 @@ beforeEach(() => {
 });
 
 test("", () => {
+  router.mockReturnValue({
+    query: { tag: "foo" },
+  });
   render(<Tags tags={["foo", "bar", "baz"]} />);
 
   const links = screen.getAllByRole("link");
