@@ -3,13 +3,11 @@
 }
 
 .start {
-  @apply w-[99%] bg-pink-600 opacity-50;
-
-  transition: width 10s cubic-bezier(0.1, 0.05, 0, 1);
+  @apply w-[99%] bg-pink-600 opacity-50
+    transition-[width] duration-[10000ms] ease-[cubic-bezier(0.1,0.05,0,1)];
 }
 
 .complete {
-  @apply w-full opacity-0;
-
-  transition: width 0.1s ease-out, opacity 0.5s ease 0.2s;
+  @apply w-full opacity-60
+    transition-[width_0.1s_ease-out];
 }
