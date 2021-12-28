@@ -1,4 +1,4 @@
-@import "prism-themes/themes/prism-nord";
+@import "prism-themes/themes/prism-nord.css";
 
 .post {
   @apply my-5;
