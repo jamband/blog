@@ -23,8 +23,8 @@ export default function View() {
       <p>
         また、プログラムのバグなどを発見した場合は{" "}
         <LinkExternal href={`https://github.com/${APP_NAME}/issues`}>
-          GitHub Issues{" "}
-        </LinkExternal>
+          GitHub Issues
+        </LinkExternal>{" "}
         から報告してもらえると助かります。
       </p>
     </Page>
