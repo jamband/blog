@@ -33,6 +33,14 @@ export const getPosts = () => {
   });
 };
 
+export const getLatestPosts = () => {
+  return getPosts().slice(0, 10);
+};
+
+export const getOldPosts = () => {
+  return getPosts().slice(10);
+};
+
 export const getPostByPath = (path: string) => {
   return matter(contents(`${baseDir}/${path}`));
 };
