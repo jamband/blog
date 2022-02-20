@@ -31,6 +31,7 @@ export const getStaticProps = async ({ params }: Params) => {
       post: {
         ...post.data,
         content,
+        description: description(content),
       },
     },
   };
@@ -50,17 +51,15 @@ export const getStaticPaths = () => {
 };
 
 export default function View(props: Props) {
-  const _description = description(props.post.content);
-
   return (
     <Page title={props.post.title}>
       <Head>
-        <meta name="description" content={_description} />
+        <meta name="description" content={props.post.description} />
         <meta
           property="og:title"
           content={`${props.post.title} ･ ${APP_NAME}`}
         />
-        <meta property="og:description" content={_description} />
+        <meta property="og:description" content={props.post.description} />
         <meta
           property="og:url"
           content={`${APP_URL}${props.post.year}/${props.post.month}/${props.post.slug}`}

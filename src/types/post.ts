@@ -5,5 +5,6 @@ export type Post = {
   month: string;
   slug: string;
   content: string;
+  description: string;
   tags: string[];
 };
