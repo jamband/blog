@@ -56,15 +56,15 @@ export default function View(props: Props) {
       <Tags tags={props.tags} className="mb-14" decoration />
       <h2 className="mb-4">
         Posts{" "}
-        <span className="font-normal text-xs text-gray-400 tracking-widest">
+        <span className="text-xs font-normal tracking-widest text-gray-400">
           #
         </span>
-        <span className="font-normal text-base text-pink-500">{tag}</span>
+        <span className="text-base font-normal text-pink-500">{tag}</span>
       </h2>
       <ul>
         {props.posts.map((post) => (
           <li key={post.slug} className="mb-6">
-            <div className="italic text-xs text-gray-400">
+            <div className="text-xs italic text-gray-400">
               {formatDate(post.date)}
             </div>
             <Link href={`/${post.year}/${post.month}/${post.slug}`}>

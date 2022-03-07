@@ -4,11 +4,11 @@ import type { _Props } from "./types";
 export const Component: React.VFC<_Props> = (props) => (
   <header>
     <nav
-      className="fixed w-full py-3 z-20 text-center font-semibold bg-gray-800"
+      className="fixed z-20 w-full bg-gray-800 py-3 text-center font-semibold"
       aria-label="Header navigation"
     >
       <Link href="/">
-        <a className="px-5 py-3 no-underline font-mono tracking-tight">
+        <a className="px-5 py-3 font-mono tracking-tight no-underline">
           <span
             className={`text-xs ${
               props.isPost ? "text-gray-100 duration-1000" : "text-gray-400"

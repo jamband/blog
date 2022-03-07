@@ -1,11 +1,11 @@
 @layer base {
   html,
   body {
-    @apply text-gray-100 text-base bg-gray-900;
+    @apply bg-gray-900 text-base text-gray-100;
   }
 
   h1 {
-    @apply text-4xl mb-2 font-semibold;
+    @apply mb-2 text-4xl font-semibold;
   }
 
   h2 {

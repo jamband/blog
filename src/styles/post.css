@@ -5,7 +5,7 @@
 }
 
 .post h2 {
-  @apply mt-16 mb-5 pb-1 border-b border-gray-600 text-3xl;
+  @apply mt-16 mb-5 border-b border-gray-600 pb-1 text-3xl;
 }
 
 .post ul {
@@ -25,7 +25,7 @@
 }
 
 .post code {
-  @apply block font-mono text-xs md:text-sm leading-5 md:leading-6;
+  @apply block font-mono text-xs leading-5 md:text-sm md:leading-6;
 }
 
 .remark-highlight {
@@ -33,6 +33,6 @@
 }
 
 .remark-highlight pre[data-file]::before {
-  @apply content-[attr(data-file)] relative top-[-22px] left-[-18px]
-    px-2 py-1 rounded-tl font-mono text-xxs md:text-xs text-gray-100 bg-gray-600;
+  @apply relative top-[-22px] left-[-18px] rounded-tl bg-gray-600
+    px-2 py-1 font-mono text-xxs text-gray-100 content-[attr(data-file)] md:text-xs;
 }

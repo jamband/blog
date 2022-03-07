@@ -4,9 +4,9 @@ import { Header } from "~/layouts/header";
 import type { _Props } from "./types";
 
 export const Component: React.VFC<_Props> = (props) => (
-  <div className="flex flex-col min-h-screen">
+  <div className="flex min-h-screen flex-col">
     <Header />
-    <main className="flex-grow container mx-auto pt-28 pb-10">
+    <main className="container mx-auto flex-grow pt-28 pb-10">
       {props.children}
     </main>
     {props.isPost && <Copyright />}

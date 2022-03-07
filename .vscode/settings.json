@@ -6,6 +6,5 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
-  "editor.formatOnSave": true,
-  "stylelint.validate": ["css", "postcss"]
+  "editor.formatOnSave": true
 }

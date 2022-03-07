@@ -43,7 +43,7 @@ export default function View(props: Props) {
       <ul>
         {props.latestPosts.map((post) => (
           <li key={post.slug} className="mb-6">
-            <div className="italic text-xs text-gray-400">
+            <div className="text-xs italic text-gray-400">
               {formatDate(post.date)}
             </div>
             <Link href={`/${post.year}/${post.month}/${post.slug}`}>
@@ -56,7 +56,7 @@ export default function View(props: Props) {
         <div className="text-center">
           <button
             onClick={moreOldPosts}
-            className="px-5 py-1 text-gray-300 active:text-pink-500 bg-gray-700 rounded shadow-sm"
+            className="rounded bg-gray-700 px-5 py-1 text-gray-300 shadow-sm active:text-pink-500"
           >
             more old posts
           </button>
@@ -65,7 +65,7 @@ export default function View(props: Props) {
       <ul style={{ display: hideOldPosts ? "none" : "block" }}>
         {props.oldPosts.map((post) => (
           <li key={post.slug} className="mb-6">
-            <div className="italic text-xs text-gray-400">
+            <div className="text-xs italic text-gray-400">
               {formatDate(post.date)}
             </div>
             <Link href={`/${post.year}/${post.month}/${post.slug}`}>
