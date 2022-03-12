@@ -34,11 +34,11 @@ export const getPosts = () => {
 };
 
 export const getLatestPosts = () => {
-  return getPosts().slice(0, 10);
+  return getPosts().slice(0, 3);
 };
 
 export const getOldPosts = () => {
-  return getPosts().slice(10);
+  return getPosts().slice(3);
 };
 
 export const getPostByPath = (path: string) => {

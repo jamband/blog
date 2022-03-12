@@ -33,7 +33,6 @@ test("", () => {
   render(<Layout>foo</Layout>);
 
   expect(screen.getByText("foo")).toBeInTheDocument();
-  expect(screen.queryByText("copyright")).not.toBeInTheDocument();
 });
 
 test("copyright", () => {
@@ -44,5 +43,4 @@ test("copyright", () => {
   render(<Layout>foo</Layout>);
 
   expect(screen.getByText("foo")).toBeInTheDocument();
-  expect(screen.getByText("copyright")).toBeInTheDocument();
 });

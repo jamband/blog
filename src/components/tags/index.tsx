@@ -9,6 +9,8 @@ export const Tags: React.VFC<Props> = (props) => {
     let selector = "mr-4";
     if (props.decoration && query.tag === tag) {
       selector += " text-pink-500";
+    } else {
+      selector += " text-gray-400";
     }
     return selector;
   };

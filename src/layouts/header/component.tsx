@@ -4,7 +4,7 @@ import type { _Props } from "./types";
 export const Component: React.VFC<_Props> = (props) => (
   <header>
     <nav
-      className="fixed z-20 w-full bg-gray-800 py-3 text-center font-semibold"
+      className="fixed z-20 w-full bg-gray-700 py-3 text-center font-semibold"
       aria-label="Header navigation"
     >
       <Link href="/">
@@ -18,7 +18,9 @@ export const Component: React.VFC<_Props> = (props) => (
           </span>
           <span
             className={
-              props.isPost ? "text-pink-500 opacity-80 duration-1000" : ""
+              props.isPost
+                ? "text-pink-500 opacity-80 duration-1000"
+                : "text-gray-200"
             }
           >
             {props.repository}

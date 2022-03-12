@@ -8,6 +8,6 @@ test("", () => {
   expect(screen.getByRole("banner")).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: "Foo" })).toBeInTheDocument();
 
-  const time = screen.getByText("Dec 31, 1999");
+  const time = screen.getByText("December 31, 1999");
   expect(time).toHaveAttribute("dateTime", "1999-12-31");
 });

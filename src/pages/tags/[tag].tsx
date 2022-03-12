@@ -52,24 +52,18 @@ export default function View(props: Props) {
         <meta property="og:description" content={APP_DESCRIPTION} />
         <meta property="og:url" content={`${APP_URL}tags/${tag}`} />
       </Head>
-      <h2 className="mb-5">Tags</h2>
+      <h2 className="mb-5 text-4xl">Tags</h2>
       <Tags tags={props.tags} className="mb-14" decoration />
-      <h2 className="mb-4">
-        Posts{" "}
-        <span className="text-xs font-normal tracking-widest text-gray-400">
-          #
-        </span>
-        <span className="text-base font-normal text-pink-500">{tag}</span>
+      <h2 className="mb-4 text-4xl">
+        Posts <span className="text-base text-pink-500">{tag}</span>
       </h2>
       <ul>
         {props.posts.map((post) => (
           <li key={post.slug} className="mb-6">
-            <div className="text-xs italic text-gray-400">
-              {formatDate(post.date)}
-            </div>
             <Link href={`/${post.year}/${post.month}/${post.slug}`}>
-              <a className="font-semibold">{post.title}</a>
+              <a className="font-semibold text-gray-200">{post.title}</a>
             </Link>
+            <div className="text-xs text-gray-400">{formatDate(post.date)}</div>
           </li>
         ))}
       </ul>

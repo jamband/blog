@@ -6,10 +6,7 @@ export const Component: React.VFC<_Props> = (props) => (
     {props.tags.map((tag) => (
       <li key={tag} className="mb-1 inline-block">
         <Link href={`/tags/${tag}`}>
-          <a className={props.linkClass(tag)}>
-            <span className="text-xs tracking-widest text-gray-400">#</span>
-            {tag}
-          </a>
+          <a className={props.linkClass(tag)}>{tag}</a>
         </Link>
       </li>
     ))}

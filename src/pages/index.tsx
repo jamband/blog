@@ -37,18 +37,18 @@ export default function View(props: Props) {
         <meta property="og:description" content={APP_DESCRIPTION} />
         <meta property="og:url" content={APP_URL} />
       </Head>
-      <h2 className="mb-5">Tags</h2>
+      <h2 className="mb-5 text-4xl">Tags</h2>
       <Tags tags={props.tags} className="mb-14" />
-      <h2 className="mb-5">Posts</h2>
+      <h2 className="mb-5 text-4xl">
+        Posts <span className="text-base text-pink-500">all</span>
+      </h2>
       <ul>
         {props.latestPosts.map((post) => (
           <li key={post.slug} className="mb-6">
-            <div className="text-xs italic text-gray-400">
-              {formatDate(post.date)}
-            </div>
             <Link href={`/${post.year}/${post.month}/${post.slug}`}>
-              <a className="font-semibold">{post.title}</a>
+              <a className="font-semibold text-gray-200">{post.title}</a>
             </Link>
+            <div className="text-xs text-gray-400">{formatDate(post.date)}</div>
           </li>
         ))}
       </ul>
@@ -56,21 +56,21 @@ export default function View(props: Props) {
         <div className="text-center">
           <button
             onClick={moreOldPosts}
-            className="rounded bg-gray-700 px-5 py-1 text-gray-300 shadow-sm active:text-pink-500"
+            className="rounded bg-gray-700 px-5 py-2 text-gray-200 shadow-sm active:text-pink-500"
           >
-            more old posts
+            more old posts ↓
           </button>
         </div>
       )}
       <ul style={{ display: hideOldPosts ? "none" : "block" }}>
         {props.oldPosts.map((post) => (
           <li key={post.slug} className="mb-6">
+            <Link href={`/${post.year}/${post.month}/${post.slug}`}>
+              <a className="font-semibold text-gray-200">{post.title}</a>
+            </Link>
             <div className="text-xs italic text-gray-400">
               {formatDate(post.date)}
             </div>
-            <Link href={`/${post.year}/${post.month}/${post.slug}`}>
-              <a className="font-semibold">{post.title}</a>
-            </Link>
           </li>
         ))}
       </ul>

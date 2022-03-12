@@ -5,7 +5,7 @@ import { PostHeader } from "~/components/post-header";
 import { APP_NAME, APP_URL } from "~/constants/app";
 import { Page } from "~/layouts/page";
 import type { Post } from "~/types/post";
-import { getPosts, getPostByPath } from "~/utils/api";
+import { getPostByPath, getPosts } from "~/utils/api";
 import { markdownToHtml } from "~/utils/convert";
 import { description } from "~/utils/meta";
 
