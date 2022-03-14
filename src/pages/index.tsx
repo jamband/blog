@@ -26,8 +26,8 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 };
 
 export default function View(props: Props) {
-  const [hideOldPosts, setHideOldPosts] = useState(true);
-  const moreOldPosts = () => setHideOldPosts(false);
+  const [showOldPosts, setShowOldPosts] = useState(false);
+  const toggleOldPosts = () => setShowOldPosts((previous) => !previous);
 
   return (
     <Page title="">
@@ -52,28 +52,36 @@ export default function View(props: Props) {
           </li>
         ))}
       </ul>
-      {hideOldPosts && (
+      {!showOldPosts && (
         <div className="text-center">
           <button
-            onClick={moreOldPosts}
-            className="rounded bg-gray-700 px-5 py-2 text-gray-200 shadow-sm active:text-pink-500"
+            onClick={toggleOldPosts}
+            className="rounded bg-gray-700 px-3 py-2 text-gray-200 shadow-sm active:text-pink-500"
           >
             more old posts ↓
           </button>
         </div>
       )}
-      <ul style={{ display: hideOldPosts ? "none" : "block" }}>
+      <ul style={{ display: !showOldPosts ? "none" : "block" }}>
         {props.oldPosts.map((post) => (
           <li key={post.slug} className="mb-6">
             <Link href={`/${post.year}/${post.month}/${post.slug}`}>
               <a className="font-semibold text-gray-200">{post.title}</a>
             </Link>
-            <div className="text-xs italic text-gray-400">
-              {formatDate(post.date)}
-            </div>
+            <div className="text-xs text-gray-400">{formatDate(post.date)}</div>
           </li>
         ))}
       </ul>
+      {showOldPosts && (
+        <div className="text-center">
+          <button
+            onClick={toggleOldPosts}
+            className="rounded bg-gray-700 px-3 py-2 text-gray-200 shadow-sm active:text-pink-500"
+          >
+            hide old posts ↑
+          </button>
+        </div>
+      )}
     </Page>
   );
 }
