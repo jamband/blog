@@ -58,7 +58,7 @@ SvelteKit はデフォルトではまず基本的な HTML をサーバでレン�
 
 以下のようにする:
 
-```js[data-path="/path/to/project/svelte.config.js"]
+```js[data-file="svelte.config.js"]
 import adapter from "@sveltejs/adapter-static";
 
 const dev = process.env.NODE_ENV === "development";
