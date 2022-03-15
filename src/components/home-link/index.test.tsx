@@ -5,6 +5,6 @@ import { HomeLink } from ".";
 test("", () => {
   render(<HomeLink />);
 
-  const link = screen.getByRole("link", { name: "Home" });
+  const link = screen.getByRole("link", { name: "← Home" });
   expect(link).toHaveAttribute("href", "/");
 });
