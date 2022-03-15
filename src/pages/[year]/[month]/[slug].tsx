@@ -62,7 +62,7 @@ export default function View(props: Props) {
         <meta property="og:description" content={props.post.description} />
         <meta
           property="og:url"
-          content={`${APP_URL}${props.post.year}/${props.post.month}/${props.post.slug}`}
+          content={`${APP_URL}${props.post.year}/${props.post.month}/${props.post.slug}/`}
         />
       </Head>
       <article>
