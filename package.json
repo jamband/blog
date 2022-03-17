@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
+    "postbuild": "mv out/404/index.html out/404.html && rmdir out/404",
     "tsc": "tsc",
     "lint": "next lint",
     "format": "prettier --check .",
