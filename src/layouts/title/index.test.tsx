@@ -1,6 +1,6 @@
 /** @jest-environment jsdom */
 import { render } from "@testing-library/react";
-import { Page } from ".";
+import { Title } from ".";
 import { APP_NAME } from "../../constants/app";
 
 jest.mock("next/head", () => ({
@@ -9,11 +9,11 @@ jest.mock("next/head", () => ({
 }));
 
 test("title: ''", () => {
-  render(<Page title="" />);
+  render(<Title title="" />);
   expect(document.title).toBe(APP_NAME);
 });
 
 test("title: Foo", () => {
-  render(<Page title="Foo" />);
+  render(<Title title="Foo" />);
   expect(document.title).toBe(`Foo · ${APP_NAME}`);
 });

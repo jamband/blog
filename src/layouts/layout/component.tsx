@@ -3,7 +3,7 @@ import { Copyright } from "../copyright";
 import { Footer } from "../footer";
 import { Header } from "../header";
 import { Loading } from "../loading";
-import { Page } from "../page";
+import { Title } from "../title";
 import type { _Props } from "./types";
 
 export const Component: React.FC<_Props> = (props) => (
@@ -14,7 +14,7 @@ export const Component: React.FC<_Props> = (props) => (
         content="width=device-width, initial-scale=1, viewport-fit=cover"
       />
     </Head>
-    <Page title={props.title} />
+    <Title title={props.title} />
     <Loading />
     <div className="flex min-h-screen flex-col">
       <Header />
