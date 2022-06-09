@@ -6,33 +6,18 @@ import type { State } from "./types";
 
 export const Loading: React.FC = () => {
   const [state, setState] = useState<State>("initial");
-  const { asPath, events } = useRouter();
+  const { events } = useRouter();
 
   let className = styles.initial;
-  if (state === "start") {
-    className += ` ${styles.start}`;
-  }
-  if (state === "complete") {
-    className += ` ${styles.complete}`;
-  }
+  if (state === "start") className += ` ${styles.start}`;
+  if (state === "complete") className += ` ${styles.complete}`;
 
   useEffect(() => {
-    const start = (url: string) => {
-      if (asPath !== url) {
-        setState("start");
-      }
-    };
+    const start = () => setState("start");
 
-    const complete = (url: string) => {
-      if (asPath !== url) {
-        setTimeout(() => {
-          setState("complete");
-        }, 100);
-
-        setTimeout(() => {
-          setState("initial");
-        }, 500);
-      }
+    const complete = () => {
+      setTimeout(() => setState("complete"), 100);
+      setTimeout(() => setState("initial"), 500);
     };
 
     events.on("routeChangeStart", start);
@@ -44,7 +29,7 @@ export const Loading: React.FC = () => {
       events.off("routeChangeComplete", complete);
       events.off("routeChangeError", complete);
     };
-  }, [asPath, events]);
+  }, [events]);
 
   return <Component className={className} />;
 };
