@@ -5,5 +5,5 @@ export type Props = {
 };
 
 export type _Props = Props & {
-  linkClass: (tag: string) => string;
+  match: (tag: string) => boolean;
 };
