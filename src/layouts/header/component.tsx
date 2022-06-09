@@ -11,22 +11,21 @@ export const Component: React.FC<_Props> = (props) => (
         href="/"
         className="px-5 py-3 font-mono tracking-tight no-underline"
       >
-        <span
-          className={`text-xs ${
-            props.isPost ? "text-gray-100 duration-1000" : "text-gray-400"
-          }`}
-        >
-          {props.name}/
-        </span>
-        <span
-          className={
-            props.isPost
-              ? "text-pink-500 opacity-80 duration-1000"
-              : "text-gray-200"
-          }
-        >
-          {props.repository}
-        </span>
+        {props.isPost ? (
+          <>
+            <span className="text-xs text-gray-100 duration-100">
+              {props.name}/
+            </span>
+            <span className="text-pink-500 opacity-80 duration-1000">
+              {props.repository}
+            </span>
+          </>
+        ) : (
+          <>
+            <span className="text-xs text-gray-400">{props.name}/</span>
+            <span className="text-gray-200">{props.repository}</span>
+          </>
+        )}
       </Link>
     </nav>
   </header>
