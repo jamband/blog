@@ -48,7 +48,7 @@ export default function Page(props: Props) {
         <meta name="description" content={APP_DESCRIPTION} />
         <meta property="og:title" content={`${props.tag} ･ ${APP_NAME}`} />
         <meta property="og:description" content={APP_DESCRIPTION} />
-        <meta property="og:url" content={`${APP_URL}tags/${props.tag}`} />
+        <meta property="og:url" content={`${APP_URL}tags/${props.tag}/`} />
       </Head>
       <h2 className="mb-5 text-4xl">Tags</h2>
       <Tags tags={props.tags} className="mb-14" decoration />
