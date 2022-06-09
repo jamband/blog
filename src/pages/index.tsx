@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import type { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
