@@ -3,7 +3,7 @@ import { HomeLink } from "../../../components/home-link";
 import { PostContent } from "../../../components/post-content";
 import { PostHeader } from "../../../components/post-header";
 import { APP_NAME, APP_URL } from "../../../constants/app";
-import { Page } from "../../../layouts/page";
+import { Layout } from "../../../layouts/layout";
 import type { Post } from "../../../types/post";
 import { getPostByPath, getPosts } from "../../../utils/api";
 import { markdownToHtml } from "../../../utils/convert";
@@ -50,9 +50,9 @@ export const getStaticPaths = () => {
   };
 };
 
-export default function View(props: Props) {
+export default function Page(props: Props) {
   return (
-    <Page title={props.post.title}>
+    <>
       <Head>
         <meta name="description" content={props.post.description} />
         <meta
@@ -72,6 +72,10 @@ export default function View(props: Props) {
           <HomeLink />
         </p>
       </article>
-    </Page>
+    </>
   );
 }
+
+Page.getLayout = (page: React.ReactElement) => (
+  <Layout title={page.props.post.title}>{page}</Layout>
+);

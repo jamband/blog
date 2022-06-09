@@ -2,11 +2,11 @@ import Head from "next/head";
 import { ExternalLink } from "../components/external-link";
 import { APP_DESCRIPTION, APP_NAME, APP_URL } from "../constants/app";
 import { IconExternalLink } from "../icons/external-link";
-import { Page } from "../layouts/page";
+import { Layout } from "../layouts/layout";
 
-export default function View() {
+export default function Page() {
   return (
-    <Page title="About">
+    <>
       <Head>
         <meta name="description" content={APP_DESCRIPTION} />
         <meta property="og:title" content={`About ･ ${APP_NAME}`} />
@@ -26,6 +26,10 @@ export default function View() {
         </ExternalLink>{" "}
         をご覧ください。
       </p>
-    </Page>
+    </>
   );
 }
+
+Page.getLayout = (page: React.ReactElement) => (
+  <Layout title="About">{page}</Layout>
+);

@@ -7,9 +7,5 @@
     "plugin:testing-library/react",
     "next/core-web-vitals",
     "prettier"
-  ],
-  "rules": {
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-non-null-assertion": "off"
-  }
+  ]
 }

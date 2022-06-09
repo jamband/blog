@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Tags } from "../components/tags";
 import { APP_DESCRIPTION, APP_NAME, APP_URL } from "../constants/app";
-import { Page } from "../layouts/page";
+import { Layout } from "../layouts/layout";
 import type { Post } from "../types/post";
 import { getLatestPosts, getOldPosts, getTags } from "../utils/api";
 import { formatDate } from "../utils/format";
@@ -25,12 +25,12 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   };
 };
 
-export default function View(props: Props) {
+export default function Page(props: Props) {
   const [showOldPosts, setShowOldPosts] = useState(false);
   const toggleOldPosts = () => setShowOldPosts((previous) => !previous);
 
   return (
-    <Page title="">
+    <>
       <Head>
         <meta name="description" content={APP_DESCRIPTION} />
         <meta property="og:title" content={APP_NAME} />
@@ -88,6 +88,8 @@ export default function View(props: Props) {
           </button>
         </div>
       )}
-    </Page>
+    </>
   );
 }
+
+Page.getLayout = (page: React.ReactElement) => <Layout title="">{page}</Layout>;

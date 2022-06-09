@@ -1,10 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { HomeLink } from "../../components/home-link";
 import { Tags } from "../../components/tags";
 import { APP_DESCRIPTION, APP_NAME, APP_URL } from "../../constants/app";
-import { Page } from "../../layouts/page";
+import { Layout } from "../../layouts/layout";
 import type { Post } from "../../types/post";
 import { getPostsByTag, getTags } from "../../utils/api";
 import { formatDate } from "../../utils/format";
@@ -12,6 +11,7 @@ import { formatDate } from "../../utils/format";
 type Props = {
   posts: Post[];
   tags: string[];
+  tag: string;
 };
 
 type Params = {
@@ -25,6 +25,7 @@ export const getStaticProps = async ({ params }: Params) => {
     props: {
       posts: getPostsByTag(params.tag),
       tags: getTags(),
+      tag: params.tag,
     },
   };
 };
@@ -40,22 +41,19 @@ export const getStaticPaths = () => {
   };
 };
 
-export default function View(props: Props) {
-  const router = useRouter();
-  const tag = router.query.tag?.toString() || "";
-
+export default function Page(props: Props) {
   return (
-    <Page title={tag}>
+    <>
       <Head>
         <meta name="description" content={APP_DESCRIPTION} />
-        <meta property="og:title" content={`${tag} ･ ${APP_NAME}`} />
+        <meta property="og:title" content={`${props.tag} ･ ${APP_NAME}`} />
         <meta property="og:description" content={APP_DESCRIPTION} />
-        <meta property="og:url" content={`${APP_URL}tags/${tag}`} />
+        <meta property="og:url" content={`${APP_URL}tags/${props.tag}`} />
       </Head>
       <h2 className="mb-5 text-4xl">Tags</h2>
       <Tags tags={props.tags} className="mb-14" decoration />
       <h2 className="mb-4 text-4xl">
-        Posts <span className="text-base text-pink-500">{tag}</span>
+        Posts <span className="text-base text-pink-500">{props.tag}</span>
       </h2>
       <ul>
         {props.posts.map((post) => (
@@ -73,6 +71,10 @@ export default function View(props: Props) {
       <p className="mt-16 text-center">
         <HomeLink />
       </p>
-    </Page>
+    </>
   );
 }
+
+Page.getLayout = (page: React.ReactElement) => (
+  <Layout title={page.props.tag}>{page}</Layout>
+);

@@ -1,5 +1,5 @@
 /** @jest-environment jsdom */
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { Page } from ".";
 import { APP_NAME } from "../../constants/app";
 
@@ -11,21 +11,11 @@ jest.mock("next/head", () => ({
 }));
 
 test("title: ''", () => {
-  render(
-    <Page title="">
-      <h1>Foo</h1>
-    </Page>
-  );
+  render(<Page title="" />);
   expect(document.title).toBe(APP_NAME);
-  expect(screen.getByRole("heading", { name: "Foo" })).toBeInTheDocument();
 });
 
 test("title: Foo", () => {
-  render(
-    <Page title="Foo">
-      <h1>Foo</h1>
-    </Page>
-  );
+  render(<Page title="Foo" />);
   expect(document.title).toBe(`Foo · ${APP_NAME}`);
-  expect(screen.getByRole("heading", { name: "Foo" })).toBeInTheDocument();
 });

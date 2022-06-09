@@ -1,11 +1,11 @@
 import Head from "next/head";
 import { HomeLink } from "../components/home-link";
 import { APP_DESCRIPTION, APP_NAME, APP_URL } from "../constants/app";
-import { Page } from "../layouts/page";
+import { Layout } from "../layouts/layout";
 
-export default function View() {
+export default function Page() {
   return (
-    <Page title="Not Found">
+    <>
       <Head>
         <meta name="description" content={APP_DESCRIPTION} />
         <meta property="og:title" content={`Not Found ･ ${APP_NAME}`} />
@@ -17,6 +17,10 @@ export default function View() {
       <div className="mt-12 text-center">
         <HomeLink />
       </div>
-    </Page>
+    </>
   );
 }
+
+Page.getLayout = (page: React.ReactElement) => (
+  <Layout title="Not Found">{page}</Layout>
+);
