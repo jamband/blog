@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { _Props } from "./types";
 
-export const Component: React.VFC<_Props> = (props) => (
+export const Component: React.FC<_Props> = (props) => (
   <header>
     <nav
       className="fixed z-20 w-full bg-gray-700 py-3 text-center font-semibold"

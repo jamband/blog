@@ -1,5 +1,5 @@
 import { Component } from "./component";
 
-export const HomeLink: React.VFC = () => {
+export const HomeLink: React.FC = () => {
   return <Component />;
 };

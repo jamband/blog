@@ -1,5 +1,5 @@
 import { Component } from "./component";
 
-export const Footer: React.VFC = () => {
+export const Footer: React.FC = () => {
   return <Component />;
 };
