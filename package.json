@@ -7,8 +7,8 @@
     "lint": "next lint",
     "format": "prettier --check .",
     "test": "jest -i",
-    "clear": "rm -rf .next out",
-    "clean": "rm -rf .next node_modules out tsconfig.tsbuildinfo"
+    "clear": "node scripts/clear.mjs",
+    "clean": "node scripts/clean.mjs"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.4",
