@@ -7,15 +7,15 @@ jest.mock("next/router", () => ({
   useRouter: jest.fn(),
 }));
 
-jest.mock("~/layouts/header", () => ({
+jest.mock("../header", () => ({
   Header: jest.fn(() => null),
 }));
 
-jest.mock("~/layouts/copyright", () => ({
+jest.mock("../copyright", () => ({
   Copyright: jest.fn(() => "copyright"),
 }));
 
-jest.mock("~/layouts/footer", () => ({
+jest.mock("../footer", () => ({
   Footer: jest.fn(() => null),
 }));
 

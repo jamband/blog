@@ -2,12 +2,12 @@ import type { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
-import { Tags } from "~/components/tags";
-import { APP_DESCRIPTION, APP_NAME, APP_URL } from "~/constants/app";
-import { Page } from "~/layouts/page";
-import type { Post } from "~/types/post";
-import { getLatestPosts, getOldPosts, getTags } from "~/utils/api";
-import { formatDate } from "~/utils/format";
+import { Tags } from "../components/tags";
+import { APP_DESCRIPTION, APP_NAME, APP_URL } from "../constants/app";
+import { Page } from "../layouts/page";
+import type { Post } from "../types/post";
+import { getLatestPosts, getOldPosts, getTags } from "../utils/api";
+import { formatDate } from "../utils/format";
 
 type Props = {
   tags: string[];

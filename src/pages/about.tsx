@@ -1,8 +1,8 @@
 import Head from "next/head";
-import { LinkExternal } from "~/components/link-external";
-import { APP_DESCRIPTION, APP_NAME, APP_URL } from "~/constants/app";
-import { IconExternalLink } from "~/icons/external-link";
-import { Page } from "~/layouts/page";
+import { LinkExternal } from "../components/link-external";
+import { APP_DESCRIPTION, APP_NAME, APP_URL } from "../constants/app";
+import { IconExternalLink } from "../icons/external-link";
+import { Page } from "../layouts/page";
 
 export default function View() {
   return (

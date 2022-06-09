@@ -1,5 +1,5 @@
 import { parse } from "node-html-parser";
-import { APP_DESCRIPTION } from "~/constants/app";
+import { APP_DESCRIPTION } from "../constants/app";
 
 export const description = (content: string) => {
   const match = content.match(/<p>(.*?)<\/p>/g);

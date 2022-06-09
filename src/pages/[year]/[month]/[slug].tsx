@@ -1,13 +1,13 @@
 import Head from "next/head";
-import { HomeLink } from "~/components/home-link";
-import { PostContent } from "~/components/post-content";
-import { PostHeader } from "~/components/post-header";
-import { APP_NAME, APP_URL } from "~/constants/app";
-import { Page } from "~/layouts/page";
-import type { Post } from "~/types/post";
-import { getPostByPath, getPosts } from "~/utils/api";
-import { markdownToHtml } from "~/utils/convert";
-import { description } from "~/utils/meta";
+import { HomeLink } from "../../../components/home-link";
+import { PostContent } from "../../../components/post-content";
+import { PostHeader } from "../../../components/post-header";
+import { APP_NAME, APP_URL } from "../../../constants/app";
+import { Page } from "../../../layouts/page";
+import type { Post } from "../../../types/post";
+import { getPostByPath, getPosts } from "../../../utils/api";
+import { markdownToHtml } from "../../../utils/convert";
+import { description } from "../../../utils/meta";
 
 type Props = {
   post: Post;

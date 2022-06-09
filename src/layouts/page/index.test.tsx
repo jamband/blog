@@ -1,7 +1,7 @@
 /** @jest-environment jsdom */
 import { render, screen } from "@testing-library/react";
-import { APP_NAME } from "~/constants/app";
 import { Page } from ".";
+import { APP_NAME } from "../../constants/app";
 
 jest.mock("next/head", () => ({
   __esModule: true,

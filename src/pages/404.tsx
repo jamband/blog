@@ -1,7 +1,7 @@
 import Head from "next/head";
-import { HomeLink } from "~/components/home-link";
-import { APP_DESCRIPTION, APP_NAME, APP_URL } from "~/constants/app";
-import { Page } from "~/layouts/page";
+import { HomeLink } from "../components/home-link";
+import { APP_DESCRIPTION, APP_NAME, APP_URL } from "../constants/app";
+import { Page } from "../layouts/page";
 
 export default function View() {
   return (
