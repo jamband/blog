@@ -45,8 +45,11 @@ export default function View(props: Props) {
       <ul>
         {props.latestPosts.map((post) => (
           <li key={post.slug} className="mb-6">
-            <Link href={`/${post.year}/${post.month}/${post.slug}`}>
-              <a className="font-semibold text-gray-200">{post.title}</a>
+            <Link
+              href={`/${post.year}/${post.month}/${post.slug}`}
+              className="font-semibold text-gray-200"
+            >
+              {post.title}
             </Link>
             <div className="text-xs text-gray-400">{formatDate(post.date)}</div>
           </li>
@@ -65,8 +68,11 @@ export default function View(props: Props) {
       <ul style={{ display: !showOldPosts ? "none" : "block" }}>
         {props.oldPosts.map((post) => (
           <li key={post.slug} className="mb-6">
-            <Link href={`/${post.year}/${post.month}/${post.slug}`}>
-              <a className="font-semibold text-gray-200">{post.title}</a>
+            <Link
+              href={`/${post.year}/${post.month}/${post.slug}`}
+              className="font-semibold text-gray-200"
+            >
+              {post.title}
             </Link>
             <div className="text-xs text-gray-400">{formatDate(post.date)}</div>
           </li>
