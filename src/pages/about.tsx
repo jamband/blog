@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { LinkExternal } from "../components/link-external";
+import { ExternalLink } from "../components/external-link";
 import { APP_DESCRIPTION, APP_NAME, APP_URL } from "../constants/app";
 import { IconExternalLink } from "../icons/external-link";
 import { Page } from "../layouts/page";
@@ -17,13 +17,13 @@ export default function View() {
       <p>{APP_DESCRIPTION}</p>
       <p>
         また、このウェブサイトはオープンソースなプロジェクトです。詳細については{" "}
-        <LinkExternal
+        <ExternalLink
           href={`https://github.com/${APP_NAME}`}
           className="inline-flex items-center"
         >
           GitHub: {APP_NAME}
           <IconExternalLink className="ml-0.5 h-4 w-4" />
-        </LinkExternal>{" "}
+        </ExternalLink>{" "}
         をご覧ください。
       </p>
     </Page>

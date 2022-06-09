@@ -1,9 +1,9 @@
 /** @jest-environment jsdom */
 import { render, screen } from "@testing-library/react";
-import { LinkExternal } from ".";
+import { ExternalLink } from ".";
 
 test("", () => {
-  render(<LinkExternal href="https://example.com">foo</LinkExternal>);
+  render(<ExternalLink href="https://example.com">foo</ExternalLink>);
 
   const link = screen.getByRole("link", { name: "foo" });
   expect(link).toHaveAttribute("rel", "noopener noreferrer");
