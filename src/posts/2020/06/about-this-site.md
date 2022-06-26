@@ -1,7 +1,7 @@
 ---
 title: このサイトについて
 created_at: "2020-06-15"
-last_updated: "2020-06-15"
+last_updated: "2021-07-31"
 tags:
     - info
     - nuxt
