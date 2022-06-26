@@ -1,7 +1,12 @@
 export const formatDate = (value: string) => {
-  return new Date(value).toLocaleDateString("en", {
-    year: "numeric",
-    month: "long",
-    day: "2-digit",
-  });
+  return (
+    new Date(value)
+      .toLocaleDateString("ja-JP", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      })
+      .replace("/", "年")
+      .replace("/", "月") + "日"
+  );
 };
