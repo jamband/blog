@@ -1,6 +1,11 @@
 import Head from "next/head";
 import { ExternalLink } from "../components/external-link";
-import { APP_DESCRIPTION, APP_NAME, APP_URL } from "../constants/app";
+import {
+  APP_DESCRIPTION,
+  APP_NAME,
+  APP_REPOSITORY_URL,
+  APP_URL,
+} from "../constants/app";
 import { IconExternalLink } from "../icons/external-link";
 import { Layout } from "../layouts/layout";
 
@@ -17,10 +22,7 @@ export default function Page() {
       <p>{APP_DESCRIPTION}</p>
       <p>
         また、このウェブサイトはオープンソースなプロジェクトです。詳細については{" "}
-        <ExternalLink
-          href={`https://github.com/${APP_NAME}`}
-          className="text-pink-500"
-        >
+        <ExternalLink href={APP_REPOSITORY_URL} className="text-pink-500">
           GitHub: {APP_NAME}
           <IconExternalLink className="h-4 w-4 align-[-0.125em]" />
         </ExternalLink>{" "}

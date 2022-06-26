@@ -1,6 +1,11 @@
 import Head from "next/head";
 import { ExternalLink } from "../components/external-link";
-import { APP_DESCRIPTION, APP_NAME, APP_URL } from "../constants/app";
+import {
+  APP_DESCRIPTION,
+  APP_NAME,
+  APP_REPOSITORY_URL,
+  APP_URL,
+} from "../constants/app";
 import { IconExternalLink } from "../icons/external-link";
 import { Layout } from "../layouts/layout";
 
@@ -28,7 +33,7 @@ export default function Page() {
       <p>
         また、プログラムのバグなどを発見した場合は{" "}
         <ExternalLink
-          href={`https://github.com/${APP_NAME}/issues`}
+          href={`${APP_REPOSITORY_URL}/issues`}
           className="text-pink-500"
         >
           GitHub Issues
