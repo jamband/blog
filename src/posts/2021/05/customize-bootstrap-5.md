@@ -1,6 +1,7 @@
 ---
 title: Bootstrap 5 をカスタマイズして使う
-date: "2021-05-03"
+created_at: "2021-05-03"
+last_updated: "2021-05-03"
 tags:
     - css
 ---

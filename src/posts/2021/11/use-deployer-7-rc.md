@@ -1,6 +1,7 @@
 ---
 title: Deployer の 7.0 RC 版を使ってみる
-date: "2021-11-28"
+created_at: "2021-11-28"
+last_updated: "2021-11-28"
 tags:
     - deployment
     - php

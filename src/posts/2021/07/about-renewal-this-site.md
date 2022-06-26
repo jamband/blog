@@ -1,6 +1,7 @@
 ---
 title: サイトをリニューアルした
-date: "2021-07-31"
+created_at: "2021-07-31"
+last_updated: "2021-07-31"
 tags:
     - info
     - next

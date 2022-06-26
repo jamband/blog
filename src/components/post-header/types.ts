@@ -1,6 +1,7 @@
 export type Props = {
   title: string;
-  date: string;
+  created_at: string;
+  last_updated: string;
 };
 
 export type _Props = Props;

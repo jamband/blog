@@ -1,6 +1,7 @@
 ---
 title: GitHub Discussions について
-date: "2020-06-17"
+created_at: "2020-06-17"
+last_updated: "2020-06-17"
 tags:
     - github
 ---

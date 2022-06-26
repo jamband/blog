@@ -64,7 +64,9 @@ export default function Page(props: Props) {
             >
               {post.title}
             </Link>
-            <div className="text-xs text-gray-400">{formatDate(post.date)}</div>
+            <div className="text-xs text-gray-400">
+              {formatDate(post.created_at)}
+            </div>
           </li>
         ))}
       </ul>

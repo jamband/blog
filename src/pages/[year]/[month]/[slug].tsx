@@ -66,7 +66,11 @@ export default function Page(props: Props) {
         />
       </Head>
       <article>
-        <PostHeader title={props.post.title} date={props.post.date} />
+        <PostHeader
+          title={props.post.title}
+          created_at={props.post.created_at}
+          last_updated={props.post.last_updated}
+        />
         <PostContent content={props.post.content} />
         <p className="mt-16 text-center">
           <HomeLink />

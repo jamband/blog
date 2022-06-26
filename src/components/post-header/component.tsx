@@ -4,8 +4,13 @@ import type { _Props } from "./types";
 export const Component: React.FC<_Props> = (props) => (
   <header className="mb-8">
     <h1 className="mb-10">{props.title}</h1>
-    <div className="text-right text-sm text-gray-400">
-      <time dateTime={props.date}>{formatDate(props.date)}</time>
-    </div>
+    <ul className="flex flex-col text-end text-sm leading-relaxed text-gray-400">
+      <li>作成日: {formatDate(props.created_at)}</li>
+      <li>
+        <time dateTime={props.last_updated}>
+          最終更新日: {formatDate(props.last_updated)}
+        </time>
+      </li>
+    </ul>
   </header>
 );

@@ -51,7 +51,9 @@ export default function Page(props: Props) {
             >
               {post.title}
             </Link>
-            <div className="text-xs text-gray-400">{formatDate(post.date)}</div>
+            <div className="text-xs text-gray-400">
+              {formatDate(post.created_at)}
+            </div>
           </li>
         ))}
       </ul>
@@ -59,9 +61,9 @@ export default function Page(props: Props) {
         <div className="flex justify-center">
           <button
             onClick={toggleOldPosts}
-            className="rounded bg-gray-700 px-3 py-1.5 text-gray-200 shadow-sm active:text-pink-500"
+            className="rounded bg-gray-700 px-3 py-1.5 text-sm text-gray-200 shadow-sm active:text-pink-500"
           >
-            <span className="mr-2">more old posts</span>↓
+            <span className="mr-2">古い記事をもっと見る</span>↓
           </button>
         </div>
       )}
@@ -74,7 +76,9 @@ export default function Page(props: Props) {
             >
               {post.title}
             </Link>
-            <div className="text-xs text-gray-400">{formatDate(post.date)}</div>
+            <div className="text-xs text-gray-400">
+              {formatDate(post.created_at)}
+            </div>
           </li>
         ))}
       </ul>
@@ -82,9 +86,9 @@ export default function Page(props: Props) {
         <div className="flex justify-center">
           <button
             onClick={toggleOldPosts}
-            className="rounded bg-gray-700 px-3 py-1.5 text-gray-200 shadow-sm active:text-pink-500"
+            className="rounded bg-gray-700 px-3 py-1.5 text-sm text-gray-200 shadow-sm active:text-pink-500"
           >
-            <span className="mr-2">hide old posts</span>↑
+            <span className="mr-2">古い記事をかくす</span>↑
           </button>
         </div>
       )}

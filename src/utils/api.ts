@@ -23,13 +23,13 @@ export const getTags = (): string[] => {
 export const getPosts = () => {
   const posts = files.map((path) => {
     const { data } = matter(contents(path));
-    [data.year, data.month] = data.date.split("-");
+    [data.year, data.month] = data.created_at.split("-");
     data.slug = basename(path).replace(/\.md$/, "");
     return data;
   }) as Post[];
 
   return posts.sort((post1, post2) => {
-    return post1.date > post2.date ? -1 : 1;
+    return post1.created_at > post2.created_at ? -1 : 1;
   });
 };
 
