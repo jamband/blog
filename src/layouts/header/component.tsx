@@ -9,7 +9,7 @@ export const Component: React.FC<_Props> = (props) => (
     >
       <Link
         href="/"
-        className="px-5 py-3 font-mono tracking-tight no-underline"
+        className="rounded px-5 py-2.5 font-mono tracking-tight no-underline active:bg-gray-600"
       >
         {props.isPost ? (
           <>

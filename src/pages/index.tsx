@@ -47,7 +47,7 @@ export default function Page(props: Props) {
           <li key={post.slug} className="mb-6">
             <Link
               href={`/${post.year}/${post.month}/${post.slug}`}
-              className="font-semibold text-gray-200"
+              className="font-semibold"
             >
               {post.title}
             </Link>
@@ -56,12 +56,12 @@ export default function Page(props: Props) {
         ))}
       </ul>
       {!showOldPosts && (
-        <div className="text-center">
+        <div className="flex justify-center">
           <button
             onClick={toggleOldPosts}
-            className="rounded bg-gray-700 px-3 py-2 text-gray-200 shadow-sm active:text-pink-500"
+            className="rounded bg-gray-700 px-3 py-1.5 text-gray-200 shadow-sm active:text-pink-500"
           >
-            more old posts ↓
+            <span className="mr-2">more old posts</span>↓
           </button>
         </div>
       )}
@@ -70,7 +70,7 @@ export default function Page(props: Props) {
           <li key={post.slug} className="mb-6">
             <Link
               href={`/${post.year}/${post.month}/${post.slug}`}
-              className="font-semibold text-gray-200"
+              className="font-semibold"
             >
               {post.title}
             </Link>
@@ -79,12 +79,12 @@ export default function Page(props: Props) {
         ))}
       </ul>
       {showOldPosts && (
-        <div className="text-center">
+        <div className="flex justify-center">
           <button
             onClick={toggleOldPosts}
-            className="rounded bg-gray-700 px-3 py-2 text-gray-200 shadow-sm active:text-pink-500"
+            className="rounded bg-gray-700 px-3 py-1.5 text-gray-200 shadow-sm active:text-pink-500"
           >
-            hide old posts ↑
+            <span className="mr-2">hide old posts</span>↑
           </button>
         </div>
       )}

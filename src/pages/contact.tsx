@@ -16,17 +16,23 @@ export default function Page() {
       <h1>Contact</h1>
       <p>
         何かしらの問い合わせに関しては{" "}
-        <ExternalLink href="https://twitter.com/livejam_db">
+        <ExternalLink
+          href="https://twitter.com/livejam_db"
+          className="text-pink-500"
+        >
           Twitter
-          <IconExternalLink className="ml-0.5 h-4 w-4 align-[-0.125em]" />
+          <IconExternalLink className="h-4 w-4 align-[-0.125em]" />
         </ExternalLink>{" "}
         のダイレクトメッセージからお願いします。
       </p>
       <p>
         また、プログラムのバグなどを発見した場合は{" "}
-        <ExternalLink href={`https://github.com/${APP_NAME}/issues`}>
+        <ExternalLink
+          href={`https://github.com/${APP_NAME}/issues`}
+          className="text-pink-500"
+        >
           GitHub Issues
-          <IconExternalLink className="ml-0.5 h-4 w-4 align-[-0.125em]" />
+          <IconExternalLink className="h-4 w-4 align-[-0.125em]" />
         </ExternalLink>{" "}
         から報告してもらえると助かります。
       </p>

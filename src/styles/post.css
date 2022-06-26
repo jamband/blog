@@ -1,11 +1,11 @@
 @import "prism-themes/themes/prism-nord.css";
 
 .post {
-  @apply my-5 text-gray-200;
+  @apply my-5 text-gray-300;
 }
 
 .post a {
-  @apply text-gray-200;
+  @apply text-gray-300 active:text-pink-500;
 }
 
 .post h2 {
@@ -33,7 +33,7 @@
 }
 
 .post code {
-  @apply block font-mono text-xs leading-5 text-gray-200 md:text-sm md:leading-6;
+  @apply block font-mono text-xs leading-5 text-gray-300 md:text-sm md:leading-6;
 }
 
 .remark-highlight {
@@ -42,5 +42,5 @@
 
 .remark-highlight pre[data-file]::before {
   @apply relative top-[-22px] left-[-18px] rounded-tl bg-gray-600
-    px-2 py-1 font-mono text-xxs text-gray-200 content-[attr(data-file)] md:text-xs;
+    px-2 py-1 font-mono text-xxs text-gray-300 content-[attr(data-file)] md:text-xs;
 }

@@ -55,12 +55,12 @@ export default function Page(props: Props) {
       <h2 className="mb-4 text-4xl">
         Posts <span className="text-base text-pink-500">{props.tag}</span>
       </h2>
-      <ul>
+      <ul className="mb-6">
         {props.posts.map((post) => (
           <li key={post.slug} className="mb-6">
             <Link
               href={`/${post.year}/${post.month}/${post.slug}`}
-              className="font-semibold text-gray-200"
+              className="font-semibold"
             >
               {post.title}
             </Link>
@@ -68,9 +68,9 @@ export default function Page(props: Props) {
           </li>
         ))}
       </ul>
-      <p className="mt-16 text-center">
+      <div className="flex justify-center">
         <HomeLink />
-      </p>
+      </div>
     </>
   );
 }

@@ -17,9 +17,12 @@ export default function Page() {
       <p>{APP_DESCRIPTION}</p>
       <p>
         また、このウェブサイトはオープンソースなプロジェクトです。詳細については{" "}
-        <ExternalLink href={`https://github.com/${APP_NAME}`}>
+        <ExternalLink
+          href={`https://github.com/${APP_NAME}`}
+          className="text-pink-500"
+        >
           GitHub: {APP_NAME}
-          <IconExternalLink className="ml-0.5 h-4 w-4 align-[-0.125em]" />
+          <IconExternalLink className="h-4 w-4 align-[-0.125em]" />
         </ExternalLink>{" "}
         をご覧ください。
       </p>

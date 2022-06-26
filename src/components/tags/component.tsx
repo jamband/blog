@@ -2,14 +2,12 @@ import Link from "next/link";
 import type { _Props } from "./types";
 
 export const Component: React.FC<_Props> = (props) => (
-  <ul className={props.className}>
+  <ul className={`flex flex-wrap gap-x-4 gap-y-2 ${props.className || ""}`}>
     {props.tags.map((tag) => (
-      <li key={tag} className="mb-1 inline-block">
+      <li key={tag}>
         <Link
           href={`/tags/${tag}`}
-          className={`mr-4 ${
-            props.match(tag) ? "text-pint-500" : "text-gray-400"
-          }`}
+          className={`${props.match(tag) ? "text-pink-500" : ""}`}
         >
           {tag}
         </Link>

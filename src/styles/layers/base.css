@@ -1,7 +1,7 @@
 @layer base {
   html,
   body {
-    @apply bg-gray-800 text-base text-gray-200;
+    @apply bg-gray-800 text-base text-gray-300;
   }
 
   h1 {
@@ -17,6 +17,6 @@
   }
 
   a {
-    @apply text-pink-500 underline decoration-[0.05em] underline-offset-[0.25em];
+    @apply underline decoration-[0.05em] underline-offset-[0.25em] active:text-pink-500;
   }
 }
