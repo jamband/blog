@@ -1,4 +1,6 @@
+import { IconExternalLink } from "../../icons/external-link";
 import { formatDate } from "../../utils/format";
+import { ExternalLink } from "../external-link";
 import type { _Props } from "./types";
 
 export const Component: React.FC<_Props> = (props) => (
@@ -10,6 +12,12 @@ export const Component: React.FC<_Props> = (props) => (
         <time dateTime={props.last_updated}>
           最終更新日: {formatDate(props.last_updated)}
         </time>
+      </li>
+      <li>
+        <ExternalLink href={props.historyUrl}>
+          更新履歴
+          <IconExternalLink className="h-4 w-4 align-[-0.125em]" />
+        </ExternalLink>
       </li>
     </ul>
   </header>

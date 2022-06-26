@@ -2,7 +2,7 @@ import Head from "next/head";
 import { HomeLink } from "../../../components/home-link";
 import { PostContent } from "../../../components/post-content";
 import { PostHeader } from "../../../components/post-header";
-import { APP_NAME, APP_URL } from "../../../constants/app";
+import { APP_NAME, APP_REPOSITORY_URL, APP_URL } from "../../../constants/app";
 import { Layout } from "../../../layouts/layout";
 import type { Post } from "../../../types/post";
 import { getPostByPath, getPosts } from "../../../utils/api";
@@ -70,6 +70,7 @@ export default function Page(props: Props) {
           title={props.post.title}
           created_at={props.post.created_at}
           last_updated={props.post.last_updated}
+          historyUrl={`${APP_REPOSITORY_URL}/commits/main/src/posts/${props.post.year}/${props.post.month}/${props.post.slug}.md`}
         />
         <PostContent content={props.post.content} />
       </article>
