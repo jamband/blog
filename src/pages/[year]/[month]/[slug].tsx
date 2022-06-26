@@ -65,17 +65,17 @@ export default function Page(props: Props) {
           content={`${APP_URL}${props.post.year}/${props.post.month}/${props.post.slug}/`}
         />
       </Head>
-      <article>
+      <article className="mb-16">
         <PostHeader
           title={props.post.title}
           created_at={props.post.created_at}
           last_updated={props.post.last_updated}
         />
         <PostContent content={props.post.content} />
-        <p className="mt-16 text-center">
-          <HomeLink />
-        </p>
       </article>
+      <div className="flex justify-center">
+        <HomeLink />
+      </div>
     </>
   );
 }
