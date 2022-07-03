@@ -1,7 +1,7 @@
 ---
 title: React Location を使ってみる
 created_at: "2022-04-19"
-last_updated: "2022-04-19"
+last_updated: "2022-07-03"
 tags:
     - react
 ---
