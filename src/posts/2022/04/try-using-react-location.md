@@ -12,11 +12,11 @@ tags:
 
 ## 環境
 
-- Library: React 17.x
+- Library: React 18.x
 - Routing: React Location 3.x
 - State management: Jotai 1.x
 - Building: Vite 2.x
-- Testing: Vitest 0.9.x
+- Testing: Vitest 0.16.x
 - Hosting: Cloudflare Pages
 
 ## 作ったもの
@@ -58,14 +58,16 @@ export default routes;
 ```tsx:[data-file="/src/index.tsx"]
 import { ReactLocation, Router } from "@tanstack/react-location";
 import { StrictMode } from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 import routes from "./routes";
 
-render(
+const container = document.getElementById("app");
+if (container === null) throw new Error("Root element does not exists.");
+
+createRoot(container).render(
   <StrictMode>
     <Router location={new ReactLocation()} routes={routes} />
-  </StrictMode>,
-  document.getElementById("root")
+  </StrictMode>
 );
 ```
 
@@ -166,15 +168,17 @@ export default routes;
 ```tsx[data-file="/src/index.tsx"]
 import { ReactLocation, Router } from "@tanstack/react-location";
 import { StrictMode } from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 import routes from "./routes";
 import type { LocationGenerics } from "./types/location";
 
-render(
+const container = document.getElementById("app");
+if (container === null) throw new Error("Root element does not exists.");
+
+createRoot(container).render(
   <StrictMode>
     <Router location={new ReactLocation<LocationGenerics>()} routes={routes} />
-  </StrictMode>,
-  document.getElementById("root")
+  </StrictMode>
 );
 ```
 
@@ -244,7 +248,7 @@ React Location には Route Loaders のキャッシュを制御するために [
 ```tsx[data-file="/src/components/foo/index.tsx"]
 import { useLocation } from "@tanstack/react-location";
 
-export const Foo: React.VFC = () => {
+export const Foo: React.FC = () => {
   const { current } = useLocation();
   const text = current.pathname === "/foo" ? "foo" : "???";
   return <h2>{text}</h2>;
