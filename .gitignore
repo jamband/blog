@@ -1,5 +1,4 @@
 /.next
-/.swc
 /node_modules
 /out
 *.tsbuildinfo

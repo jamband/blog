@@ -7,7 +7,6 @@ const options = {
 };
 
 rmSync(".next", options);
-rmSync(".swc", options);
 rmSync("node_modules", options);
 rmSync("out", options);
 rmSync("tsconfig.tsbuildinfo", options);
