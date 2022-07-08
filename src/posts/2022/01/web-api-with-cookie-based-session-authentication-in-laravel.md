@@ -15,7 +15,7 @@ Laravel をバックエンドの Web API として利用し、クッキーベー
 ## 環境
 
 - PHP 8.0.x
-- Laravel 8.x
+- Laravel 9.x
 - Google Chrome 97.x
 
 また、バックエンド (Laravel) とフロントエンド (Next.js) でアプリケーションが分かれているため、以下のようなオリジンを想定している。
@@ -61,9 +61,10 @@ Papers 自体はログインして自分しか見れないメモを残すだけ�
 バックエンドのアプリケーションで必要になるのは以下:
 
 - [laravel/framework](https://github.com/laravel/framework)
-- [fruitcake/laravel-cors](https://github.com/fruitcake/laravel-cors)
 
-最初は [Laravel Sanctum](https://github.com/laravel/sanctum) も使っていたのだが、今回の環境ではいらないと思い途中で使うのをやめた。また認証関連の実装は基本的に [Laravel Breeze の api](https://github.com/laravel/breeze/tree/master/stubs/api) を参考にしている。ただ Laravel Breeze はスターターキット的なものなので Composer でインストールとかはせず、あくまで中身のコードを参考にしている程度。
+Laravel のバージョン 9.2 以降では CORS 関連のパッケージがビルトインされているので、特になにかしらのパッケージをインストールしなくてもよくなった。
+
+また、最初は [Laravel Sanctum](https://github.com/laravel/sanctum) も使っていたのだが、今回の環境ではいらないと思い途中で使うのをやめた。認証関連の実装は基本的に [Laravel Breeze の api](https://github.com/laravel/breeze/tree/master/stubs/api) を参考にしている。ただ Laravel Breeze はスターターキット的なものなので Composer でインストールとかはせず、あくまで中身のコードを参考にしている程度。
 
 ## CORS の設定
 
@@ -85,7 +86,7 @@ Frontend origin: http://localhost:3000 (with Next.js)
 Access-Control-Allow-Origin: http://localhost:3000
 ```
 
-Laravel で [fruitcake/laravel-cors](https://github.com/fruitcake/laravel-cors) を使っている場合は以下のようになる (環境変数名はわかりやすければなんでもいい):
+Laravel の場合は以下のようになる (環境変数名はわかりやすければなんでもいい):
 
 ```shell[data-file=".env"]
 FRONTEND_ORIGIN=http://localhost:3000
@@ -130,7 +131,7 @@ Access-Control-Allow-Methods: GET,POST,PUT,DELETE,OPTIONS,PATCH
 
 これはフロントエンド側がバックエンド側にアクセスする際に使う HTTP のリクエストメソッドを指定する。これはカンマ区切りで複数指定できる。Access-Control-Allow-Origin ヘッダーと同様に値として * (アスタリスク) を指定できるが、条件によっては意味のない * というメソッドとして扱われたりするので、必ず HTTP のリクエストメソッドを明示すること。
 
-laravel-cors を使っている場合は以下:
+Laravel の場合は以下:
 
 ```php[data-file="config/cors.php"]
 return [
@@ -155,19 +156,19 @@ Access-Control-Allow-Headers: Accept,Content-Type,X-XSRF-TOKEN
 
 上記以外のヘッダーが含まれたアクセスがあった場合 Web ブラウザはエラーを返し、バックエンド側との通信はその時点で遮断される。
 
-laravel-cors を使っている場合は以下:
+Laravel の場合は以下:
 
 ```php[data-file="config/cors.php"]
 return [
     'paths' => ['*'],
     'allowed_origins' => [env('FRONTEND_ORIGIN')],
     'allowed_methods' => ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
-    'allowed_headers' => ['Accept', 'Content-Type', 'Origin', 'X-XSRF-TOKEN'], // add
+    'allowed_headers' => ['Accept', 'Content-Type', 'X-XSRF-TOKEN'], // add
     // ...
 ];
 ```
 
-生の Access-Control-Allow-Headers ヘッダーとの違いは Origin ヘッダーも指定しているところ。これは [laravel-cors](https://github.com/fruitcake/laravel-cors#configuration) の README に書いてあるのでとりあえず付け足しておく。また、Accept と Content-Type ヘッダーは常に許可されているヘッダーなので明示する必要はないのだが、ヘッダーの値によっては許可されたりされなかったりするというあいまいな条件があるため、すべて明示したほうが無難。X-XSRF-TOKEN ヘッダーは CSRF 対策として使われる Laravel 特有のヘッダーでフロントエンド側からバックエンド側に [XMLHttpRequest](https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest) や [Fetch API](https://developer.mozilla.org/ja/docs/Web/API/Fetch_API/Using_Fetch) を介して POST リクエストをする際などに必要になってくる。
+Accept と Content-Type ヘッダーは常に許可されているヘッダーなので明示する必要はないのだが、ヘッダーの値によっては許可されたりされなかったりするというあいまいな条件があるため、すべて明示したほうが無難。X-XSRF-TOKEN ヘッダーは CSRF 対策として使われる Laravel 特有のヘッダーでフロントエンド側からバックエンド側に [XMLHttpRequest](https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest) や [Fetch API](https://developer.mozilla.org/ja/docs/Web/API/Fetch_API/Using_Fetch) を介して POST リクエストをする際などに必要になってくる。
 
 また、この Access-Control-Allow-Headers ヘッダーでも * (アスタリスク) を指定できるが、他のヘッダーと同様に使うことはできるが、できるかぎり使わないこと。
 
@@ -179,14 +180,14 @@ return [
 Access-Control-Allow-Credentials: true
 ```
 
-laravel-cors を使っている場合は以下:
+Laravel の場合は以下:
 
 ```php[data-file="config/cors.php"]
 return [
     'paths' => ['*'],
     'allowed_origins' => [env('FRONTEND_ORIGIN')],
     'allowed_methods' => ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
-    'allowed_headers' => ['Accept', 'Content-Type', 'Origin', 'X-XSRF-TOKEN'],
+    'allowed_headers' => ['Accept', 'Content-Type', 'X-XSRF-TOKEN'],
     'supports_credentials' => true, // add
     // ...
 ];
@@ -211,7 +212,7 @@ return [
     'paths' => ['*'],
     'allowed_origins' => [env('FRONTEND_ORIGIN')],
     'allowed_methods' => ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
-    'allowed_headers' => ['Accept', 'Content-Type', 'Origin', 'X-XSRF-TOKEN'],
+    'allowed_headers' => ['Accept', 'Content-Type', 'X-XSRF-TOKEN'],
     'supports_credentials' => true,
     // ...
 ];
@@ -221,8 +222,8 @@ return [
 namespace App\Http;
 
 use App\Http\Middleware\EncryptCookies;
-use Fruitcake\Cors\HandleCors;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use Illuminate\Http\Middleware\HandleCors;
 use Illuminate\Session\Middleware\StartSession;
 // ...
 
@@ -406,8 +407,8 @@ namespace App\Http;
 
 use App\Http\Middleware\EncryptCookies;
 use App\Http\Middleware\VerifyCsrfToken; // add
-use Fruitcake\Cors\HandleCors;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use Illuminate\Http\Middleware\HandleCors;
 use Illuminate\Session\Middleware\StartSession;
 // ...
 
@@ -578,9 +579,9 @@ use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\EncryptCookies;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Middleware\VerifyCsrfToken;
-use Fruitcake\Cors\HandleCors;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use Illuminate\Http\Middleware\HandleCors;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 
