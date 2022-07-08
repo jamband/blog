@@ -1,7 +1,7 @@
 ---
 title: Next.js で React Hook Form (yup または zod を含む) を使う
 created_at: "2021-04-21"
-last_updated: "2021-04-21"
+last_updated: "2022-07-09"
 tags:
     - next
     - react
@@ -13,11 +13,11 @@ tags:
 
 ## 環境
 
-- TypeScript 4.2.x
-- Next.js 10.1.x
-- React Hook Form 7.2.x
+- TypeScript 4.7.x
+- Next.js 12.2.x
+- React Hook Form 7.33.x
 - yup 0.32.x
-- zod 3.0.0-alpha.33
+- zod 3.17.x
 
 ## ディレクトリ構成
 
@@ -54,7 +54,7 @@ import { setLocale } from "yup";
 
 setLocale({
   mixed: {
-    required: "${path} cannot be blank.",
+    required: "The ${path} cannot be blank.",
   },
 });
 ```
@@ -66,16 +66,16 @@ import type { InferType } from "yup";
 
 // まずは Schema を定義する
 const schema = object({
-  // foo はラベルに Foo という文字列を使い、文字列型であり、必須項目とする
-  foo: string().label("Foo").required(),
+  // foo はラベルに foo という文字列を使い、文字列型であり、必須項目とする
+  foo: string().label("foo").required(),
 
-  // bar はラベルに Bar という文字列を使い、
+  // bar はラベルに bar という文字列を使い、
   // b, a, r のいずれかの文字のみを許可する (ただし空文字でもよい)
   bar: string()
-    .label("Bar")
+    .label("bar")
     .matches(/^(b|a|r)$/, {
       excludeEmptyString: true,
-      message: '${path} must be one of "b" "a" "r".',
+      message: 'The ${path} must be one of "b" "a" "r".',
     }),
 });
 
@@ -92,9 +92,9 @@ export const schemaOnUpdate = schema.pick(["bar"]);
 export type SchemaOnUpdate = InferType<typeof schemaOnUpdate>;
 
 // フォームで使うラベルを export する
-export const label: { [P in keyof Schema]-?: string } = {
-  foo: schema.fields.foo.spec.label!,
-  bar: schema.fields.bar.spec.label!,
+export const label: Record<keyof Schema, string> = {
+  foo: "Foo",
+  bar: "Bar",
 };
 ```
 
@@ -106,8 +106,8 @@ zod で書く場合は以下:
 import { z } from "zod";
 
 const schema = z.object({
-  foo: z.string().nonempty("Foo cannot be blank."),
-  bar: z.string().regex(/^(b|a|r|)$/, `Bar must be one of "b" "a" "r".`),
+  foo: z.string().nonempty("The foo cannot be blank."),
+  bar: z.string().regex(/^(b|a|r|)$/, `The bar must be one of "b" "a" "r".`),
 });
 
 type Schema = z.infer<typeof schema>;
@@ -118,7 +118,7 @@ export type SchemaOnCreate = Schema;
 export const schemaOnUpdate = schema.pick({ bar: true });
 export type SchemaOnUpdate = z.infer<typeof schemaOnUpdate>;
 
-export const label: { [P in keyof Schema]-?: string } = {
+export const label: Record<keyof Schema, string> = {
   foo: "Foo",
   bar: "Bar",
 };
@@ -133,12 +133,11 @@ React Hook Form と yup を組み合わせたもの:
 ```tsx[data-file="src/pages/yup.tsx"]
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { Page } from "~/layouts/page";
-import styles from "~/styles/form.module.css";
-import { schemaOnCreate as schema, label } from "~/validations/yup-schema1";
-import type { SchemaOnCreate as Schema } from "~/validations/yup-schema1";
+import styles from "../styles/form.module.css";
+import { schemaOnCreate as schema, label } from "../validations/yup-schema1";
+import type { SchemaOnCreate as Schema } from "../validations/yup-schema1";
 
-export default function YupPage() {
+export default function Page() {
   const {
     register,
     handleSubmit,
@@ -152,7 +151,7 @@ export default function YupPage() {
   };
 
   return (
-    <Page title="yup">
+    <>
       <h1>yup</h1>
       <p>
         <span className={styles.required}>*</span> is a required field.
@@ -172,7 +171,7 @@ export default function YupPage() {
           Create
         </button>
       </form>
-    </Page>
+    </>
   );
 }
 ```
@@ -182,12 +181,11 @@ React Hook Form と zod を組み合わせたフォーム:
 ```tsx[data-file="src/pages/zod.tsx"]
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Page } from "~/layouts/page";
-import styles from "~/styles/form.module.css";
-import { schemaOnCreate as schema, label } from "~/validations/zod-schema1";
-import type { SchemaOnCreate as Schema } from "~/validations/zod-schema1";
+import styles from "../styles/form.module.css";
+import { schemaOnCreate as schema, label } from "../validations/zod-schema1";
+import type { SchemaOnCreate as Schema } from "../validations/zod-schema1";
 
-export default function ZodPage() {
+export default function Page() {
   const {
     register,
     handleSubmit,
@@ -201,7 +199,7 @@ export default function ZodPage() {
   };
 
   return (
-    <Page title="zod">
+    <>
       <h1>zod</h1>
       <p>
         <span className={styles.required}>*</span> is a required field.
@@ -221,7 +219,7 @@ export default function ZodPage() {
           Create
         </button>
       </form>
-    </Page>
+    </>
   );
 }
 ```
@@ -238,12 +236,11 @@ Form validation 用の Schema の定義を外に逃しているので、 yup, zo
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
-import { Page } from "~/layouts/page";
-import styles from "~/styles/form.module.css";
-import { schemaOnCreate as schema, label } from "~/validations/yup-schema1";
-import type { SchemaOnCreate as Schema } from "~/validations/yup-schema1";
+import styles from "../styles/form.module.css";
+import { schemaOnCreate as schema, label } from "../validations/yup-schema1";
+import type { SchemaOnCreate as Schema } from "../validations/yup-schema1";
 
-export default function YupPage() {
+export default function Page() {
   const router = useRouter();
 
   const {
@@ -279,7 +276,7 @@ export default function YupPage() {
   };
 
   return (
-    <Page title="yup">
+    <>
       <h1>yup</h1>
       <p>
         <span className={styles.required}>*</span> is a required field.
@@ -299,7 +296,7 @@ export default function YupPage() {
           Create
         </button>
       </form>
-    </Page>
+    </>
   );
 }
 ```
