@@ -14,9 +14,9 @@ Laravel をバックエンドの Web API として利用し、クッキーベー
 
 ## 環境
 
-- PHP 8.0.x
+- PHP 8.x
 - Laravel 9.x
-- Google Chrome 97.x
+- Google Chrome
 
 また、バックエンド (Laravel) とフロントエンド (Next.js) でアプリケーションが分かれているため、以下のようなオリジンを想定している。
 
