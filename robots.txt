@@ -1,2 +1,9 @@
+# *
 User-agent: *
-Disallow:
+Allow: /
+
+# Host
+Host: https://jamband.github.io/blog/
+
+# Sitemaps
+Sitemap: https://jamband.github.io/blog/sitemap.xml
