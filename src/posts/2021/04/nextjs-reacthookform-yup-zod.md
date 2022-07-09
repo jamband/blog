@@ -103,20 +103,24 @@ export const label: Record<keyof Schema, string> = {
 zod で書く場合は以下:
 
 ```ts[data-file="src/validations/zod-schema1.ts"]
-import { z } from "zod";
+import type { infer as InferType } from "zod";
+import { literal, object, string } from "zod";
 
-const schema = z.object({
-  foo: z.string().nonempty("The foo cannot be blank."),
-  bar: z.string().regex(/^(b|a|r|)$/, `The bar must be one of "b" "a" "r".`),
+const schema = object({
+  foo: string().min(1, "The foo cannot be blank."),
+  bar: string()
+    .regex(/^(b|a|r)$/, `The bar must be one of "b" "a" "r".`)
+    .optional()
+    .or(literal("")),
 });
 
-type Schema = z.infer<typeof schema>;
+type Schema = InferType<typeof schema>;
 
 export const schemaOnCreate = schema;
 export type SchemaOnCreate = Schema;
 
 export const schemaOnUpdate = schema.pick({ bar: true });
-export type SchemaOnUpdate = z.infer<typeof schemaOnUpdate>;
+export type SchemaOnUpdate = InferType<typeof schemaOnUpdate>;
 
 export const label: Record<keyof Schema, string> = {
   foo: "Foo",
