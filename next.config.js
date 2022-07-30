@@ -1,6 +1,6 @@
 /** @type {import("next").NextConfig} */
 module.exports = {
-  basePath: process.env.GITHUB_ACTIONS ? "/blog" : "",
+  basePath: process.env.GITHUB_ACTIONS && "/blog",
   experimental: {
     newNextLinkBehavior: true,
   },
