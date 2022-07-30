@@ -58,11 +58,8 @@ export default function Page(props: Props) {
       <ul className="mb-6">
         {props.posts.map((post) => (
           <li key={post.slug} className="mb-6">
-            <Link
-              href={`/${post.year}/${post.month}/${post.slug}`}
-              className="font-semibold"
-            >
-              {post.title}
+            <Link href={`/${post.year}/${post.month}/${post.slug}`}>
+              <a className="font-semibold">{post.title}</a>
             </Link>
             <div className="text-xs text-gray-400">
               {formatDate(post.created_at)}

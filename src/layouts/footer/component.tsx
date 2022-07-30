@@ -8,12 +8,10 @@ export const Component: React.FC<_Props> = (props) => (
       aria-label="Footer navigation"
     >
       {props.links.map((link) => (
-        <Link
-          key={link.href}
-          href={link.href}
-          className="rounded px-5 py-1 no-underline active:bg-gray-600 active:text-gray-100"
-        >
-          {link.text}
+        <Link key={link.href} href={link.href}>
+          <a className="rounded px-5 py-1 no-underline active:bg-gray-600 active:text-gray-100">
+            {link.text}
+          </a>
         </Link>
       ))}
     </nav>
