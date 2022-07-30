@@ -53,7 +53,7 @@ touch public/.nojekyll
 ```js[data-file="next.config.js"]
 // repository_name はそれぞれの値に置き換える
 module.exports = {
-  basePath: process.env.GITHUB_ACTIONS ? "/repository_name" : "",
+  basePath: process.env.GITHUB_ACTIONS && "/repository_name",
   trailingSlash: true,
 };
 ```
