@@ -26,11 +26,11 @@ tags:
 - [Experinica](https://experinica.pages.dev/)
 - [GitHub: jamband/experinica](https://github.com/jamband/experinica)
 
-Experinica は自分が以前作った [jamband/tapes](https://jamband.github.io/tapes/) のコピー品のようなものである。jamband/tapes は本番環境にビルド・デプロイすると、各 route はそれに対応する HTML と JSON ファイルを生成する。詳細は以下で確認できる。
+Experinica は自分が以前作った [jamband/tapes](https://jamband.github.io/tapes/) のコピー品のようなものである。jamband/tapes は本番環境にビルド・デプロイすると、各 route はそれに対応する HTML とデータファイルを生成する。詳細は以下で確認できる。
 
 - [GitHub: jamband/tapes - gh-pages](https://github.com/jamband/tapes/tree/gh-pages)
 
-Experinica では jamband/tapes で生成された JSON ファイルを Fetch API を用いてリクエストしデータを取得する。スタイルなどはほぼ jamband/tapes に合わせているため、結果的に見た目は同じようなものになる。ただ jamband/tapes は SvelteKit を使った静的サイト + SPA のようなものであるのに対して、Experinica は完全なる SPA であることに注意する。
+Experinica では jamband/tapes で生成されたデータファイルを Fetch API を用いてリクエストしデータを取得する。スタイルなどはほぼ jamband/tapes に合わせているため、結果的に見た目は同じようなものになる。ただ jamband/tapes は SvelteKit を使った静的サイト + SPA のようなものであるのに対して、Experinica は完全なる SPA であることに注意する。
 
 ## React Location の特徴
 
