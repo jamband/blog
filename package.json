@@ -6,7 +6,7 @@
     "postbuild": "node scripts/postbuild.mjs",
     "lint": "next lint",
     "format": "prettier --check .",
-    "test": "jest -i",
+    "test": "jest",
     "clear": "node scripts/clear.mjs",
     "clean": "node scripts/clean.mjs"
   },
