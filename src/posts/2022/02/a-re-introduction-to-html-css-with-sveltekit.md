@@ -68,25 +68,25 @@ const dev = process.env.NODE_ENV === "development";
 const config = {
   kit: {
     adapter: adapter(),
-    browser: {
-      // 本番環境ではクライアントルーティングはしない
-      router: dev || false,
-      // 本番環境ではハイドレイト処理はしない
-      hydrate: dev || false,
-    },
-    // 1024 バイトまでは CSS をインライン化する
     inlineStyleThreshold: 1024,
     paths: {
       base: process.env["VITE_GITHUB_ACTIONS"] ? "/denene" : "",
-    },
-    prerender: {
-      default: true,
     },
     trailingSlash: "always",
   },
 };
 
 export default config;
+```
+
+```js[data-file="src/routes/+layout.ts"]
+import { dev } from "$app/environment";
+import type { PrerenderOption } from "@sveltejs/kit";
+
+// 開発環境ではクライアントルーティングとハイドレーションを有効にして (無効にすると Vite の HMR が動作しないため)
+// 本番環境ではクライアントルーティングとハイドレーションを無効にする
+export const csr = dev ? true : false;
+export const prerender: PrerenderOption = true;
 ```
 
 これで結果的に本番環境ではランタイムファイルなどの読み込みもなくなり、HTML/CSS のみを読み込む静的な Web サイトを作ることができる。
