@@ -1,7 +1,7 @@
 ---
 title: SvelteKit を使った HTML/CSS 再入門
 created_at: "2022-02-20"
-last_updated: "2022-07-03"
+last_updated: "2022-09-02"
 tags:
     - css
     - html
