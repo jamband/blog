@@ -1,13 +1,13 @@
 import Head from "next/head";
-import { ExternalLink } from "../components/external-link";
+import { ExternalLink } from "~/components/external-link";
 import {
   APP_DESCRIPTION,
   APP_NAME,
   APP_REPOSITORY_URL,
   APP_URL,
-} from "../constants/app";
-import { IconExternalLink } from "../icons/external-link";
-import { Layout } from "../layouts/layout";
+} from "~/constants/app";
+import { IconExternalLink } from "~/icons/external-link";
+import { Layout } from "~/layouts/layout";
 
 export default function Page() {
   return (

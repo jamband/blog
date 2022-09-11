@@ -1,5 +1,5 @@
 import { Head, Html, Main, NextScript } from "next/document";
-import { APP_NAME } from "../constants/app";
+import { APP_NAME } from "~/constants/app";
 
 export default function Document() {
   return (

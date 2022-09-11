@@ -2,7 +2,7 @@ import fs from "fs";
 import glob from "glob";
 import matter from "gray-matter";
 import { basename, join } from "path";
-import type { Post } from "../types/post";
+import type { Post } from "~/types/post";
 
 const baseDir = join(process.cwd(), "src/posts");
 const files = glob.sync(`${baseDir}/**/*.md`);

@@ -1,5 +1,5 @@
-import { IconExternalLink } from "../../icons/external-link";
-import { formatDate } from "../../utils/format";
+import { IconExternalLink } from "~/icons/external-link";
+import { formatDate } from "~/utils/format";
 import { ExternalLink } from "../external-link";
 import type { _Props } from "./types";
 

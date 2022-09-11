@@ -1,4 +1,4 @@
-import { APP_DESCRIPTION } from "../constants/app";
+import { APP_DESCRIPTION } from "~/constants/app";
 import { description } from "./meta";
 
 describe("description", () => {

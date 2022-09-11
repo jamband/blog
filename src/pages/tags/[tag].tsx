@@ -1,12 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
-import { HomeLink } from "../../components/home-link";
-import { Tags } from "../../components/tags";
-import { APP_DESCRIPTION, APP_NAME, APP_URL } from "../../constants/app";
-import { Layout } from "../../layouts/layout";
-import type { Post } from "../../types/post";
-import { getPostsByTag, getTags } from "../../utils/api";
-import { formatDate } from "../../utils/format";
+import { HomeLink } from "~/components/home-link";
+import { Tags } from "~/components/tags";
+import { APP_DESCRIPTION, APP_NAME, APP_URL } from "~/constants/app";
+import { Layout } from "~/layouts/layout";
+import type { Post } from "~/types/post";
+import { getPostsByTag, getTags } from "~/utils/api";
+import { formatDate } from "~/utils/format";
 
 type Props = {
   posts: Array<Post>;
