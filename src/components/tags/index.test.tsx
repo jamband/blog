@@ -22,17 +22,5 @@ test("", () => {
   const links = screen.getAllByRole("link");
   expect(links).toHaveLength(3);
   expect(links[0]).toHaveAttribute("href", "/tags/foo");
-  // expect(links[0]).toHaveClass("text-gray-400");
-});
-
-test("decoration: true", () => {
-  router.mockReturnValue({
-    query: { tag: "foo" },
-  });
-  render(<Tags tags={["foo", "bar", "baz"]} decoration />);
-
-  const links = screen.getAllByRole("link");
-  expect(links).toHaveLength(3);
-  expect(links[0]).toHaveAttribute("href", "/tags/foo");
-  // expect(links[0]).toHaveClass("text-pink-500");
+  expect(links[0]).toHaveClass("text-pink-500");
 });

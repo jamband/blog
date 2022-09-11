@@ -51,7 +51,7 @@ export default function Page(props: Props) {
         <meta property="og:url" content={`${APP_URL}tags/${props.tag}/`} />
       </Head>
       <h2 className="mb-5 text-4xl">Tags</h2>
-      <Tags tags={props.tags} className="mb-14" decoration />
+      <Tags tags={props.tags} className="mb-14" />
       <h2 className="mb-4 text-4xl">
         Posts <span className="text-base text-pink-500">{props.tag}</span>
       </h2>
