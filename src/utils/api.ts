@@ -42,7 +42,11 @@ export const getOldPosts = () => {
 };
 
 export const getPostByPath = (path: string) => {
-  return matter(contents(`${baseDir}/${path}`));
+  const { data, content } = matter(contents(`${baseDir}/${path}`));
+  return {
+    data: data as Post,
+    content,
+  };
 };
 
 export const getPostsByTag = (tag: string) => {

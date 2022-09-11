@@ -1,4 +1,6 @@
+import type { GetStaticProps } from "next";
 import Head from "next/head";
+import type { ParsedUrlQuery } from "querystring";
 import { HomeLink } from "~/components/home-link";
 import { PostContent } from "~/components/post-content";
 import { PostHeader } from "~/components/post-header";
@@ -13,24 +15,26 @@ type Props = {
   post: Post;
 };
 
-type Params = {
-  params: {
-    year: string;
-    month: string;
-    slug: string;
-  };
+type Params = ParsedUrlQuery & {
+  year: string;
+  month: string;
+  slug: string;
 };
 
-export const getStaticProps = async ({ params }: Params) => {
-  const path = `${params.year}/${params.month}/${params.slug}.md`;
-  const post = getPostByPath(path);
-  const content = await markdownToHtml(post.content || "");
+export const getStaticProps: GetStaticProps<Props, Params> = async ({
+  params,
+}) => {
+  const year = params?.year || "";
+  const month = params?.month || "";
+  const slug = params?.slug || "";
+
+  const { data, content } = getPostByPath(`${year}/${month}/${slug}.md`);
 
   return {
     props: {
       post: {
-        ...post.data,
-        content,
+        ...data,
+        content: await markdownToHtml(content),
         description: description(content),
       },
     },
@@ -39,12 +43,8 @@ export const getStaticProps = async ({ params }: Params) => {
 
 export const getStaticPaths = () => {
   return {
-    paths: getPosts().map((post) => ({
-      params: {
-        year: post.year,
-        month: post.month,
-        slug: post.slug,
-      },
+    paths: getPosts().map(({ year, month, slug }) => ({
+      params: { year, month, slug },
     })),
     fallback: false,
   };

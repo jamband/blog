@@ -1,5 +1,7 @@
+import type { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import type { ParsedUrlQuery } from "querystring";
 import { HomeLink } from "~/components/home-link";
 import { Tags } from "~/components/tags";
 import { APP_DESCRIPTION, APP_NAME, APP_URL } from "~/constants/app";
@@ -14,18 +16,20 @@ type Props = {
   tag: string;
 };
 
-type Params = {
-  params: {
-    tag: string;
-  };
+type Params = ParsedUrlQuery & {
+  tag: string;
 };
 
-export const getStaticProps = async ({ params }: Params) => {
+export const getStaticProps: GetStaticProps<Props, Params> = async ({
+  params,
+}) => {
+  const tag = params?.tag || "";
+
   return {
     props: {
-      posts: getPostsByTag(params.tag),
+      posts: getPostsByTag(tag),
       tags: getTags(),
-      tag: params.tag,
+      tag,
     },
   };
 };
