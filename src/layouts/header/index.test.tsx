@@ -24,8 +24,8 @@ test("", () => {
   const [name, repository] = APP_NAME.split("/");
   expect(screen.getByText(`${name}/`)).toBeInTheDocument();
 
-  const repositoryElement = screen.getByText(repository);
-  expect(repositoryElement).toHaveClass("text-gray-200");
+  const element = screen.getByText(repository);
+  expect(element).toHaveClass("text-gray-200");
 });
 
 test("repository element", () => {
@@ -38,6 +38,6 @@ test("repository element", () => {
   const [name, repository] = APP_NAME.split("/");
   expect(screen.getByText(`${name}/`)).toBeInTheDocument();
 
-  const repositoryElement = screen.getByText(repository);
-  expect(repositoryElement).toHaveClass("text-pink-500");
+  const element = screen.getByText(repository);
+  expect(element).toHaveClass("text-pink-500");
 });
