@@ -13,8 +13,8 @@ export default function Page() {
         <meta property="og:url" content={APP_URL} />
       </Head>
       <h1>Not Found</h1>
-      <p>Page not found.</p>
-      <div className="mt-12 text-center">
+      <p className="mb-12">Page not found.</p>
+      <div className="flex justify-center">
         <HomeLink />
       </div>
     </>
