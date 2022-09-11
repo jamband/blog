@@ -9,8 +9,8 @@ import { getPostsByTag, getTags } from "../../utils/api";
 import { formatDate } from "../../utils/format";
 
 type Props = {
-  posts: Post[];
-  tags: string[];
+  posts: Array<Post>;
+  tags: Array<string>;
   tag: string;
 };
 

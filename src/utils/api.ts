@@ -11,7 +11,7 @@ const contents = (path: string) => {
   return fs.readFileSync(path, "utf8");
 };
 
-export const getTags = (): string[] => {
+export const getTags = (): Array<string> => {
   let tags = files.map((path) => {
     const { data } = matter(contents(path));
     return data.tags;
@@ -26,7 +26,7 @@ export const getPosts = () => {
     [data.year, data.month] = data.created_at.split("-");
     data.slug = basename(path).replace(/\.md$/, "");
     return data;
-  }) as Post[];
+  }) as Array<Post>;
 
   return posts.sort((post1, post2) => {
     return post1.created_at > post2.created_at ? -1 : 1;

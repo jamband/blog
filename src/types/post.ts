@@ -7,5 +7,5 @@ export type Post = {
   slug: string;
   content: string;
   description: string;
-  tags: string[];
+  tags: Array<string>;
 };

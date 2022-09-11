@@ -1,5 +1,5 @@
 export type Props = {
-  tags: string[];
+  tags: Array<string>;
   className?: string;
 };
 

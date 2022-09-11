@@ -10,9 +10,9 @@ import { getLatestPosts, getOldPosts, getTags } from "../utils/api";
 import { formatDate } from "../utils/format";
 
 type Props = {
-  tags: string[];
-  latestPosts: Post[];
-  oldPosts: Post[];
+  tags: Array<string>;
+  latestPosts: Array<Post>;
+  oldPosts: Array<Post>;
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
