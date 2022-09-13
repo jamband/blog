@@ -8,6 +8,7 @@ import { Layout } from "~/layouts/layout";
 import type { Post } from "~/types/post";
 import { getLatestPosts, getOldPosts, getTags } from "~/utils/api";
 import { formatDate } from "~/utils/format";
+import type { PageComponent } from "./_app";
 
 type Props = {
   tags: Array<string>;
@@ -25,7 +26,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   };
 };
 
-export default function Page(props: Props) {
+const Page: PageComponent<Props> = (props) => {
   const [showOldPosts, setShowOldPosts] = useState(false);
   const toggleOldPosts = () => setShowOldPosts((previous) => !previous);
 
@@ -88,6 +89,8 @@ export default function Page(props: Props) {
       )}
     </>
   );
-}
+};
 
-Page.getLayout = (page: React.ReactElement) => <Layout title="">{page}</Layout>;
+Page.getLayout = (page) => <Layout title="">{page}</Layout>;
+
+export default Page;

@@ -9,6 +9,7 @@ import { Layout } from "~/layouts/layout";
 import type { Post } from "~/types/post";
 import { getPostsByTag, getTags } from "~/utils/api";
 import { formatDate } from "~/utils/format";
+import type { PageComponent } from "../_app";
 
 type Props = {
   posts: Array<Post>;
@@ -45,7 +46,7 @@ export const getStaticPaths = () => {
   };
 };
 
-export default function Page(props: Props) {
+const Page: PageComponent<Props> = (props) => {
   return (
     <>
       <Head>
@@ -76,8 +77,8 @@ export default function Page(props: Props) {
       </div>
     </>
   );
-}
+};
 
-Page.getLayout = (page: React.ReactElement) => (
-  <Layout title={page.props.tag}>{page}</Layout>
-);
+Page.getLayout = (page) => <Layout title={page.props.tag}>{page}</Layout>;
+
+export default Page;

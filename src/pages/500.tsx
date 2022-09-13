@@ -13,8 +13,8 @@ const Page: PageComponent = () => {
         <meta property="og:description" content={APP_DESCRIPTION} />
         <meta property="og:url" content={APP_URL} />
       </Head>
-      <h1>Not Found</h1>
-      <p className="mb-12">Page not found.</p>
+      <h1>An error occurred</h1>
+      <p className="mb-12">An error occurred.</p>
       <div className="flex justify-center">
         <HomeLink />
       </div>
@@ -22,6 +22,6 @@ const Page: PageComponent = () => {
   );
 };
 
-Page.getLayout = (page) => <Layout title="Not Found">{page}</Layout>;
+Page.getLayout = (page) => <Layout title="An error occurred">{page}</Layout>;
 
 export default Page;

@@ -8,8 +8,9 @@ import {
 } from "~/constants/app";
 import { IconExternalLink } from "~/icons/external-link";
 import { Layout } from "~/layouts/layout";
+import type { PageComponent } from "./_app";
 
-export default function Page() {
+const Page: PageComponent = () => {
   return (
     <>
       <Head>
@@ -43,8 +44,8 @@ export default function Page() {
       </p>
     </>
   );
-}
+};
 
-Page.getLayout = (page: React.ReactElement) => (
-  <Layout title="Contact">{page}</Layout>
-);
+Page.getLayout = (page) => <Layout title="Contact">{page}</Layout>;
+
+export default Page;

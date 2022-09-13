@@ -6,6 +6,7 @@ import { PostContent } from "~/components/post-content";
 import { PostHeader } from "~/components/post-header";
 import { APP_NAME, APP_REPOSITORY_URL, APP_URL } from "~/constants/app";
 import { Layout } from "~/layouts/layout";
+import type { PageComponent } from "~/pages/_app";
 import type { Post } from "~/types/post";
 import { getPostByPath, getPosts } from "~/utils/api";
 import { markdownToHtml } from "~/utils/convert";
@@ -50,7 +51,7 @@ export const getStaticPaths = () => {
   };
 };
 
-export default function Page(props: Props) {
+const Page: PageComponent<Props> = (props) => {
   return (
     <>
       <Head>
@@ -79,8 +80,10 @@ export default function Page(props: Props) {
       </div>
     </>
   );
-}
+};
 
-Page.getLayout = (page: React.ReactElement) => (
+Page.getLayout = (page) => (
   <Layout title={page.props.post.title}>{page}</Layout>
 );
+
+export default Page;
