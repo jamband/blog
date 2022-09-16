@@ -5,7 +5,7 @@
 }
 
 .post a {
-  @apply text-gray-300 active:text-pink-500;
+  @apply text-gray-300 hover:text-pink-500 active:text-pink-500;
 }
 
 .post h2 {

@@ -6,7 +6,13 @@ export const Component: React.FC<_Props> = (props) => (
     {props.tags.map((tag) => (
       <li key={tag}>
         <Link href={`/tags/${tag}`}>
-          <a className={`${props.match(tag) ? "text-pink-500" : ""}`}>{tag}</a>
+          <a
+            className={`hover:text-pink-500 ${
+              props.match(tag) ? "text-pink-500" : ""
+            }`}
+          >
+            {tag}
+          </a>
         </Link>
       </li>
     ))}

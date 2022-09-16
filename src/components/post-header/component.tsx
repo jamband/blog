@@ -14,7 +14,7 @@ export const Component: React.FC<_Props> = (props) => (
         </time>
       </li>
       <li>
-        <ExternalLink href={props.historyUrl}>
+        <ExternalLink href={props.historyUrl} className="hover:text-pink-500">
           更新履歴
           <IconExternalLink className="h-4 w-4 align-[-0.125em]" />
         </ExternalLink>

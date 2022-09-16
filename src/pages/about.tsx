@@ -23,7 +23,7 @@ const Page: PageComponent = () => {
       <p>{APP_DESCRIPTION}</p>
       <p>
         また、このウェブサイトはオープンソースなプロジェクトです。詳細については{" "}
-        <ExternalLink href={APP_REPOSITORY_URL} className="text-pink-500">
+        <ExternalLink href={APP_REPOSITORY_URL} className="hover:text-pink-500">
           GitHub: {APP_NAME}
           <IconExternalLink className="h-4 w-4 align-[-0.125em]" />
         </ExternalLink>{" "}

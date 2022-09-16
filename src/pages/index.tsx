@@ -47,7 +47,7 @@ const Page: PageComponent<Props> = (props) => {
         {props.latestPosts.map((post) => (
           <li key={post.slug} className="mb-6">
             <Link href={`/${post.year}/${post.month}/${post.slug}`}>
-              <a className="font-semibold">{post.title}</a>
+              <a className="font-semibold hover:text-pink-500">{post.title}</a>
             </Link>
             <div className="text-xs text-gray-400">
               {formatDate(post.created_at)}
@@ -59,7 +59,7 @@ const Page: PageComponent<Props> = (props) => {
         <div className="flex justify-center">
           <button
             onClick={toggleOldPosts}
-            className="rounded bg-gray-700 px-3 py-1.5 text-sm text-gray-200 shadow-sm active:text-pink-500"
+            className="rounded bg-gray-700 px-3 py-1.5 text-sm text-gray-400 shadow-sm hover:text-gray-100 active:text-gray-100 active:ring-2 active:ring-gray-500"
           >
             <span className="mr-2">古い記事をもっと見る</span>↓
           </button>
@@ -69,7 +69,7 @@ const Page: PageComponent<Props> = (props) => {
         {props.oldPosts.map((post) => (
           <li key={post.slug} className="mb-6">
             <Link href={`/${post.year}/${post.month}/${post.slug}`}>
-              <a className="font-semibold">{post.title}</a>
+              <a className="font-semibold hover:text-pink-500">{post.title}</a>
             </Link>
             <div className="text-xs text-gray-400">
               {formatDate(post.created_at)}
@@ -81,7 +81,7 @@ const Page: PageComponent<Props> = (props) => {
         <div className="flex justify-center">
           <button
             onClick={toggleOldPosts}
-            className="rounded bg-gray-700 px-3 py-1.5 text-sm text-gray-200 shadow-sm active:text-pink-500"
+            className="rounded bg-gray-700 px-3 py-1.5 text-sm text-gray-400 shadow-sm hover:text-gray-100 active:text-gray-100 active:ring-2 active:ring-gray-500"
           >
             <span className="mr-2">古い記事をかくす</span>↑
           </button>
