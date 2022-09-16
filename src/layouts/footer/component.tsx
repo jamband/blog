@@ -9,7 +9,7 @@ export const Component: React.FC<_Props> = (props) => (
     >
       {props.links.map((link) => (
         <Link key={link.href} href={link.href}>
-          <a className="rounded px-5 py-1 no-underline hover:bg-gray-600 hover:text-gray-100 active:bg-gray-600 active:text-gray-100 active:ring-2 active:ring-gray-500">
+          <a className="rounded px-5 py-1 no-underline hover:bg-gray-600 hover:text-gray-100 active:bg-gray-600 active:text-gray-100">
             {link.text}
           </a>
         </Link>
