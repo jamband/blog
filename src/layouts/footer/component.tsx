@@ -3,6 +3,9 @@ import type { _Props } from "./types";
 
 export const Component: React.FC<_Props> = (props) => (
   <footer>
+    <div className="mb-3 flex justify-center text-xs">
+      © {new Date().getFullYear()} Tomoki Morita
+    </div>
     <nav
       className="flex justify-center gap-x-5 bg-gray-700 py-3 text-sm"
       aria-label="Footer navigation"

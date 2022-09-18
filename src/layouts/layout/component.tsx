@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { Copyright } from "../copyright";
 import { Footer } from "../footer";
 import { Header } from "../header";
 import { Loading } from "../loading";
@@ -21,7 +20,6 @@ export const Component: React.FC<_Props> = (props) => (
       <main className="container mx-auto flex-grow pt-28 pb-10">
         {props.children}
       </main>
-      <Copyright />
       <Footer />
     </div>
   </>

@@ -15,10 +15,6 @@ jest.mock("../header", () => ({
   Header: jest.fn(() => null),
 }));
 
-jest.mock("../copyright", () => ({
-  Copyright: jest.fn(() => "copyright"),
-}));
-
 jest.mock("../footer", () => ({
   Footer: jest.fn(() => null),
 }));

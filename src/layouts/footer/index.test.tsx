@@ -5,6 +5,8 @@ import { Footer } from ".";
 test("", () => {
   render(<Footer />);
 
+  expect(screen.getByText("© 2022 Tomoki Morita")).toBeInTheDocument();
+
   const aboutLink = screen.getByRole("link", { name: "About" });
   expect(aboutLink).toHaveAttribute("href", "/about");
 
