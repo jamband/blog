@@ -1,23 +1,25 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Component } from "./component";
-import styles from "./style.module.css";
-import type { State } from "./types";
+import type { _Props } from "./types";
 
 export const Loading: React.FC = () => {
-  const [state, setState] = useState<State>("initial");
+  const [state, setState] = useState<_Props["state"]>("initial");
   const { events } = useRouter();
 
-  let className = styles.initial;
-  if (state === "start") className += ` ${styles.start}`;
-  if (state === "complete") className += ` ${styles.complete}`;
-
   useEffect(() => {
-    const start = () => setState("start");
+    const start = () => {
+      setState("start");
+    };
 
     const complete = () => {
-      setTimeout(() => setState("complete"), 100);
-      setTimeout(() => setState("initial"), 500);
+      setTimeout(() => {
+        setState("complete");
+      }, 100);
+
+      setTimeout(() => {
+        setState("initial");
+      }, 500);
     };
 
     events.on("routeChangeStart", start);
@@ -31,5 +33,5 @@ export const Loading: React.FC = () => {
     };
   }, [events]);
 
-  return <Component className={className} />;
+  return <Component state={state} />;
 };

@@ -28,7 +28,5 @@ test("", () => {
 
   render(<Loading />);
 
-  expect(screen.getByRole("status")).toHaveClass("initial start", {
-    exact: true,
-  });
+  expect(screen.getByRole("status")).toHaveClass("fixed w-[99%]");
 });
