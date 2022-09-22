@@ -14,7 +14,7 @@ export const Component: React.FC<_Props> = (props) => (
               <span className="text-xs text-gray-100 duration-100">
                 {props.name}/
               </span>
-              <span className="text-pink-500 opacity-80 duration-1000">
+              <span className="text-pink-500/80 duration-1000">
                 {props.repository}
               </span>
             </>

@@ -17,7 +17,7 @@ export const Component: React.FC<_Props> = (props) => (
     <Loading />
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="container mx-auto flex-grow pt-28 pb-10">
+      <main className="container mx-auto grow pt-28 pb-10">
         {props.children}
       </main>
       <Footer />

@@ -24,7 +24,7 @@ const Page: PageComponent = () => {
         何かしらの問い合わせに関しては{" "}
         <ExternalLink
           href="https://twitter.com/livejam_db"
-          className="hover:text-pink-500"
+          className="text-pink-500"
         >
           Twitter
           <IconExternalLink className="h-4 w-4 align-[-0.125em]" />
@@ -35,7 +35,7 @@ const Page: PageComponent = () => {
         また、プログラムのバグなどを発見した場合は{" "}
         <ExternalLink
           href={`${APP_REPOSITORY_URL}/issues`}
-          className="hover:text-pink-500"
+          className="text-pink-500"
         >
           GitHub Issues
           <IconExternalLink className="h-4 w-4 align-[-0.125em]" />
