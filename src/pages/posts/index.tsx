@@ -31,7 +31,7 @@ const Page: PageComponent<Props> = (props) => {
         <meta name="description" content={APP_DESCRIPTION} />
         <meta property="og:title" content={`posts ･ ${APP_NAME}`} />
         <meta property="og:description" content={APP_DESCRIPTION} />
-        <meta property="og:url" content={`${APP_URL}/posts/`} />
+        <meta property="og:url" content={`${APP_URL}posts/`} />
       </Head>
       <h2 className="mb-5 text-4xl">Tags</h2>
       <Tags tags={props.tags} className="mb-14" />
