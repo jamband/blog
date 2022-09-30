@@ -5,6 +5,6 @@ import { HomeLink } from ".";
 test("", () => {
   render(<HomeLink />);
 
-  const link = screen.getByRole("link", { name: "← トップページに戻る" });
+  const link = screen.getByRole("link", { name: "← home" });
   expect(link).toHaveAttribute("href", "/");
 });

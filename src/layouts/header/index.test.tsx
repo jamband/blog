@@ -39,5 +39,5 @@ test("repository element", () => {
   expect(screen.getByText(`${name}/`)).toBeInTheDocument();
 
   const element = screen.getByText(repository);
-  expect(element).toHaveClass("text-pink-500");
+  expect(element).toHaveClass("text-pink-500/80");
 });
