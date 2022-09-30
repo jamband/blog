@@ -1,24 +1,25 @@
 import type { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import { HomeLink } from "~/components/home-link";
 import { Tags } from "~/components/tags";
 import { APP_DESCRIPTION, APP_NAME, APP_URL } from "~/constants/app";
 import { Layout } from "~/layouts/layout";
 import type { Post } from "~/types/post";
-import { getLatestPosts, getTags } from "~/utils/api";
+import { getPosts, getTags } from "~/utils/api";
 import { formatDate } from "~/utils/format";
-import type { PageComponent } from "./_app";
+import type { PageComponent } from "../_app";
 
 type Props = {
   tags: Array<string>;
-  latestPosts: Array<Post>;
+  posts: Array<Post>;
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
       tags: getTags(),
-      latestPosts: getLatestPosts(),
+      posts: getPosts(),
     },
   };
 };
@@ -35,10 +36,10 @@ const Page: PageComponent<Props> = (props) => {
       <h2 className="mb-5 text-4xl">Tags</h2>
       <Tags tags={props.tags} className="mb-14" />
       <h2 className="mb-5 text-4xl">
-        Posts <span className="text-base text-pink-500">latest</span>
+        Posts <span className="text-base text-pink-500">all</span>
       </h2>
       <ul>
-        {props.latestPosts.map((post) => (
+        {props.posts.map((post) => (
           <li key={post.slug} className="mb-6">
             <Link href={`/${post.year}/${post.month}/${post.slug}`}>
               <a className="font-semibold hover:text-pink-500">{post.title}</a>
@@ -50,11 +51,7 @@ const Page: PageComponent<Props> = (props) => {
         ))}
       </ul>
       <div className="flex justify-center">
-        <Link href="/posts">
-          <a className="rounded bg-gray-700 px-4 py-1 text-sm text-gray-400 no-underline hover:text-gray-100 active:text-gray-100 active:ring-2 active:ring-gray-500">
-            more ↓
-          </a>
-        </Link>
+        <HomeLink />
       </div>
     </>
   );
