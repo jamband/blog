@@ -58,7 +58,8 @@ const Page: PageComponent<Props> = (props) => {
       <h2 className="mb-5 text-4xl">Tags</h2>
       <Tags tags={props.tags} className="mb-14" />
       <h2 className="mb-4 text-4xl">
-        Posts <span className="text-base text-pink-500">{props.tag}</span>
+        Posts <span className="text-[60%] text-gray-400">/</span>{" "}
+        <span className="text-[60%] text-pink-500">{props.tag}</span>
       </h2>
       <ul className="mb-6">
         {props.posts.map((post) => (
