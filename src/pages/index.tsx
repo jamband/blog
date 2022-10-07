@@ -52,7 +52,7 @@ const Page: PageComponent<Props> = (props) => {
       </ul>
       <div className="flex justify-center">
         <Link href="/posts">
-          <a className="rounded bg-gray-700 px-4 py-1 text-sm text-gray-400 no-underline hover:text-gray-100 active:text-gray-100 active:ring-2 active:ring-gray-500">
+          <a className="rounded bg-gray-700 px-4 py-1 text-sm text-gray-400 no-underline hover:text-gray-100 active:text-gray-100 active:ring-2 active:ring-gray-400">
             see all →
           </a>
         </Link>
