@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { useRouter } from "next/router";
+import { router } from "~/mocks/router";
 import { Layout } from ".";
 
 jest.mock("next/router", () => ({
@@ -17,12 +17,6 @@ jest.mock("../header", () => ({
 jest.mock("../footer", () => ({
   Footer: jest.fn(() => null),
 }));
-
-const router = useRouter as jest.Mock;
-
-beforeEach(() => {
-  router.mockReset();
-});
 
 test("", () => {
   router.mockReturnValue({

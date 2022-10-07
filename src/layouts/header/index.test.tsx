@@ -1,17 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import { useRouter } from "next/router";
 import { APP_NAME } from "~/constants/app";
+import { router } from "~/mocks/router";
 import { Header } from ".";
 
 jest.mock("next/router", () => ({
   useRouter: jest.fn(),
 }));
-
-const router = useRouter as jest.Mock;
-
-beforeEach(() => {
-  router.mockReset();
-});
 
 test("", () => {
   router.mockReturnValue({
