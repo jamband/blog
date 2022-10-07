@@ -15,5 +15,5 @@ test("", () => {
   const links = screen.getAllByRole("link");
   expect(links).toHaveLength(3);
   expect(links[0]).toHaveAttribute("href", "/tags/foo");
-  expect(links[0]).toHaveClass("text-pink-500");
+  expect(links[0]).toHaveClass("bg-pink-600/90");
 });
