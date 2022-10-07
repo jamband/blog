@@ -1,3 +1,4 @@
+/* @jest-environment node */
 import { formatDate } from "./format";
 
 describe("formatDate", () => {
