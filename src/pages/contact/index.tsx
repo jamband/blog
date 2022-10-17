@@ -3,7 +3,7 @@ import { ExternalLink } from "~/components/external-link";
 import { APP_DESCRIPTION, APP_REPOSITORY_URL } from "~/constants/app";
 import { IconExternalLink } from "~/icons/external-link";
 import { Layout } from "~/layouts/layout";
-import type { PageComponent } from "./_app";
+import type { PageComponent } from "../_app";
 
 const Page: PageComponent = () => {
   return (
