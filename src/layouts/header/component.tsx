@@ -8,7 +8,7 @@ export const Component: React.FC<_Props> = (props) => (
       aria-label="Header navigation"
     >
       <Link href="/">
-        <a className="rounded px-5 py-2.5 font-mono tracking-tight no-underline hover:bg-gray-600 active:bg-gray-600">
+        <a className="rounded px-5 py-2.5 font-mono tracking-tight no-underline hover:bg-gray-600/50 active:bg-gray-600">
           {props.isPost ? (
             <>
               <span className="text-xs text-gray-100 duration-100">
