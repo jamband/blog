@@ -3,7 +3,7 @@ import { Component } from "./component";
 import type { Props } from "./types";
 
 export const Title: React.FC<Props> = (props) => {
-  const title = props.title === "" ? APP_NAME : `${props.title} · ${APP_NAME}`;
+  const title = props.title === "" ? APP_NAME : `${props.title} ･ ${APP_NAME}`;
 
   return <Component {...props} title={title} />;
 };

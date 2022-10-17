@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { HomeLink } from "~/components/home-link";
 import { Tags } from "~/components/tags";
-import { APP_DESCRIPTION, APP_NAME, APP_URL } from "~/constants/app";
+import { APP_DESCRIPTION } from "~/constants/app";
 import { Layout } from "~/layouts/layout";
 import type { Post } from "~/types/post";
 import { getPosts, getTags } from "~/utils/api";
@@ -29,9 +29,7 @@ const Page: PageComponent<Props> = (props) => {
     <>
       <Head>
         <meta name="description" content={APP_DESCRIPTION} />
-        <meta property="og:title" content={`posts ･ ${APP_NAME}`} />
         <meta property="og:description" content={APP_DESCRIPTION} />
-        <meta property="og:url" content={`${APP_URL}posts/`} />
       </Head>
       <h2 className="mb-5 text-4xl">Tags</h2>
       <Tags tags={props.tags} className="mb-14" />

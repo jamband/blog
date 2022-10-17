@@ -14,5 +14,5 @@ test("title: ''", () => {
 
 test("title: Foo", () => {
   render(<Title title="Foo" />);
-  expect(document.title).toBe(`Foo · ${APP_NAME}`);
+  expect(document.title).toBe(`Foo ･ ${APP_NAME}`);
 });

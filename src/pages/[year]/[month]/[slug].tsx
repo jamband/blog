@@ -4,7 +4,7 @@ import type { ParsedUrlQuery } from "querystring";
 import { HomeLink } from "~/components/home-link";
 import { PostContent } from "~/components/post-content";
 import { PostHeader } from "~/components/post-header";
-import { APP_NAME, APP_REPOSITORY_URL, APP_URL } from "~/constants/app";
+import { APP_REPOSITORY_URL } from "~/constants/app";
 import { Layout } from "~/layouts/layout";
 import type { PageComponent } from "~/pages/_app";
 import type { Post } from "~/types/post";
@@ -56,15 +56,7 @@ const Page: PageComponent<Props> = (props) => {
     <>
       <Head>
         <meta name="description" content={props.post.description} />
-        <meta
-          property="og:title"
-          content={`${props.post.title} ･ ${APP_NAME}`}
-        />
         <meta property="og:description" content={props.post.description} />
-        <meta
-          property="og:url"
-          content={`${APP_URL}${props.post.year}/${props.post.month}/${props.post.slug}/`}
-        />
       </Head>
       <article className="mb-16">
         <PostHeader

@@ -1,11 +1,6 @@
 import Head from "next/head";
 import { ExternalLink } from "~/components/external-link";
-import {
-  APP_DESCRIPTION,
-  APP_NAME,
-  APP_REPOSITORY_URL,
-  APP_URL,
-} from "~/constants/app";
+import { APP_DESCRIPTION, APP_REPOSITORY_URL } from "~/constants/app";
 import { IconExternalLink } from "~/icons/external-link";
 import { Layout } from "~/layouts/layout";
 import type { PageComponent } from "./_app";
@@ -15,9 +10,7 @@ const Page: PageComponent = () => {
     <>
       <Head>
         <meta name="description" content={APP_DESCRIPTION} />
-        <meta property="og:title" content={`Contact ･ ${APP_NAME}`} />
         <meta property="og:description" content={APP_DESCRIPTION} />
-        <meta property="og:url" content={`${APP_URL}contact/`} />
       </Head>
       <h1>Contact</h1>
       <p>
