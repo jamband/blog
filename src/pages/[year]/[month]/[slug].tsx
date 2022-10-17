@@ -30,13 +30,14 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
   const slug = params?.slug || "";
 
   const { data, content } = getPostByPath(`${year}/${month}/${slug}.md`);
+  const htmlContent = await markdownToHtml(content);
 
   return {
     props: {
       post: {
         ...data,
-        content: await markdownToHtml(content),
-        description: description(content),
+        content: htmlContent,
+        description: description(htmlContent),
       },
     },
   };
