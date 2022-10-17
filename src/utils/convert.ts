@@ -4,12 +4,11 @@ import gfm from "remark-gfm";
 import html from "remark-html";
 
 export const markdownToHtml = async (file: string) => {
-  const result = await remark()
+  return await remark()
     .use(html, { sanitize: false })
     .use(gfm)
     .use(externalLinks)
     .use(require("remark-prism")) // eslint-disable-line
-    .process(file);
-
-  return result.toString();
+    .process(file)
+    .then((value) => value.toString());
 };
