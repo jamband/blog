@@ -39,8 +39,11 @@ const Page: PageComponent<Props> = (props) => {
       <ul>
         {props.latestPosts.map((post) => (
           <li key={post.slug} className="mb-6">
-            <Link href={`/${post.year}/${post.month}/${post.slug}`}>
-              <a className="font-semibold hover:text-pink-500">{post.title}</a>
+            <Link
+              href={`/${post.year}/${post.month}/${post.slug}`}
+              className="font-semibold hover:text-pink-500"
+            >
+              {post.title}
             </Link>
             <div className="text-xs text-gray-400">
               {formatDate(post.created_at)}
@@ -49,10 +52,11 @@ const Page: PageComponent<Props> = (props) => {
         ))}
       </ul>
       <div className="flex justify-center">
-        <Link href="/posts">
-          <a className="rounded bg-gray-700 px-4 py-1 text-sm text-gray-400 no-underline hover:text-gray-100 active:text-gray-100 active:ring-2 active:ring-gray-400">
-            see all →
-          </a>
+        <Link
+          href="/posts"
+          className="rounded bg-gray-700 px-4 py-1 text-sm text-gray-400 no-underline hover:text-gray-100 active:text-gray-100 active:ring-2 active:ring-gray-400"
+        >
+          see all →
         </Link>
       </div>
     </>

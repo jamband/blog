@@ -62,8 +62,11 @@ const Page: PageComponent<Props> = (props) => {
       <ul className="mb-6">
         {props.posts.map((post) => (
           <li key={post.slug} className="mb-6">
-            <Link href={`/${post.year}/${post.month}/${post.slug}`}>
-              <a className="font-semibold hover:text-pink-500">{post.title}</a>
+            <Link
+              href={`/${post.year}/${post.month}/${post.slug}`}
+              className="font-semibold hover:text-pink-500"
+            >
+              {post.title}
             </Link>
             <div className="text-xs text-gray-400">
               {formatDate(post.created_at)}
