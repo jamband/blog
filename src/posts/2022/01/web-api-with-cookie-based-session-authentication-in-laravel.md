@@ -1,7 +1,7 @@
 ---
 title: Laravel でクッキーベースのセッション認証を使った Web API を実装する
 created_at: "2022-01-25"
-last_updated: "2022-07-09"
+last_updated: "2022-11-05"
 tags:
     - authentication
     - laravel
@@ -197,11 +197,11 @@ return [
 
 Laravel でクッキーベースのセッション認証を安全に行う場合、必要となるミドルウェアがいくつかある。
 
-- [EncryptCookies](https://laravel.com/api/8.x/Illuminate/Cookie/Middleware/EncryptCookies.html)
-- [AddQueuedCookiesToResponse](https://laravel.com/api/8.x/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.html)
-- [StartSession](https://laravel.com/api/8.x/Illuminate/Session/Middleware/StartSession.html)
-- [AuthenticateSession](https://laravel.com/api/8.x/Illuminate/Session/Middleware/AuthenticateSession.html)
-- [VerifyCsrfToken](https://laravel.com/api/8.x/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.html)
+- [EncryptCookies](https://laravel.com/api/master/Illuminate/Cookie/Middleware/EncryptCookies.html)
+- [AddQueuedCookiesToResponse](https://laravel.com/api/master/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.html)
+- [StartSession](https://laravel.com/api/master/Illuminate/Session/Middleware/StartSession.html)
+- [AuthenticateSession](https://laravel.com/api/master/Illuminate/Session/Middleware/AuthenticateSession.html)
+- [VerifyCsrfToken](https://laravel.com/api/master/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.html)
 
 上記の中の StartSession と VerifyCsrfToken ミドルウェアが独自の Set-Cookie ヘッダーを生成し、これがフロントエンド側でも重要なものになってくるので詳しく説明していく。
 
