@@ -1,13 +1,7 @@
 import { rmSync } from "fs";
 
-/** @type {import("fs").RmOptions} */
-const options = {
-  recursive: true,
-  force: true,
-};
-
-rmSync(".next", options);
-rmSync(".swc", options);
-rmSync("node_modules", options);
-rmSync("out", options);
-rmSync("tsconfig.tsbuildinfo", options);
+rmSync(".next", { recursive: true, force: true });
+rmSync(".swc", { recursive: true, force: true });
+rmSync("node_modules", { recursive: true, force: true });
+rmSync("out", { recursive: true, force: true });
+rmSync("tsconfig.tsbuildinfo", { recursive: true, force: true });
