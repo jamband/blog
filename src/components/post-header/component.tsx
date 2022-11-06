@@ -1,6 +1,5 @@
 import { IconExternalLink } from "~/icons/external-link";
 import { formatDate } from "~/utils/format";
-import { ExternalLink } from "../external-link";
 import type { _Props } from "./types";
 
 export const Component: React.FC<_Props> = (props) => (
@@ -14,10 +13,15 @@ export const Component: React.FC<_Props> = (props) => (
         </time>
       </li>
       <li>
-        <ExternalLink href={props.historyUrl} className="hover:text-pink-500">
+        <a
+          href={props.historyUrl}
+          className="hover:text-pink-500"
+          target="_blank"
+          rel="noreferrer"
+        >
           更新履歴
           <IconExternalLink className="h-4 w-4 align-[-0.125em]" />
-        </ExternalLink>
+        </a>
       </li>
     </ul>
   </header>

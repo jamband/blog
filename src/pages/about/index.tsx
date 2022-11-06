@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { ExternalLink } from "~/components/external-link";
 import { APP_DESCRIPTION, APP_NAME, APP_REPOSITORY_URL } from "~/constants/app";
 import { IconExternalLink } from "~/icons/external-link";
 import { Layout } from "~/layouts/layout";
@@ -16,10 +15,15 @@ const Page: PageComponent = () => {
       <p>{APP_DESCRIPTION}</p>
       <p>
         また、このウェブサイトはオープンソースなプロジェクトです。詳細については{" "}
-        <ExternalLink href={APP_REPOSITORY_URL} className="text-pink-500">
+        <a
+          href={APP_REPOSITORY_URL}
+          className="text-pink-500"
+          target="_blank"
+          rel="noreferrer"
+        >
           GitHub: {APP_NAME}
           <IconExternalLink className="h-4 w-4 align-[-0.125em]" />
-        </ExternalLink>{" "}
+        </a>{" "}
         をご覧ください。
       </p>
     </>

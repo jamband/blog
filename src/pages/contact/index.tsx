@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { ExternalLink } from "~/components/external-link";
 import { APP_DESCRIPTION, APP_REPOSITORY_URL } from "~/constants/app";
 import { IconExternalLink } from "~/icons/external-link";
 import { Layout } from "~/layouts/layout";
@@ -15,24 +14,28 @@ const Page: PageComponent = () => {
       <h1>Contact</h1>
       <p>
         何かしらの問い合わせに関しては{" "}
-        <ExternalLink
+        <a
           href="https://twitter.com/livejam_db"
           className="text-pink-500"
+          target="_blank"
+          rel="noreferrer"
         >
           Twitter
           <IconExternalLink className="h-4 w-4 align-[-0.125em]" />
-        </ExternalLink>{" "}
+        </a>{" "}
         のダイレクトメッセージからお願いします。
       </p>
       <p>
         また、プログラムのバグなどを発見した場合は{" "}
-        <ExternalLink
+        <a
           href={`${APP_REPOSITORY_URL}/issues`}
           className="text-pink-500"
+          target="_blank"
+          rel="noreferrer"
         >
           GitHub Issues
           <IconExternalLink className="h-4 w-4 align-[-0.125em]" />
-        </ExternalLink>{" "}
+        </a>{" "}
         から報告してもらえると助かります。
       </p>
     </>
