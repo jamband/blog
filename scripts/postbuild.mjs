@@ -1,5 +1,5 @@
-import { exec } from "child_process";
-import { rmSync, renameSync } from "fs";
+import { exec } from "node:child_process";
+import { rename, rm } from "node:fs/promises";
 
 exec("next-sitemap --config sitemap.config.js", (error, stdout, stderr) => {
   if (error) {
@@ -15,5 +15,5 @@ exec("next-sitemap --config sitemap.config.js", (error, stdout, stderr) => {
   console.log(stdout.toString());
 });
 
-renameSync("out/404/index.html", "out/404.html");
-rmSync("out/404", { recursive: true, force: true });
+await rename("out/404/index.html", "out/404.html");
+await rm("out/404", { recursive: true, force: true });
