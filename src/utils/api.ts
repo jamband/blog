@@ -1,14 +1,14 @@
 import fg from "fast-glob";
-import fs from "fs";
 import matter from "gray-matter";
-import { basename, join } from "path";
+import { readFileSync } from "node:fs";
+import { basename, join } from "node:path";
 import type { Post } from "~/types/post";
 
 const baseDir = join(process.cwd(), "src/posts");
 const files = fg.sync(`${baseDir}/**/*.md`);
 
 const contents = (path: string) => {
-  return fs.readFileSync(path, "utf8");
+  return readFileSync(path, "utf8");
 };
 
 export const getTags = (): Array<string> => {
