@@ -1,7 +1,7 @@
 ---
 title: React Location を使ってみる
 created_at: "2022-04-19"
-last_updated: "2022-09-02"
+last_updated: "2022-11-12"
 tags:
     - react
 ---
@@ -9,6 +9,15 @@ tags:
 ## はじめに
 
 少し前から気になっていた React のルーティングライブラリである React Location を使ってみた。React Location にはどのような特徴があるのか、また React Router との違いなどについても書いていく。
+
+## 補足
+
+2022 年 11 月に React Location は [TanStack Router](https://tanstack.com/router) という名前に変更されました。API にも大幅な変更が発生しています。このセクション以降の内容は無となりましたので、注意してください。
+
+実験のために作ったものは TanStack Router に置き換えていきます。興味のある方は参考にしてください。
+
+- [Experinica](https://experinica.pages.dev/)
+- [GitHub: jamband/experinica](https://github.com/jamband/experinica)
 
 ## 環境
 
