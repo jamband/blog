@@ -1,21 +1,27 @@
 ---
 title: SvelteKit を使った HTML/CSS 再入門
 created_at: "2022-02-20"
-last_updated: "2022-09-02"
+last_updated: "2022-11-12"
 tags:
     - css
     - html
     - sveltekit
+    - astro
 ---
 
 ## はじめに
 
 IE 11 がそろそろ終わるので、IE 11 以降で利用できる HTML/CSS 関連の機能を再確認したくて簡単な Web サイトを作った。基本的には HTML/CSS ファイルのみを読み込むだけのごく小規模な静的サイトなのだが、それをなぜ SvelteKit で作ったのか、などを細かく説明していく。
 
+## 補足
+
+2022 年 11 月に [jamband/denene](https://jamband.gitub.io/denene/) は SvelteKit から [Astro](https://astro.build/) にリプレイスしました。この補足の追加以降は、この記事の更新は行わないので注意してください。
+
 ## 環境
 
 - VSCode
-- SvelteKit Beta
+- ~~SvelteKit Beta~~
+- Astro
 - Hosting: GitHub Pages
 
 ## 今回作った Web サイト
