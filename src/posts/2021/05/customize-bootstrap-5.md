@@ -1,7 +1,7 @@
 ---
 title: Bootstrap 5 をカスタマイズして使う
 created_at: "2021-05-03"
-last_updated: "2021-10-28"
+last_updated: "2022-11-15"
 tags:
     - css
 ---
@@ -10,12 +10,22 @@ tags:
 
 そろそろ Bootstrap 5 の安定版のリリースが来そうなので (2021.05.02 現在)、webpack 5 と組み合わせて、良い感じに最適化をしつつ、カスタマイズしていく方法を書いていく。
 
+## 補足
+
+[Turbopack](https://turbo.build/pack) の登場により、webpack は今後レガシーになると予想し、この記事のために作成したリポジトリは 2022 年 11 月に webpack から [Vite](https://vitejs.dev/) に置き換えました。記事の内容については更新せずそのままに残しておきます。ご了承ください。
+
+以下は webpack から Vite に更新したリポジトリとデモサイト:
+
+- [GitHub: jamband/sunraz](https://github.com/jamband/sunraz)
+- [Sunraz](https://sunraz.pages.dev/)
+
 ## 環境
 
 - Bootstrap 5 Beta 3
 - Node.js 12.22.x
 - Yarn 1.22.x
-- webpack 5.36.x
+- ~~webpack 5.36.x~~
+- Vite
 
 ## ディレクトリ構成
 
