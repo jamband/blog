@@ -31,11 +31,11 @@ const Page: PageComponent<Props> = (props) => {
         <meta name="description" content={APP_DESCRIPTION} />
         <meta property="og:description" content={APP_DESCRIPTION} />
       </Head>
-      <h2 className="mb-5 text-4xl">Tags</h2>
+      <h2 className="mb-8 text-center text-5xl">Tags</h2>
       <Tags tags={props.tags} className="mb-14" />
-      <h2 className="mb-5 text-4xl">
-        Posts <span className="text-[60%] text-gray-400">/</span>{" "}
-        <span className="text-[60%] text-pink-500">all</span>
+      <h2 className="mb-8 flex flex-col items-center justify-center text-5xl leading-tight">
+        <div>Posts</div>
+        <div className="text-[1.25rem] text-pink-500">all</div>
       </h2>
       <ul>
         {props.posts.map((post) => (

@@ -4,7 +4,7 @@ import type { _Props } from "./types";
 
 export const Component: React.FC<_Props> = (props) => (
   <header className="mb-8">
-    <h1 className="mb-12 text-center">{props.title}</h1>
+    <h1 className="mb-12 text-center text-4xl">{props.title}</h1>
     <ul className="flex flex-col text-end text-sm leading-relaxed text-gray-400">
       <li>作成日: {formatDate(props.created_at)}</li>
       <li>
