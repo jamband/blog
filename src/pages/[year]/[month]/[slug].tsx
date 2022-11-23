@@ -9,7 +9,7 @@ import { Layout } from "~/layouts/layout";
 import type { PageComponent } from "~/pages/_app";
 import type { Post } from "~/types/post";
 import { getPostByPath, getPosts } from "~/utils/api";
-import { markdownToHtml } from "~/utils/convert";
+import markdownToHtml from "~/utils/markdown-to-html";
 import { description } from "~/utils/meta";
 
 type Props = {
