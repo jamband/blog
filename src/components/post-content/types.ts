@@ -1,5 +1,5 @@
 export type Props = {
-  content: string;
+  htmlContent: string;
 };
 
 export type _Props = Props;

@@ -5,7 +5,7 @@ export type Post = {
   year: string;
   month: string;
   slug: string;
-  content: string;
+  htmlContent: string;
   description: string;
   tags: Array<string>;
 };

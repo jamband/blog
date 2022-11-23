@@ -36,7 +36,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
     props: {
       post: {
         ...data,
-        content: htmlContent,
+        htmlContent,
         description: description(htmlContent),
       },
     },
@@ -66,7 +66,7 @@ const Page: PageComponent<Props> = (props) => {
           last_updated={props.post.last_updated}
           historyUrl={`${APP_REPOSITORY_URL}/commits/main/src/posts/${props.post.year}/${props.post.month}/${props.post.slug}.md`}
         />
-        <PostContent content={props.post.content} />
+        <PostContent htmlContent={props.post.htmlContent} />
       </article>
       <div className="flex justify-center">
         <HomeLink />
