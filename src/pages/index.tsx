@@ -1,13 +1,12 @@
 import type { GetStaticProps } from "next";
 import Head from "next/head";
-import Link from "next/link";
 import { NavigationLink } from "~/components/navigation-link";
+import { PostCollection } from "~/components/post-collection";
 import { Tags } from "~/components/tags";
 import { APP_DESCRIPTION } from "~/constants/app";
 import { Layout } from "~/layouts/layout";
 import type { Post } from "~/types/post";
 import { getLatestPosts, getTags } from "~/utils/api";
-import { formatDate } from "~/utils/format";
 import type { PageComponent } from "./_app";
 
 type Props = {
@@ -37,21 +36,7 @@ const Page: PageComponent<Props> = (props) => {
         <div>Posts</div>
         <div className="text-[1.25rem] text-pink-500">latest</div>
       </h2>
-      <ul className="mb-16">
-        {props.latestPosts.map((post) => (
-          <li key={post.slug} className="mb-6">
-            <Link
-              href={`/${post.year}/${post.month}/${post.slug}`}
-              className="font-semibold hover:text-pink-500"
-            >
-              {post.title}
-            </Link>
-            <div className="text-xs text-gray-400">
-              {formatDate(post.created_at)}
-            </div>
-          </li>
-        ))}
-      </ul>
+      <PostCollection posts={props.latestPosts} className="mb-16" />
       <NavigationLink href="/posts" className="flex justify-center">
         see all →
       </NavigationLink>

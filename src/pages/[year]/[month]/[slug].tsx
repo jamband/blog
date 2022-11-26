@@ -14,6 +14,8 @@ import { description } from "~/utils/meta";
 
 type Props = {
   post: Post;
+  description: string;
+  htmlContent: string;
 };
 
 type Params = ParsedUrlQuery & {
@@ -29,16 +31,14 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
   const month = params?.month || "";
   const slug = params?.slug || "";
 
-  const { data, content } = getPostByPath(`${year}/${month}/${slug}.md`);
+  const { data: post, content } = getPostByPath(`${year}/${month}/${slug}.md`);
   const htmlContent = await markdownToHtml(content);
 
   return {
     props: {
-      post: {
-        ...data,
-        htmlContent,
-        description: description(htmlContent),
-      },
+      post,
+      htmlContent,
+      description: description(htmlContent),
     },
   };
 };
@@ -56,8 +56,8 @@ const Page: PageComponent<Props> = (props) => {
   return (
     <>
       <Head>
-        <meta name="description" content={props.post.description} />
-        <meta property="og:description" content={props.post.description} />
+        <meta name="description" content={props.description} />
+        <meta property="og:description" content={props.description} />
       </Head>
       <article className="mb-16">
         <PostHeader
@@ -66,7 +66,7 @@ const Page: PageComponent<Props> = (props) => {
           last_updated={props.post.last_updated}
           historyUrl={`${APP_REPOSITORY_URL}/commits/main/src/posts/${props.post.year}/${props.post.month}/${props.post.slug}.md`}
         />
-        <PostContent htmlContent={props.post.htmlContent} />
+        <PostContent htmlContent={props.htmlContent} />
       </article>
       <NavigationLink href="/" className="flex justify-center">
         ← home
