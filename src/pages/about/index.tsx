@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { NavigationLink } from "~/components/navigation-link";
 import { APP_DESCRIPTION, APP_NAME, APP_REPOSITORY_URL } from "~/constants/app";
 import { IconExternalLink } from "~/icons/external-link";
 import { Layout } from "~/layouts/layout";
@@ -13,7 +14,7 @@ const Page: PageComponent = () => {
       </Head>
       <h1>About</h1>
       <p>{APP_DESCRIPTION}</p>
-      <p>
+      <p className="mb-16">
         また、このウェブサイトはオープンソースなプロジェクトです。詳細については{" "}
         <a
           href={APP_REPOSITORY_URL}
@@ -26,6 +27,9 @@ const Page: PageComponent = () => {
         </a>{" "}
         をご覧ください。
       </p>
+      <NavigationLink href="/" className="flex justify-center">
+        ← home
+      </NavigationLink>
     </>
   );
 };

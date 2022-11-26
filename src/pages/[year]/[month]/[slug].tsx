@@ -1,7 +1,7 @@
 import type { GetStaticProps } from "next";
 import Head from "next/head";
 import type { ParsedUrlQuery } from "querystring";
-import { HomeLink } from "~/components/home-link";
+import { NavigationLink } from "~/components/navigation-link";
 import { PostContent } from "~/components/post-content";
 import { PostHeader } from "~/components/post-header";
 import { APP_REPOSITORY_URL } from "~/constants/app";
@@ -68,9 +68,9 @@ const Page: PageComponent<Props> = (props) => {
         />
         <PostContent htmlContent={props.post.htmlContent} />
       </article>
-      <div className="flex justify-center">
-        <HomeLink />
-      </div>
+      <NavigationLink href="/" className="flex justify-center">
+        ← home
+      </NavigationLink>
     </>
   );
 };

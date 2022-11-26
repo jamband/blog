@@ -2,7 +2,7 @@ import type { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import type { ParsedUrlQuery } from "querystring";
-import { HomeLink } from "~/components/home-link";
+import { NavigationLink } from "~/components/navigation-link";
 import { Tags } from "~/components/tags";
 import { APP_DESCRIPTION } from "~/constants/app";
 import { Layout } from "~/layouts/layout";
@@ -62,7 +62,7 @@ const Page: PageComponent<Props> = (props) => {
           {props.tag}
         </div>
       </h2>
-      <ul className="mb-6">
+      <ul className="mb-16">
         {props.posts.map((post) => (
           <li key={post.slug} className="mb-6">
             <Link
@@ -77,9 +77,9 @@ const Page: PageComponent<Props> = (props) => {
           </li>
         ))}
       </ul>
-      <div className="flex justify-center">
-        <HomeLink />
-      </div>
+      <NavigationLink href="/" className="flex justify-center">
+        ← home
+      </NavigationLink>
     </>
   );
 };

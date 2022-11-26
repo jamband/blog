@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { NavigationLink } from "~/components/navigation-link";
 import { APP_DESCRIPTION, APP_REPOSITORY_URL } from "~/constants/app";
 import { IconExternalLink } from "~/icons/external-link";
 import { Layout } from "~/layouts/layout";
@@ -25,7 +26,7 @@ const Page: PageComponent = () => {
         </a>{" "}
         のダイレクトメッセージからお願いします。
       </p>
-      <p>
+      <p className="mb-16">
         また、プログラムのバグなどを発見した場合は{" "}
         <a
           href={`${APP_REPOSITORY_URL}/issues`}
@@ -38,6 +39,9 @@ const Page: PageComponent = () => {
         </a>{" "}
         から報告してもらえると助かります。
       </p>
+      <NavigationLink href="/" className="flex justify-center">
+        ← home
+      </NavigationLink>
     </>
   );
 };

@@ -1,6 +1,7 @@
 import type { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import { NavigationLink } from "~/components/navigation-link";
 import { Tags } from "~/components/tags";
 import { APP_DESCRIPTION } from "~/constants/app";
 import { Layout } from "~/layouts/layout";
@@ -36,7 +37,7 @@ const Page: PageComponent<Props> = (props) => {
         <div>Posts</div>
         <div className="text-[1.25rem] text-pink-500">latest</div>
       </h2>
-      <ul>
+      <ul className="mb-16">
         {props.latestPosts.map((post) => (
           <li key={post.slug} className="mb-6">
             <Link
@@ -51,14 +52,9 @@ const Page: PageComponent<Props> = (props) => {
           </li>
         ))}
       </ul>
-      <div className="flex justify-center">
-        <Link
-          href="/posts"
-          className="rounded bg-gray-700 px-4 py-1 text-sm text-gray-400 no-underline hover:text-gray-100 active:text-gray-100 active:ring-2 active:ring-gray-400"
-        >
-          see all →
-        </Link>
-      </div>
+      <NavigationLink href="/posts" className="flex justify-center">
+        see all →
+      </NavigationLink>
     </>
   );
 };
