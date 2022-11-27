@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { router } from "~/mocks/router";
-import { Tags } from ".";
+import { TagLinks } from ".";
 
 jest.mock("next/router", () => ({
   useRouter: jest.fn(),
@@ -10,7 +10,7 @@ test("", () => {
   router.mockReturnValue({
     query: { tag: "foo" },
   });
-  render(<Tags tags={["foo", "bar", "baz"]} />);
+  render(<TagLinks tags={["foo", "bar", "baz"]} />);
 
   const links = screen.getAllByRole("link");
   expect(links).toHaveLength(3);
