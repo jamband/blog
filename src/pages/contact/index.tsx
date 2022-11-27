@@ -12,7 +12,7 @@ const Page: PageComponent = () => {
         <meta name="description" content={APP_DESCRIPTION} />
         <meta property="og:description" content={APP_DESCRIPTION} />
       </Head>
-      <h1>Contact</h1>
+      <h1 className="mb-12 text-center">Contact</h1>
       <p>
         何かしらの問い合わせに関しては{" "}
         <a

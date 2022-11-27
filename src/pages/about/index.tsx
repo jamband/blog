@@ -12,7 +12,7 @@ const Page: PageComponent = () => {
         <meta name="description" content={APP_DESCRIPTION} />
         <meta property="og:description" content={APP_DESCRIPTION} />
       </Head>
-      <h1>About</h1>
+      <h1 className="mb-12 text-center">About</h1>
       <p>{APP_DESCRIPTION}</p>
       <p className="mb-16">
         また、このウェブサイトはオープンソースなプロジェクトです。詳細については{" "}

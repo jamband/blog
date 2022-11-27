@@ -8,7 +8,7 @@ export const Component: React.FC<_Props> = (props) => (
       <li key={post.slug}>
         <Link
           href={`/${post.year}/${post.month}/${post.slug}`}
-          className="font-semibold hover:text-pink-500"
+          className="text-[1.125rem] font-semibold text-gray-200 hover:text-pink-500"
         >
           {post.title}
         </Link>

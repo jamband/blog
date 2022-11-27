@@ -30,12 +30,11 @@ const Page: PageComponent<Props> = (props) => {
         <meta name="description" content={APP_DESCRIPTION} />
         <meta property="og:description" content={APP_DESCRIPTION} />
       </Head>
-      <h2 className="mb-8 text-center text-5xl">Tags</h2>
       <Tags tags={props.tags} className="mb-14" />
-      <h2 className="mb-8 flex flex-col items-center justify-center text-5xl leading-tight">
+      <h1 className="mb-12 flex flex-col items-center justify-center leading-tight">
         <div>Posts</div>
         <div className="text-[1.25rem] text-pink-500">latest</div>
-      </h2>
+      </h1>
       <PostCollection posts={props.latestPosts} className="mb-16" />
       <NavigationLink href="/posts" className="flex justify-center">
         see all →

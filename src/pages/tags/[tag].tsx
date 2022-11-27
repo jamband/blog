@@ -52,15 +52,14 @@ const Page: PageComponent<Props> = (props) => {
         <meta name="description" content={APP_DESCRIPTION} />
         <meta property="og:description" content={APP_DESCRIPTION} />
       </Head>
-      <h2 className="mb-8 text-center text-5xl">Tags</h2>
       <Tags tags={props.tags} className="mb-14" />
-      <h2 className="mb-8 flex flex-col items-center justify-center text-5xl leading-tight">
+      <h1 className="mb-12 flex flex-col items-center justify-center leading-tight">
         <div>Posts</div>
         <div className="text-[1.25rem] text-pink-500">
-          <span className="mr-0.5 align-middle text-sm text-gray-500">#</span>
+          <span className="mr-0.5 align-middle text-sm">#</span>
           {props.tag}
         </div>
-      </h2>
+      </h1>
       <PostCollection posts={props.posts} className="mb-16" />
       <NavigationLink href="/" className="flex justify-center">
         ← home
@@ -69,6 +68,6 @@ const Page: PageComponent<Props> = (props) => {
   );
 };
 
-Page.getLayout = (page) => <Layout title={page.props.tag}>{page}</Layout>;
+Page.getLayout = (page) => <Layout title={`#${page.props.tag}`}>{page}</Layout>;
 
 export default Page;
