@@ -11,11 +11,15 @@ const Page: PageComponent = () => {
         <meta name="description" content={APP_DESCRIPTION} />
         <meta property="og:description" content={APP_DESCRIPTION} />
       </Head>
-      <h1>Not Found</h1>
-      <p className="mb-16">Page not found.</p>
-      <NavigationLink href="/" className="flex justify-center">
-        ← home
-      </NavigationLink>
+      <article className="flex h-[70vh] items-center justify-center">
+        <section className="text-center">
+          <h1>Not Found</h1>
+          <p className="mb-8">Page not found.</p>
+          <NavigationLink href="/" className="flex justify-center">
+            ← home
+          </NavigationLink>
+        </section>
+      </article>
     </>
   );
 };
