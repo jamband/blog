@@ -3,6 +3,4 @@ export type Props = {
   className?: string;
 };
 
-export type _Props = Props & {
-  match: (tag: string) => boolean;
-};
+export type _Props = Props;
