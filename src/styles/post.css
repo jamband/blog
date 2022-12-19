@@ -1,7 +1,7 @@
 @import "prism-themes/themes/prism-nord.css";
 
 .post {
-  @apply my-5 text-gray-300;
+  @apply my-5 leading-[1.8] text-gray-300;
 }
 
 .post a {
@@ -20,8 +20,12 @@
   @apply mt-5;
 }
 
+.post li {
+  @apply my-1 leading-[1.7];
+}
+
 .post ol {
-  @apply ml-3 mb-5 list-inside list-decimal;
+  @apply ml-3 list-inside list-decimal py-1 leading-[1.7];
 }
 
 .post ol a {
