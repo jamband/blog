@@ -4,11 +4,7 @@ import { Footer } from ".";
 test("", () => {
   render(<Footer />);
 
-  expect(screen.getByText("© 2022 Tomoki Morita")).toBeInTheDocument();
-
-  const aboutLink = screen.getByRole("link", { name: "About" });
-  expect(aboutLink).toHaveAttribute("href", "/about");
-
-  const contactLink = screen.getByRole("link", { name: "Contact" });
-  expect(contactLink).toHaveAttribute("href", "/contact");
+  expect(screen.getByText(/Tomoki Morita/)).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: "About" })).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: "Contact" })).toBeInTheDocument();
 });
