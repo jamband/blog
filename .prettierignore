@@ -1,3 +1,4 @@
 /.next
 /out
 *.md
+pnpm-lock.yaml

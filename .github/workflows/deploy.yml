@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: deploy to github pages
 
 on:
   push:
@@ -10,22 +10,27 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
+      - name: setup node
         uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: yarn
+          cache: pnpm
 
-      - name: Install dependencies
-        run: yarn --frozen-lockfile
+      - name: install dependencies
+        run: pnpm install
 
-      - name: Build
-        run: yarn build
+      - name: build
+        run: pnpm build
 
-      - name: Deploy
+      - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
