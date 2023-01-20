@@ -1,8 +1,8 @@
+import type { Post } from "@/types/post";
 import fg from "fast-glob";
 import matter from "gray-matter";
 import { readFileSync } from "node:fs";
 import { basename, join } from "node:path";
-import type { Post } from "~/types/post";
 
 const baseDir = join(process.cwd(), "src/posts");
 const files = fg.sync(`${baseDir}/**/*.md`);

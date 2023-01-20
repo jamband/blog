@@ -1,8 +1,8 @@
+import { NavigationLink } from "@/components/navigation-link";
+import { APP_DESCRIPTION, APP_REPOSITORY_URL } from "@/constants/app";
+import { IconExternalLink } from "@/icons/external-link";
+import { Layout } from "@/layouts/layout";
 import Head from "next/head";
-import { NavigationLink } from "~/components/navigation-link";
-import { APP_DESCRIPTION, APP_REPOSITORY_URL } from "~/constants/app";
-import { IconExternalLink } from "~/icons/external-link";
-import { Layout } from "~/layouts/layout";
 import type { PageComponent } from "../_app";
 
 const Page: PageComponent = () => {

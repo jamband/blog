@@ -1,16 +1,16 @@
+import { NavigationLink } from "@/components/navigation-link";
+import { PostContent } from "@/components/post-content";
+import { PostHeader } from "@/components/post-header";
+import { APP_REPOSITORY_URL } from "@/constants/app";
+import { Layout } from "@/layouts/layout";
+import type { PageComponent } from "@/pages/_app";
+import type { Post } from "@/types/post";
+import { getPostByPath, getPosts } from "@/utils/api";
+import markdownToHtml from "@/utils/markdown-to-html";
+import { description } from "@/utils/meta";
 import type { GetStaticProps } from "next";
 import Head from "next/head";
 import type { ParsedUrlQuery } from "querystring";
-import { NavigationLink } from "~/components/navigation-link";
-import { PostContent } from "~/components/post-content";
-import { PostHeader } from "~/components/post-header";
-import { APP_REPOSITORY_URL } from "~/constants/app";
-import { Layout } from "~/layouts/layout";
-import type { PageComponent } from "~/pages/_app";
-import type { Post } from "~/types/post";
-import { getPostByPath, getPosts } from "~/utils/api";
-import markdownToHtml from "~/utils/markdown-to-html";
-import { description } from "~/utils/meta";
 
 type Props = {
   post: Post;

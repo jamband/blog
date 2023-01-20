@@ -1,13 +1,13 @@
+import { NavigationLink } from "@/components/navigation-link";
+import { PostCollection } from "@/components/post-collection";
+import { TagLinks } from "@/components/tag-links";
+import { APP_DESCRIPTION } from "@/constants/app";
+import { Layout } from "@/layouts/layout";
+import type { Post } from "@/types/post";
+import { getPostsByTag, getTags } from "@/utils/api";
 import type { GetStaticProps } from "next";
 import Head from "next/head";
 import type { ParsedUrlQuery } from "querystring";
-import { NavigationLink } from "~/components/navigation-link";
-import { PostCollection } from "~/components/post-collection";
-import { TagLinks } from "~/components/tag-links";
-import { APP_DESCRIPTION } from "~/constants/app";
-import { Layout } from "~/layouts/layout";
-import type { Post } from "~/types/post";
-import { getPostsByTag, getTags } from "~/utils/api";
 import type { PageComponent } from "../_app";
 
 type Props = {

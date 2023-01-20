@@ -1,7 +1,7 @@
+import { NavigationLink } from "@/components/navigation-link";
+import { APP_DESCRIPTION } from "@/constants/app";
+import { Layout } from "@/layouts/layout";
 import Head from "next/head";
-import { NavigationLink } from "~/components/navigation-link";
-import { APP_DESCRIPTION } from "~/constants/app";
-import { Layout } from "~/layouts/layout";
 import type { PageComponent } from "./_app";
 
 const Page: PageComponent = () => {

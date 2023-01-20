@@ -11,13 +11,13 @@
     "jsx": "preserve",
     "moduleResolution": "Node",
     "noEmit": true,
-    "paths": { "~/*": ["src/*"] },
+    "paths": { "@/*": ["./src/*"] },
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
     "incremental": true,
     "importsNotUsedAsValues": "error"
   },
-  "include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

@@ -1,5 +1,5 @@
+import { APP_NAME } from "@/constants/app";
 import Head from "next/head";
-import { APP_NAME } from "~/constants/app";
 import { Footer } from "../footer";
 import { Header } from "../header";
 import { Loading } from "../loading";

@@ -1,5 +1,5 @@
-import { IconExternalLink } from "~/icons/external-link";
-import { formatDate } from "~/utils/format";
+import { IconExternalLink } from "@/icons/external-link";
+import { formatDate } from "@/utils/format";
 import type { _Props } from "./types";
 
 export const Component: React.FC<_Props> = (props) => (
