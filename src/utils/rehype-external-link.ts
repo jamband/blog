@@ -1,9 +1,9 @@
-import type { Element, Node } from "hast";
+import type { Root } from "hast";
 import { visit } from "unist-util-visit";
 
 export default function rehypeExternalLink() {
-  return (tree: Node) => {
-    visit(tree, "element", (node: Element) => {
+  return (tree: Root) => {
+    visit(tree, "element", (node) => {
       if (
         node.tagName === "a" &&
         node.properties &&
