@@ -35,7 +35,7 @@
 }
 
 .post div[data-rehype-pretty-code-title] {
-  @apply rounded-t bg-gray-600/40 px-3 py-1 font-mono text-xxs text-gray-300 md:text-xs;
+  @apply rounded-t bg-gray-600/40 px-3 py-1 font-mono text-xxs text-[#d8dee9ff] md:text-xs;
 }
 
 .post pre {
@@ -47,5 +47,5 @@
 }
 
 .post pre code {
-  @apply block font-mono text-xs leading-5 text-gray-300 md:text-sm md:leading-6;
+  @apply block font-mono text-xs leading-5 text-[#d8dee9ff] md:text-sm md:leading-6;
 }
