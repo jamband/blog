@@ -31,7 +31,7 @@ Vue.js や Nuxt.js において今までコンポーネントへのスタイリ�
 
 Nuxt.js における CSS Modules は Vue.js と同様に [vue-loader](https://vue-loader.vuejs.org/) がいろいろやってくれるわけだが、コードとしては以下のように記述する:
 
-```js[data-file="pages/index.vue"]
+```js title="pages/index.vue"
 <template>
   <p :class="$style.red">
     This should be red
@@ -68,7 +68,7 @@ Scoped CSS とは違い、クラス名の suffix にハッシュ値が自動で�
 
 設定ファイル:
 
-```js[data-file="nuxt.config.js"]
+```js title="nuxt.config.js"
 export default {
   // ...
   purgeCSS: {

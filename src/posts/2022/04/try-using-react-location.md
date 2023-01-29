@@ -44,7 +44,7 @@ Experinica では jamband/tapes で生成されたデータファイルを Fetch
 
 React Location は React のルーティングライブラリである。アプリケーションの各 route を配列オブジェクトで構成する。以下のような感じ:
 
-```js:[data-file="/src/routes/index.tsx"]
+```js title="/src/routes/index.tsx"
 import type { Route } from "@tanstack/react-location";
 
 const routes: Array<Route> = [
@@ -63,7 +63,7 @@ export default routes;
 
 あとは Router プロバイダーコンポーネントの props に構成した routes を読み込ませる:
 
-```tsx:[data-file="/src/index.tsx"]
+```tsx title="/src/index.tsx"
 import { ReactLocation, Router } from "@tanstack/react-location";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
@@ -97,7 +97,7 @@ http://localhost:3000/foo
 
 たとえば /(ホーム) route に対していくつかのデータを API サーバから取得したい場合は以下:
 
-```tsx[data-file="/src/routes/index.tsx"]
+```tsx title="/src/routes/index.tsx"
 import type { Route } from "@tanstack/react-location";
 import Home from "./home";
 
@@ -117,7 +117,7 @@ export default routes;
 
 Home コンポーネントでは [useMatch](https://react-location.tanstack.com/docs/api#usematch) フックをつかってデータを取得する:
 
-```tsx[data-file="/src/routes/home.tsx"]
+```tsx title="/src/routes/home.tsx"
 import { useMatch } from "@tanstack/react-location";
 
 export default function Home() {
@@ -148,7 +148,7 @@ export default function Home() {
 
 データの型は MakeGenerics を使って書く:
 
-```ts[data-file="/src/types/location.ts"]
+```ts title="/src/types/location.ts"
 import type { MakeGenerics } from "@tanstack/react-location";
 
 export type LocationGenerics = MakeGenerics<{
@@ -162,7 +162,7 @@ export type LocationGenerics = MakeGenerics<{
 }>;
 ```
 
-```tsx[data-file="/src/routes/index.tsx"]
+```tsx title="/src/routes/index.tsx"
 import type { Route } from "@tanstack/react-location";
 import type { LocationGenerics } from "../types/location";
 
@@ -173,7 +173,7 @@ const routes: Array<Route<LocationGenerics>> = [
 export default routes;
 ```
 
-```tsx[data-file="/src/index.tsx"]
+```tsx title="/src/index.tsx"
 import { ReactLocation, Router } from "@tanstack/react-location";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
@@ -190,7 +190,7 @@ createRoot(container).render(
 );
 ```
 
-```tsx[data-file="/src/routes/home.tsx"]
+```tsx title="/src/routes/home.tsx"
 import { useMatch } from "@tanstack/react-location";
 import type { LocationGenerics } from "../types/location";
 
@@ -213,7 +213,7 @@ export default function Home() {
 
 [Link](https://react-location.tanstack.com/docs/api#link) コンポーネントを使うことによって route 間を移動できる。
 
-```tsx[data-file="/src/routes/home.tsx"]
+```tsx title="/src/routes/home.tsx"
 import { Link } from "@tanstack/react-location";
 
 export default function Home() {
@@ -228,7 +228,7 @@ export default function Home() {
 
 また、[useNavigate](https://react-location.tanstack.com/docs/api#usenavigate) フックを使用することによってプログラムよるナビゲーションができる。
 
-```tsx[data-file="/src/routes/home.tsx"]
+```tsx title="/src/routes/home.tsx"
 import { useNavigate } from "@tanstack/react-location";
 
 export default function Home() {
@@ -253,7 +253,7 @@ React Location には Route Loaders のキャッシュを制御するために [
 
 例えば以下のようなコンポーネントがあった場合:
 
-```tsx[data-file="/src/components/foo/index.tsx"]
+```tsx title="/src/components/foo/index.tsx"
 import { useLocation } from "@tanstack/react-location";
 
 export const Foo: React.FC = () => {
@@ -265,7 +265,7 @@ export const Foo: React.FC = () => {
 
 以下のようにテストを書くことができる:
 
-```tsx[data-file="/src/components/foo/index.test.tsx"]
+```tsx title="/src/components/foo/index.test.tsx"
 import {
   createMemoryHistory,
   ReactLocation,

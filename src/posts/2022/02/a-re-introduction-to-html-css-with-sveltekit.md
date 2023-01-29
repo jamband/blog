@@ -61,7 +61,7 @@ SvelteKit はデフォルトではまず基本的な HTML をサーバでレン�
 
 以下のようにする:
 
-```js[data-file="svelte.config.js"]
+```js title="svelte.config.js"
 import adapter from "@sveltejs/adapter-static";
 
 const dev = process.env.NODE_ENV === "development";
@@ -81,7 +81,7 @@ const config = {
 export default config;
 ```
 
-```js[data-file="src/routes/+layout.ts"]
+```js title="src/routes/+layout.ts"
 import { dev } from "$app/environment";
 import type { PrerenderOption } from "@sveltejs/kit";
 

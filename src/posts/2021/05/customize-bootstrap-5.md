@@ -93,7 +93,7 @@ yarn add bootstrap@next
 
 デモリポジトリの _bootstrap.scss:
 
-```scss[data-file="src/styles/_bootstrap.scss"]
+```scss title="src/styles/_bootstrap.scss"
 // Configuration
 @import "../../node_modules/bootstrap/scss/functions";
 @import "./variables"; // Custom variables
@@ -164,7 +164,7 @@ HTML を構成しているファイル内で使用していないスタイル等
 
 フレームワーク等によってインストールするパッケージや設定方法が変わるのだが、デモリポジトリでは以下のような設定になっている:
 
-```js[data-file="postcss.config.js"]
+```js title="postcss.config.js"
 const purgecss = require("@fullhuman/postcss-purgecss");
 
 module.exports = (context) => ({
@@ -196,7 +196,7 @@ module.exports = (context) => ({
 
 また簡易的なものだが、JavaScript 部分でも以下のように (webpack の場合)、使用するものだけ import することで、アセット周りのファイルサイズの削減にもなるのでやっておきたい:
 
-```js[data-file="src/entries/app.js"]
+```js title="src/entries/app.js"
 // js
 // require("bootstrap/js/dist/alert.js");
 // require("bootstrap/js/dist/button.js");

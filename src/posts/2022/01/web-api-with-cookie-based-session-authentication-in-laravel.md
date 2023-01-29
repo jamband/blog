@@ -85,11 +85,11 @@ Access-Control-Allow-Origin: http://localhost:3000
 
 Laravel の場合は以下のようになる (環境変数名はわかりやすければなんでもいい):
 
-```shell[data-file=".env"]
+```sh title=".env"
 FRONTEND_ORIGIN=http://localhost:3000
 ```
 
-```php[data-file="config/cors.php"]
+```php title="config/cors.php"
 return [
     'paths' => ['*'],
     'allowed_origins' => [env('FRONTEND_ORIGIN')], // add
@@ -130,7 +130,7 @@ Access-Control-Allow-Methods: GET,POST,PUT,DELETE,OPTIONS,PATCH
 
 Laravel の場合は以下:
 
-```php[data-file="config/cors.php"]
+```php title="config/cors.php"
 return [
     'paths' => ['*'],
     'allowed_origins' => [env('FRONTEND_ORIGIN')],
@@ -155,7 +155,7 @@ Access-Control-Allow-Headers: Accept,Content-Type,X-XSRF-TOKEN
 
 Laravel の場合は以下:
 
-```php[data-file="config/cors.php"]
+```php title="config/cors.php"
 return [
     'paths' => ['*'],
     'allowed_origins' => [env('FRONTEND_ORIGIN')],
@@ -179,7 +179,7 @@ Access-Control-Allow-Credentials: true
 
 Laravel の場合は以下:
 
-```php[data-file="config/cors.php"]
+```php title="config/cors.php"
 return [
     'paths' => ['*'],
     'allowed_origins' => [env('FRONTEND_ORIGIN')],
@@ -204,7 +204,7 @@ Laravel でクッキーベースのセッション認証を安全に行う場合
 
 CORS の設定をした状態で、StartSession ミドルウェアが割り当てられている場合、バックエンドの Web アプリケーションがどのようなレスポンスを返すのか確認してみる。
 
-```php[data-file="config/cors.php"]
+```php title="config/cors.php"
 return [
     'paths' => ['*'],
     'allowed_origins' => [env('FRONTEND_ORIGIN')],
@@ -215,7 +215,7 @@ return [
 ];
 ```
 
-```php[data-file="app/Http/Kernel.php"]
+```php title="app/Http/Kernel.php"
 namespace App\Http;
 
 use App\Http\Middleware\EncryptCookies;
@@ -243,7 +243,7 @@ class Kernel extends HttpKernel
 }
 ```
 
-```php[data-file="app/Providers/RouteServiceProvider.php"]
+```php title="app/Providers/RouteServiceProvider.php"
 namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -263,7 +263,7 @@ class RouteServiceProvider extends ServiceProvider
 }
 ```
 
-```php[data-file="routes/web.php"]
+```php title="routes/web.php"
 use Illuminate\Support\Facades\Route;
 
 Route::get('/foo', fn() => response(['message' => 'hello']));
@@ -277,7 +277,7 @@ php artisan serve
 
 簡単なフロントエンド側のスクリプトを書く:
 
-```html[data-file="/path/to/frontend/index.html"]
+```html title="/path/to/frontend/index.html"
 <script>
   fetch("http://localhost:8000/foo", {
     headers: {
@@ -329,7 +329,7 @@ Domain 属性はクッキーの送信先のドメインを指定する。
 
 Laravel を使っている場合は config/session.php の domain で設定する:
 
-```php[data-file="config/session.php"]
+```php title="config/session.php"
 return [
     // ...
     'domain' => env('SESSION_DOMAIN', null),
@@ -346,11 +346,11 @@ Secure 属性は HTTPS プロトコルで通信が行われた場合にのみク
 
 Laravel を使っている場合は config/session.php で設定する。
 
-```shell[data-file=".env"]
+```sh title=".env"
 SESSION_SECURE_COOKIE=false
 ```
 
-```php[data-file="config/session.php"]
+```php title="config/session.php"
 return [
     // ...
     'secure' => env('SESSION_SECURE_COOKIE', true),
@@ -367,7 +367,7 @@ HttpOnly 属性は JavaScript からクッキーにアクセスさせないよ�
 
 Laravel では config/session.php で設定する。
 
-```php[data-file="config/session.php"]
+```php title="config/session.php"
 return [
     'http_only' => true,
     // ...
@@ -384,7 +384,7 @@ return [
 
 Laravel では config/session.php で設定する。
 
-```php[data-file="config/session.php"]
+```php title="config/session.php"
 return [
     // ...
     'same_site' => 'lax',
@@ -399,7 +399,7 @@ Strict, Lax, None の値の違いについては細かな部分で検証しき�
 
 続いて Laravel のもう一つのミドルウェアである [VerifyCsrfToken](https://laravel.com/api/8.x/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.html) を見ていく。
 
-```php[data-file="app/Http/Kernel.php"]
+```php title="app/Http/Kernel.php"
 namespace App\Http;
 
 use App\Http\Middleware\EncryptCookies;
@@ -435,7 +435,7 @@ xxx_session の他に XSRF-TOKEN というものがあるかと思う。これ�
 
 最後にフロントエンド側からバックエンドの /foo ルートに対して GET リクエストし、その後に /bar ルートに対して POST リクエストしてみる。
 
-```php[data-file="routes/web.php"]
+```php title="routes/web.php"
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -443,7 +443,7 @@ Route::get('/foo', fn() => ['message' => 'hello']);
 Route::post('/bar', fn(Request $request) => ['message' => $request->input('message') === 'hello' ? 'hello from backend.' : '']);
 ```
 
-```html[data-file="/path/to/frontend/index.html"]
+```html title="/path/to/frontend/index.html"
 <script>
   fetch("http://localhost:8000/foo", {
     headers: {
@@ -477,7 +477,7 @@ Web ブラウザに保存されているクッキーを削除し、再度 http:/
 
 Console タブを選択すると以下のレスポンスボディが返ってきているかと思う:
 
-```shell
+```sh
 {message: 'hello from backend.'}
 ```
 
@@ -529,7 +529,7 @@ password: foofoofoo
 
 まずはルーティング (本当はコントローラを用意したり、ログインの処理ももう少しちゃんとする必要がある):
 
-```php[data-file="routes/web.php"]
+```php title="routes/web.php"
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -552,7 +552,7 @@ Route::get('/user', fn(Request $request) =>
 ```
 
 
-```php[data-file="app/Providers/RouteServiceProvider.php"]
+```php title="app/Providers/RouteServiceProvider.php"
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
@@ -571,7 +571,7 @@ class RouteServiceProvider extends ServiceProvider
 
 ミドルウェアは以下:
 
-```php[data-file="app/Http/Kernel.php"]
+```php title="app/Http/Kernel.php"
 use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\EncryptCookies;
 use App\Http\Middleware\RedirectIfAuthenticated;
@@ -608,7 +608,7 @@ class Kernel extends HttpKernel
 
 フロントエンド側:
 
-```html[data-file="/path/to/frontend/index.html"]
+```html title="/path/to/frontend/index.html"
 <script>
   fetch("http://localhost:8000/csrf-cookie", {
     headers: {
@@ -652,7 +652,7 @@ class Kernel extends HttpKernel
 
 /csrf-token に GET リクエストするといくつかのクッキーが Web ブラウザに保存される。それを取得した後 CSRF 対策用のクッキーとログインに必要な body を含めて /login に POST リクエストする。最後に /user に GET リクエストする。結果として Web ブラウザの Console 画面に以下が表示される。
 
-```shell
+```sh
 {name:'foo'}
 ```
 
@@ -664,7 +664,7 @@ class Kernel extends HttpKernel
 
 というのも Laravel の重要なクッキーを送信するいくつかのミドルウェアは config/session.php に書かれている値に依存している。そのため、もし何かしらの原因でそれらの値が書き換えられた場合、想定外の何かが発生する恐れがある。
 
-```php[data-file="tests/Features/CsrfCookieTest.php"]
+```php title="tests/Features/CsrfCookieTest.php"
 namespace Tests\Feature;
 
 use Carbon\Carbon;

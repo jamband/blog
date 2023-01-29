@@ -28,7 +28,7 @@ GitHub にサンプルを用意したので、それを参考にしてほしい�
 
 まずは API の入り口であるルーター周り。ここではほぼほぼ何もやらない。各種ミドルウェアなどの割り当てもここではやらない。
 
-```php[data-file="app/Providers/RouteServiceProvider.php"]
+```php title="app/Providers/RouteServiceProvider.php"
 declare(strict_types=1);
 
 namespace App\Providers;
@@ -64,7 +64,7 @@ class RouteServiceProvider extends ServiceProvider
 
 以下は projects グループのルート:
 
-```php[data-file="routes/projects.php"]
+```php title="routes/projects.php"
 declare(strict_types=1);
 
 use App\Http\Controllers\Project\{
@@ -90,7 +90,7 @@ Route::delete('{project}', DeleteProject::class);
 
 グローバルなミドルウェアなどは以下で構成する:
 
-```php[data-file="app/Http/Kernel.php"]
+```php title="app/Http/Kernel.php"
 declare(strict_types=1);
 
 namespace App\Http;
@@ -143,7 +143,7 @@ $routeMiddleware は本当は短縮キーを使用せずにコントローラに
 
 以下はこの 3 段階構成の例:
 
-```php[data-file="app/Http/Controllers/Controller.php"]
+```php title="app/Http/Controllers/Controller.php"
 declare(strict_types=1);
 
 namespace App\Http\Controllers;
@@ -158,7 +158,7 @@ class Controller extends BaseController
 }
 ```
 
-```php[data-file="app/Http/Controllers/Project/Controller.php"]
+```php title="app/Http/Controllers/Project/Controller.php"
 declare(strict_types=1);
 
 namespace App\Http\Controllers\Project;
@@ -174,7 +174,7 @@ class Controller extends BaseController
 }
 ```
 
-```php[data-file="app/Http/Controllers/Project/DeleteProject.php"]
+```php title="app/Http/Controllers/Project/DeleteProject.php"
 declare(strict_types=1);
 
 namespace App\Http\Controllers\Project;

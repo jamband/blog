@@ -47,7 +47,7 @@ touch public/.nojekyll
 
 次に next.config.js で以下の設定を行う。
 
-```js[data-file="next.config.js"]
+```js title="next.config.js"
 // repository_name はそれぞれの値に置き換える
 module.exports = {
   basePath: process.env.GITHUB_ACTIONS && "/repository_name",
@@ -80,7 +80,7 @@ https://username.github.io/repository_name/about/
  touch .github/workflows/deploy.yml
  ```
 
- ```yml[data-file=".github/workflows/deploy.yml"]
+ ```yml title=".github/workflows/deploy.yml"
  name: Deploy to GitHub Pages
 
 # main ブランチ の push 時にこのワークフローを実行する
@@ -131,7 +131,7 @@ OS や actions、Node.js のバージョンは現在自分が最適だと思う�
 
 ビルドコマンドを package.json に書く。
 
-```json[data-file="package.json"]
+```json title="package.json"
 {
   "scripts": {
     "dev": "next dev",
@@ -145,7 +145,7 @@ next export が実行されるとプロジェクトルートに out ディレク
 
 また、ローカル環境やステージング環境でも next export して動作確認をする場合があるので、 out ディレクトリも Git の管理下から除外しておく。
 
-```[data-file=".gitignore"]
+```sh title=".gitignore"
 /.next
 /node_modules
 /out

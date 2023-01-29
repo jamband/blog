@@ -97,7 +97,7 @@ UI Framework などは便利だが依存度が増えるだけなのであまり�
 
 バックエンド:
 
-```json:[data-file="/path/to/project/deploy/backend/composer.json"]
+```json title="/path/to/project/deploy/backend/composer.json"
 {
   "require": {
     "php": "^8.0"
@@ -115,7 +115,7 @@ UI Framework などは便利だが依存度が増えるだけなのであまり�
 }
 ```
 
-```php:[data-file="/path/to/project/deploy/backend/deploy.php"]
+```php title="/path/to/project/deploy/backend/deploy.php"
 namespace Deployer;
 
 require 'recipe/composer.php';
@@ -164,7 +164,7 @@ composer run deploy
 
 フロントエンド:
 
-```json:[data-file="/path/to/project/deploy/frontend/composer.json"]
+```json title="/path/to/project/deploy/frontend/composer.json"
 {
   "require": {
     "php": "^8.0"
@@ -182,7 +182,7 @@ composer run deploy
 }
 ```
 
-```php:[data-file="/path/to/project/deploy/frontend/deploy.php"]
+```php title="/path/to/project/deploy/frontend/deploy.php"
 namespace Deployer;
 
 require 'recipe/common.php';
@@ -214,7 +214,7 @@ task('deploy', [
 ]);
 ```
 
-```js:[data-file="/path/to/server/deploy-path/ecosystem.config.js"]
+```js title="/path/to/server/deploy-path/ecosystem.config.js"
 module.exports = {
   apps : [{
     name: "plusarchive.com",
@@ -227,7 +227,6 @@ module.exports = {
     log_date_format: "YYYY-MM-DD HH:mm Z"
   }]
 }
-
 ```
 
 フロントエンドのデプロイ:

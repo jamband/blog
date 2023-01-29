@@ -52,7 +52,7 @@ Deployer の 6.x 系と 7.x 系の PHP のサポートバージョンの違い�
 
 api.plusarchive.com のデプロイの準備 (Deployer 7.x 系はまだ RC 版なので決め打ち):
 
-```shell
+```sh
 cd /path/to/plusarchive.com/deploy/api.plusarchive.com
 composer require --dev "deployer/deployer:7.0.0-rc3"
 touch deploy.php
@@ -60,7 +60,7 @@ touch deploy.php
 
 api.plusarchive.com のデプロイ用スクリプトは以下 (xxx や 123 は伏字):
 
-```php[data-file="deploy.php"]
+```php title="deploy.php"
 declare(strict_types=1);
 
 namespace Deployer;
@@ -87,7 +87,7 @@ api.plusarchive.com は PHP の Yii Framework 2 で書かれているため shar
 
 plusarchive.com のデプロイの準備:
 
-```shell
+```sh
 cd /path/to/plusarchive.com/deploy/plusarchive.com
 composer require --dev "deployer/deployer:7.0.0-rc3"
 touch deploy.php
@@ -95,7 +95,7 @@ touch deploy.php
 
 plusarchive.com のデプロイ用スクリプトは以下 (xxx や 123 は伏字):
 
-```php[data-file="deploy.php"]
+```php title="deploy.php"
 declare(strict_types=1);
 
 namespace Deployer;
@@ -139,7 +139,7 @@ plusarchive.com は Yarn + Nuxt + PM2 の構成なので上記のような感じ
 
 api.plusarchive.com のデプロイ用コマンドの作成:
 
-```json[data-file="/path/to/plusarchive.com/deploy/api.plusarchive.com/composer.json"]
+```json title="/path/to/plusarchive.com/deploy/api.plusarchive.com/composer.json"
 {
   "require": {
     "php": "^8.0"
@@ -159,7 +159,7 @@ api.plusarchive.com のデプロイ用コマンドの作成:
 
 plusarchive.com のデプロイ用コマンドの作成 (上記と全く同じ):
 
-```json[data-file="/path/to/plusarchive.com/deploy/plusarchive.com/composer.json"]
+```json title="/path/to/plusarchive.com/deploy/plusarchive.com/composer.json"
 {
   "require": {
     "php": "^8.0"

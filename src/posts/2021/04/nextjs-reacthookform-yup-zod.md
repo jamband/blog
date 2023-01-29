@@ -47,7 +47,7 @@ pages ディレクトリ以下のコンポーネントに直接書いてもい�
 
 yup は locale をセットできるのでやっておく。zod はない？
 
-```ts[data-file="src/validations/yup-locale.ts"]
+```ts title="src/validations/yup-locale.ts"
 import { setLocale } from "yup";
 
 setLocale({
@@ -57,7 +57,7 @@ setLocale({
 });
 ```
 
-```ts[data-file="src/validations/yup-schema1.ts"]
+```ts title="src/validations/yup-schema1.ts"
 import "./yup-locale";
 import { object, string } from "yup";
 import type { InferType } from "yup";
@@ -100,7 +100,7 @@ export const label: Record<keyof Schema, string> = {
 
 zod で書く場合は以下:
 
-```ts[data-file="src/validations/zod-schema1.ts"]
+```ts title="src/validations/zod-schema1.ts"
 import type { infer as InferType } from "zod";
 import { literal, object, string } from "zod";
 
@@ -132,7 +132,7 @@ export const label: Record<keyof Schema, string> = {
 
 React Hook Form と yup を組み合わせたもの:
 
-```tsx[data-file="src/pages/yup.tsx"]
+```tsx title="src/pages/yup.tsx"
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import styles from "../styles/form.module.css";
@@ -180,7 +180,7 @@ export default function Page() {
 
 React Hook Form と zod を組み合わせたフォーム:
 
-```tsx[data-file="src/pages/zod.tsx"]
+```tsx title="src/pages/zod.tsx"
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import styles from "../styles/form.module.css";
@@ -234,7 +234,7 @@ Form validation 用の Schema の定義を外に逃しているので、 yup, zo
 
 以下のようになった:
 
-```tsx[data-file="src/pages/yup.tsx"]
+```tsx title="src/pages/yup.tsx"
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
