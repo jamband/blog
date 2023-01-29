@@ -145,7 +145,7 @@ next export が実行されるとプロジェクトルートに out ディレク
 
 また、ローカル環境やステージング環境でも next export して動作確認をする場合があるので、 out ディレクトリも Git の管理下から除外しておく。
 
-```sh title=".gitignore"
+```txt title=".gitignore"
 /.next
 /node_modules
 /out

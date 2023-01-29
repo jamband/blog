@@ -52,7 +52,7 @@ Deployer の 6.x 系と 7.x 系の PHP のサポートバージョンの違い�
 
 api.plusarchive.com のデプロイの準備 (Deployer 7.x 系はまだ RC 版なので決め打ち):
 
-```sh
+```
 cd /path/to/plusarchive.com/deploy/api.plusarchive.com
 composer require --dev "deployer/deployer:7.0.0-rc3"
 touch deploy.php
@@ -87,7 +87,7 @@ api.plusarchive.com は PHP の Yii Framework 2 で書かれているため shar
 
 plusarchive.com のデプロイの準備:
 
-```sh
+```
 cd /path/to/plusarchive.com/deploy/plusarchive.com
 composer require --dev "deployer/deployer:7.0.0-rc3"
 touch deploy.php

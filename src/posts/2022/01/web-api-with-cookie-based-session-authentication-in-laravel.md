@@ -85,7 +85,7 @@ Access-Control-Allow-Origin: http://localhost:3000
 
 Laravel の場合は以下のようになる (環境変数名はわかりやすければなんでもいい):
 
-```sh title=".env"
+```txt title=".env"
 FRONTEND_ORIGIN=http://localhost:3000
 ```
 
@@ -346,7 +346,7 @@ Secure 属性は HTTPS プロトコルで通信が行われた場合にのみク
 
 Laravel を使っている場合は config/session.php で設定する。
 
-```sh title=".env"
+```txt title=".env"
 SESSION_SECURE_COOKIE=false
 ```
 
@@ -477,7 +477,7 @@ Web ブラウザに保存されているクッキーを削除し、再度 http:/
 
 Console タブを選択すると以下のレスポンスボディが返ってきているかと思う:
 
-```sh
+```
 {message: 'hello from backend.'}
 ```
 
@@ -652,8 +652,8 @@ class Kernel extends HttpKernel
 
 /csrf-token に GET リクエストするといくつかのクッキーが Web ブラウザに保存される。それを取得した後 CSRF 対策用のクッキーとログインに必要な body を含めて /login に POST リクエストする。最後に /user に GET リクエストする。結果として Web ブラウザの Console 画面に以下が表示される。
 
-```sh
-{name:'foo'}
+```
+{name: 'foo'}
 ```
 
 以上がおおまかではあるが、ログインの実装であり、ログインしたユーザの情報を取得する実装である。重要なのは、クッキーがいつどのように生成されて、どのような属性を持ち、どのように扱われているか。Web ブラウザや CORS の性質とともにそれらを理解していないと認証関連のアクションを実装するのはわりとおっかない。
