@@ -1,10 +1,8 @@
 ---
 title: Next.js で React Hook Form (yup または zod を含む) を使う
 created_at: "2021-04-21"
-last_updated: "2022-07-09"
-tags:
-    - next
-    - react
+last_updated: "2023-01-29"
+tags: [next, react]
 ---
 
 ## はじめに

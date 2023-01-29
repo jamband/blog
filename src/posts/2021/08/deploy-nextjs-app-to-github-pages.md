@@ -1,11 +1,8 @@
 ---
 title: Next.js で作ったブログを GitHub Pages にデプロイする
 created_at: "2021-08-01"
-last_updated: "2021-11-28"
-tags:
-    - deployment
-    - github
-    - next
+last_updated: "2023-01-29"
+tags: [deployment, github, next]
 ---
 
 ## はじめに

@@ -1,11 +1,8 @@
 ---
 title: SvelteKit を使って jamband/tapes を作った
 created_at: "2021-10-16"
-last_updated: "2021-10-16"
-tags:
-    - github
-    - svelte
-    - sveltekit
+last_updated: "2023-01-29"
+tags: [github, svelte, sveltekit]
 ---
 
 ## はじめに

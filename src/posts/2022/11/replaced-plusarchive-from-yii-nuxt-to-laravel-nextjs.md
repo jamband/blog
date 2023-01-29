@@ -1,10 +1,8 @@
 ---
 title: PlusArchive を Yii + Nuxt から Laravel + Next.js にリプレイスした
 created_at: "2022-11-01"
-last_updated: "2022-11-01"
-tags:
-    - laravel
-    - next
+last_updated: "2023-01-29"
+tags: [laravel, next]
 ---
 
 ## はじめに

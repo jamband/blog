@@ -1,9 +1,8 @@
 ---
 title: Laravel as an API backend でのプロジェクトの構成について少しだけ考えてみる
 created_at: "2021-02-15"
-last_updated: "2021-02-15"
-tags:
-    - laravel
+last_updated: "2023-01-29"
+tags: [laravel]
 ---
 
 ## はじめに

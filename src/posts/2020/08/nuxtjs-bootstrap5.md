@@ -1,10 +1,8 @@
 ---
 title: Nuxt.js と Bootstrap 5
 created_at: "2020-08-03"
-last_updated: "2020-08-03"
-tags:
-    - nuxt
-    - css
+last_updated: "2023-01-29"
+tags: [nuxt, css]
 ---
 
 ## はじめに

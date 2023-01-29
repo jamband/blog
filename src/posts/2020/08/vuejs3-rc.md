@@ -1,9 +1,8 @@
 ---
 title: Vue.js 3 のリリース候補版を触ってみた
 created_at: "2020-08-24"
-last_updated: "2020-08-24"
-tags:
-    - vue
+last_updated: "2023-01-29"
+tags: [vue]
 ---
 
 ## はじめに

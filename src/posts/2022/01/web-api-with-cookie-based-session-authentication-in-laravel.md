@@ -1,11 +1,8 @@
 ---
 title: Laravel でクッキーベースのセッション認証を使った Web API を実装する
 created_at: "2022-01-25"
-last_updated: "2022-11-05"
-tags:
-    - authentication
-    - laravel
-    - next
+last_updated: "2023-01-29"
+tags: [authentication, laravel, next]
 ---
 
 ## はじめに
