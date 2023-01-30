@@ -9,7 +9,11 @@ export default defineConfig({
   site: "https://jamband.github.io/",
   base: "/blog",
   trailingSlash: "always",
-  integrations: [htmlMinify(), sitemap(), tailwind()],
+  integrations: [
+    htmlMinify(),
+    sitemap(),
+    tailwind({ config: { applyBaseStyles: false } }),
+  ],
   markdown: {
     rehypePlugins: [rehypeExternalLink, rehypePrettyCode],
     syntaxHighlight: false,
