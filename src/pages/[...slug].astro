@@ -1,0 +1,39 @@
+---
+import NavigationLink from "@/components/NavigationLink.astro";
+import PostHeader from "@/components/PostHeader.astro";
+import { APP_REPOSITORY_URL } from "@/constants/app";
+import Layout from "@/layouts/Layout.astro";
+import { posts } from "@/utils/api";
+import { description } from "@/utils/meta";
+import type { CollectionEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+export type Props = {
+  post: CollectionEntry<"posts">;
+};
+
+const { props } = Astro;
+const { Content } = await props.post.render();
+---
+
+<Layout
+  title={props.post.data.title}
+  description={description(props.post.body)}
+>
+  <article class="mb-16">
+    <PostHeader
+      title={props.post.data.title}
+      created_at={props.post.data.created_at}
+      last_updated={props.post.data.last_updated}
+      historyUrl={`${APP_REPOSITORY_URL}/commits/main/src/posts/${props.post.id}`}
+    />
+    <div class="post"><Content /></div>
+  </article>
+  <NavigationLink href="/" class="flex justify-center">← home</NavigationLink>
+</Layout>

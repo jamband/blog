@@ -1,4 +1,4 @@
-export const formatDate = (value: string) => {
+export const dateFormat = (value: string) => {
   return (
     new Date(value)
       .toLocaleDateString("ja-JP", {

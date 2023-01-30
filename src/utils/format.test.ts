@@ -1,12 +1,12 @@
-/* @jest-environment node */
-import { formatDate } from "./format";
+import { describe, expect, test } from "vitest";
+import { dateFormat } from "./format";
 
-describe("formatDate", () => {
+describe("dateFormat", () => {
   test("1999-12-31", () => {
-    expect(formatDate("1999-12-31")).toBe("1999年12月31日");
+    expect(dateFormat("1999-12-31")).toBe("1999年12月31日");
   });
 
   test("2000-01-01", () => {
-    expect(formatDate("2000-01-01")).toBe("2000年01月01日");
+    expect(dateFormat("2000-01-01")).toBe("2000年01月01日");
   });
 });

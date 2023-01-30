@@ -2,10 +2,8 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:jest-dom/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:testing-library/react",
-    "next/core-web-vitals",
-    "prettier"
-  ]
+    "plugin:astro/jsx-a11y-recommended",
+    "plugin:astro/recommended"
+  ],
+  "ignorePatterns": ["dist", "*.cjs", "env.d.ts"]
 }

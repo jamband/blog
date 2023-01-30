@@ -1,0 +1,33 @@
+---
+import Link from "@/components/Link.astro";
+import { APP_REPOSITORY_URL } from "@/constants/app";
+---
+
+<footer>
+  <div class="mb-3 flex justify-center text-xs">
+    © {new Date().getFullYear()} Tomoki Morita
+  </div>
+  <nav
+    class="flex justify-center gap-x-5 bg-gray-700 py-3 text-sm"
+    aria-label="Footer navigation"
+  >
+    <Link
+      href="/about"
+      class="rounded px-5 py-1 no-underline hover:bg-gray-600/50 hover:text-gray-100 active:bg-gray-600 active:text-gray-100"
+    >
+      About
+    </Link>
+    <Link
+      href="/contact"
+      class="rounded px-5 py-1 no-underline hover:bg-gray-600/50 hover:text-gray-100 active:bg-gray-600 active:text-gray-100"
+    >
+      Contact
+    </Link>
+    <a
+      href={APP_REPOSITORY_URL}
+      class="rounded px-5 py-1 no-underline hover:bg-gray-600/50 hover:text-gray-100 active:bg-gray-600 active:text-gray-100"
+      target="_blank"
+      rel="noreferrer">GitHub</a
+    >
+  </nav>
+</footer>

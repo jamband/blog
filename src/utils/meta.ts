@@ -1,8 +1,6 @@
-import { APP_DESCRIPTION } from "@/constants/app";
-import { parse } from "node-html-parser";
-
 export const description = (content: string) => {
-  const match = content.match(/<p>(.*?)<\/p>/g);
-  if (!match) return APP_DESCRIPTION;
-  return parse(match[0]).text.slice(0, 90);
+  return content
+    .slice(0, 180)
+    .replace(/#.*|\n|\(.*\)|\[|\]/g, "")
+    .slice(0, 90);
 };

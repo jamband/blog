@@ -1,0 +1,25 @@
+---
+import NavigationLink from "@/components/NavigationLink.astro";
+import { APP_DESCRIPTION, APP_NAME, APP_REPOSITORY_URL } from "@/constants/app";
+import IconExternalLink from "@/icons/IconExternalLink.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="About">
+  <h1 class="mb-12 text-center">About</h1>
+  <p>{APP_DESCRIPTION}</p>
+  <p class="mb-16">
+    また、このウェブサイトはオープンソースなプロジェクトです。詳細については
+    <a
+      href={APP_REPOSITORY_URL}
+      class="text-pink-500"
+      target="_blank"
+      rel="noreferrer"
+      >GitHub: {APP_NAME}<IconExternalLink
+        class="h-4 w-4 align-[-0.125em]"
+      /></a
+    >
+    をご覧ください。
+  </p>
+  <NavigationLink href="/" class="flex justify-center">← home</NavigationLink>
+</Layout>

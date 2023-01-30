@@ -1,4 +1,5 @@
-/.next
-/out
-*.md
+/.astro
+/dist
+/src/constants
+/src/content/posts
 pnpm-lock.yaml

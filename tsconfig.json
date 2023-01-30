@@ -1,23 +1,7 @@
 {
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "target": "ES5",
-    "module": "ESNext",
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "allowJs": true,
     "baseUrl": ".",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "moduleResolution": "Node",
-    "noEmit": true,
-    "paths": { "@/*": ["./src/*"] },
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "incremental": true,
-    "importsNotUsedAsValues": "error"
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+    "paths": { "@/*": ["./src/*"] }
+  }
 }

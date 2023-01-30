@@ -1,0 +1,33 @@
+---
+import NavigationLink from "@/components/NavigationLink.astro";
+import { APP_REPOSITORY_URL } from "@/constants/app";
+import IconExternalLink from "@/icons/IconExternalLink.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="Contact">
+  <h1 class="mb-12 text-center">Contact</h1>
+  <p>
+    何かしらの問い合わせに関しては
+    <a
+      href="https://twitter.com/livejam_db"
+      class="text-pink-500"
+      target="_blank"
+      rel="noreferrer"
+      >Twitter<IconExternalLink class="h-4 w-4 align-[-0.125em]" /></a
+    >
+    のダイレクトメッセージからお願いします。
+  </p>
+  <p class="mb-16">
+    また、プログラムのバグなどを発見した場合は
+    <a
+      href={`${APP_REPOSITORY_URL}/issues`}
+      class="text-pink-500"
+      target="_blank"
+      rel="noreferrer"
+      >GitHub Issues<IconExternalLink class="h-4 w-4 align-[-0.125em]" /></a
+    >
+    から報告してもらえると助かります。
+  </p>
+  <NavigationLink href="/" class="flex justify-center">← home</NavigationLink>
+</Layout>

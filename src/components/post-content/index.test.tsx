@@ -1,7 +1,0 @@
-import { render, screen } from "@testing-library/react";
-import { PostContent } from ".";
-
-test("", () => {
-  render(<PostContent htmlContent="<h1>Foo</h1>" />);
-  expect(screen.getByRole("heading", { name: "Foo" })).toBeInTheDocument();
-});
