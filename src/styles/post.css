@@ -47,5 +47,5 @@
 }
 
 .post pre code {
-  @apply block font-mono text-xs leading-5 text-[#d8dee9ff] md:text-sm md:leading-6;
+  @apply block font-mono text-xs leading-6 text-[#d8dee9ff] md:text-sm md:leading-7;
 }
