@@ -11,8 +11,8 @@ export default function htmlMinify(): AstroIntegration {
       "astro:build:done": async ({ routes }) => {
         await Promise.all(
           routes.map(async ({ distURL }) => {
-            if (distURL) {
-              const path = distURL?.pathname;
+            if (distURL && !distURL.pathname.includes("rss.xml")) {
+              const path = distURL.pathname;
 
               const data = await minify(await readFile(path, "utf8"), {
                 collapseBooleanAttributes: true,
