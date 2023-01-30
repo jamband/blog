@@ -24,10 +24,12 @@ const { props } = Astro;
     <li>
       <a
         href={props.historyUrl}
-        class="hover:text-pink-500"
+        class="group hover:text-pink-500"
         target="_blank"
         rel="noreferrer"
-        >更新履歴<IconExternalLink class="ml-0.5 h-4 w-4 align-[-0.125em]" /></a
+        >更新履歴<IconExternalLink
+          class="ml-1 h-3.5 w-3.5 align-[-0.125em] text-gray-400/70 group-hover:text-pink-500/70 group-active:text-pink-500/70"
+        /></a
       >
     </li>
   </ul>
