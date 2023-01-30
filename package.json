@@ -13,6 +13,7 @@
     "clean": "node scripts/clean.mjs"
   },
   "devDependencies": {
+    "@astrojs/rss": "^2.1.0",
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^3.0.0",
     "@types/hast": "^2.3.4",
