@@ -15,6 +15,9 @@ const { props } = Astro;
   }`}
   aria-label="Page information"
 >
-  {props.label}
-  {props.currentPage}/{props.lastPage}
+  <span
+    class="mr-1 before:mr-0.5 before:text-xs before:text-pink-500/80 before:content-['#']"
+    >{props.label}</span
+  >
+  <span class="font-mono">{props.currentPage}/{props.lastPage}</span>
 </div>

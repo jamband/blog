@@ -1,0 +1,38 @@
+---
+import Pagination from "@/components/Pagination.astro";
+import PaginationInformation from "@/components/PaginationInformation.astro";
+import PostCollection from "@/components/PostCollection.astro";
+import TagLinks from "@/components/TagLinks.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getPostsByTag, getTags } from "@/utils/api";
+import type { GetStaticPaths, Page } from "astro";
+import type { CollectionEntry } from "astro:content";
+
+export const getStaticPaths: GetStaticPaths = ({ paginate }) => {
+  return getTags().map((tag) => {
+    return paginate(getPostsByTag(tag), {
+      params: { tag },
+      pageSize: 10,
+    });
+  });
+};
+
+export type Props = {
+  page: Page<CollectionEntry<"posts">>;
+};
+
+const { props, params } = Astro;
+---
+
+<Layout title={`#${params.tag}`}>
+  <TagLinks tags={getTags()} class="mb-14" />
+  <h1 class="mb-0 text-center">Posts</h1>
+  <PaginationInformation
+    class="mb-12"
+    label={params.tag || ""}
+    currentPage={props.page.currentPage}
+    lastPage={props.page.lastPage}
+  />
+  <PostCollection posts={props.page.data} class="mb-16" />
+  <Pagination url={props.page.url} />
+</Layout>
