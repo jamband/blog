@@ -1,5 +1,5 @@
 ---
-import NavigationLink from "@/components/NavigationLink.astro";
+import BackToHomeLink from "@/components/BackToHomeLink.astro";
 import PostHeader from "@/components/PostHeader.astro";
 import { APP_REPOSITORY_URL } from "@/constants/app";
 import Layout from "@/layouts/Layout.astro";
@@ -36,5 +36,5 @@ const { Content } = await props.post.render();
     />
     <div class="post"><Content /></div>
   </article>
-  <NavigationLink href="/" class="flex justify-center">← home</NavigationLink>
+  <BackToHomeLink class="flex justify-center" />
 </Layout>

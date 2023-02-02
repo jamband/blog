@@ -1,5 +1,5 @@
 ---
-import NavigationLink from "@/components/NavigationLink.astro";
+import BackToHomeLink from "@/components/BackToHomeLink.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
@@ -8,9 +8,7 @@ import Layout from "@/layouts/Layout.astro";
     <section class="text-center">
       <h1>Not Found</h1>
       <p class="mb-8">Page not found.</p>
-      <NavigationLink href="/" class="flex justify-center">
-        ← home
-      </NavigationLink>
+      <BackToHomeLink class="flex justify-center" />
     </section>
   </article>
 </Layout>
