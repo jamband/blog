@@ -16,7 +16,7 @@ const parts = ["prev", "next"] as const;
       parts.map((part) => (
         <Link
           href={props.url[part] || props.url.current}
-          class="w-full rounded bg-gray-700 py-2 text-gray-400 no-underline hover:text-gray-100 active:text-gray-100 active:ring-2 active:ring-gray-400 aria-disabled:pointer-events-none aria-disabled:text-gray-500"
+          class="w-full rounded py-2 text-gray-400 no-underline hover:bg-gray-700 hover:text-gray-100 active:bg-gray-700 active:text-gray-100 active:ring-2 active:ring-gray-400 aria-disabled:pointer-events-none aria-disabled:text-gray-500"
           aria-disabled={!props.url[part]}
           tabindex={!props.url[part] ? -1 : 0}
         >
