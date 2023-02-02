@@ -1,0 +1,20 @@
+---
+export type Props = {
+  class?: string;
+  currentPage: number;
+  lastPage: number;
+  label: string;
+};
+
+const { props } = Astro;
+---
+
+<div
+  class={`text-center font-bold text-pink-500 text-[1.2rem] ${
+    props.class || ""
+  }`}
+  aria-label="Page information"
+>
+  {props.label}
+  {props.currentPage}/{props.lastPage}
+</div>
