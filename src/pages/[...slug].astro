@@ -5,14 +5,15 @@ import { APP_REPOSITORY_URL } from "@/constants/app";
 import Layout from "@/layouts/Layout.astro";
 import { posts } from "@/utils/api";
 import { description } from "@/utils/meta";
+import type { GetStaticPaths } from "astro";
 import type { CollectionEntry } from "astro:content";
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = () => {
   return posts.map((post) => ({
     params: { slug: post.slug },
     props: { post },
   }));
-}
+};
 
 export type Props = {
   post: CollectionEntry<"posts">;
