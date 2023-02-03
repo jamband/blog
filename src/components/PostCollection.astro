@@ -3,7 +3,7 @@ import { dateFormat } from "@/utils/format";
 import type { CollectionEntry } from "astro:content";
 import Link from "./Link.astro";
 
-export type Props = {
+type Props = {
   class?: string;
   posts: Array<CollectionEntry<"posts">>;
 };
