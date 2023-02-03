@@ -1,5 +1,5 @@
 import { APP_DESCRIPTION, APP_NAME, APP_URL } from "@/constants/app";
-import { posts } from "@/utils/api";
+import { getPosts } from "@/utils/api";
 import { description } from "@/utils/meta";
 import rss from "@astrojs/rss";
 
@@ -8,7 +8,7 @@ export async function get() {
     title: APP_NAME,
     description: APP_DESCRIPTION,
     site: APP_URL,
-    items: posts.map((post) => ({
+    items: getPosts().map((post) => ({
       title: post.data.title,
       pubDate: new Date(post.data.created_at),
       description: description(post.body),
