@@ -10,7 +10,7 @@ type Props = {
 const { props, url } = Astro;
 
 const title = props.title ? `${props.title} ･ ${APP_NAME}` : APP_NAME;
-const description = props.description ? props.description : APP_DESCRIPTION;
+const description = props.description ?? APP_DESCRIPTION;
 ---
 
 <head>
