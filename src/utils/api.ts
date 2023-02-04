@@ -1,4 +1,5 @@
 import { getCollection } from "astro:content";
+
 export const posts = await getCollection("posts");
 
 export const getTags = () => {
