@@ -9,8 +9,8 @@
     "checks": "tsc && astro sync && astro check",
     "lint": "eslint --ext .astro,.ts .",
     "format": "prettier --check --plugin-search-dir=. .",
-    "clear": "node scripts/clear.mjs",
-    "clean": "node scripts/clean.mjs"
+    "clear": "node scripts/clear.js",
+    "clean": "node scripts/clean.js"
   },
   "dependencies": {
     "@astrojs/rss": "^2.1.0",
