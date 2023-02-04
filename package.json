@@ -6,7 +6,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "test": "vitest",
-    "checks": "tsc && astro check",
+    "checks": "tsc && astro sync && astro check",
     "lint": "eslint --ext .astro,.ts .",
     "format": "prettier --check --plugin-search-dir=. .",
     "clear": "node scripts/clear.mjs",
