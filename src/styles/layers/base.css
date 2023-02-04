@@ -5,7 +5,7 @@
   }
 
   h1 {
-    @apply mb-2 text-5xl font-bold text-gray-100;
+    @apply text-5xl font-bold text-gray-100;
   }
 
   h2 {
