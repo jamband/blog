@@ -35,7 +35,7 @@
 }
 
 .post div[data-rehype-pretty-code-title] {
-  @apply rounded-t bg-gray-600/40 px-3 py-1 font-mono text-xxs text-[#d8dee9ff] md:text-xs;
+  @apply overflow-x-scroll rounded-t bg-gray-600/40 px-3 py-1 font-mono text-xxs text-[#d8dee9ff] md:text-xs;
 }
 
 .post pre {
@@ -43,7 +43,7 @@
 }
 
 .post div[data-rehype-pretty-code-fragment] pre {
-  @apply mt-0 mb-0 overflow-y-scroll border-none;
+  @apply my-0 overflow-y-scroll border-none;
 }
 
 .post pre code {
