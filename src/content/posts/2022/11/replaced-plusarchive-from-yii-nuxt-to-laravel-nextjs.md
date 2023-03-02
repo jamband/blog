@@ -1,7 +1,7 @@
 ---
 title: PlusArchive を Yii + Nuxt から Laravel + Next.js にリプレイスした
 created_at: "2022-11-01"
-last_updated: "2023-01-29"
+last_updated: "2023-03-02"
 tags: [laravel, next]
 ---
 
@@ -186,7 +186,7 @@ composer run deploy
 namespace Deployer;
 
 require 'recipe/common.php';
-require 'contrib/yarn.php';
+require 'contrib/npm.php';
 
 set('repository', 'https://github.com/jamband/plusarchive.com.git');
 set('clear_paths', ['...']);
@@ -195,21 +195,20 @@ host('plusarchive.com')
     // ...
     ->set('...', '...');
 
-after('deploy:update_code', 'yarn:install');
-
-task('yarn:build', function () {
-    run('cd {{release_or_current_path}} && {{bin/yarn}} build');
+task('npm:build', function () {
+    run('cd {{release_path}} && {{bin/npm}} run build');
 });
 
 task('pm2:start', function () {
     run('cd {{deploy_path}} && pm2 startOrRestart ecosystem.config.js');
 });
 
+after('deploy:update_code', 'npm:install');
 after('deploy:cleanup', 'pm2:start');
 
 task('deploy', [
     'deploy:prepare',
-    'yarn:build',
+    'npm:build',
     'deploy:publish',
 ]);
 ```
@@ -218,12 +217,9 @@ task('deploy', [
 module.exports = {
   apps : [{
     name: "plusarchive.com",
-    exec_mode : "cluster",
-    instances: 0,
     cwd: "./current",
-    script: "yarn",
+    script: "npm",
     args: "start",
-    interpreter: "/bin/bash",
     log_date_format: "YYYY-MM-DD HH:mm Z"
   }]
 }
@@ -237,11 +233,7 @@ composer run prepare
 composer run deploy
 ```
 
-バックエンド、フロントエンドともに nginx で動いているが細かな設定などはここでは省略する。フロントエンドは [pm2](https://pm2.keymetrics.io/) でプロセスを起動しているが、最近 cluster モードでの起動ではエラーが発生してしまうので一時的に folk モードにしている。上記の例では cluster モードで起動しているので注意。
-
-以下はその関連 issue:
-
-- [Cluster mode does not work on node v16 · Issue #5300 · Unitech/pm2](https://github.com/Unitech/pm2/issues/5300)
+バックエンド、フロントエンドともに nginx で動いているが細かな設定などはここでは省略する。フロントエンドは [pm2](https://pm2.keymetrics.io/) でプロセスを起動している。
 
 ## まとめ
 
