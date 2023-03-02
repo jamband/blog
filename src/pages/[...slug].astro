@@ -32,7 +32,7 @@ const { Content } = await props.post.render();
       title={props.post.data.title}
       created_at={props.post.data.created_at}
       last_updated={props.post.data.last_updated}
-      historyUrl={`${APP_REPOSITORY_URL}/commits/main/src/posts/${props.post.id}`}
+      historyUrl={`${APP_REPOSITORY_URL}/commits/main/src/content/posts/${props.post.id}`}
     />
     <div class="post"><Content /></div>
   </article>
