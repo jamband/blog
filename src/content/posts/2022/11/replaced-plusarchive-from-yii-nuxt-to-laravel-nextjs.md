@@ -196,7 +196,7 @@ host('plusarchive.com')
     ->set('...', '...');
 
 task('npm:build', function () {
-    run('cd {{release_path}} && {{bin/npm}} run build');
+    run('cd {{release_or_current_path}} && {{bin/npm}} run build');
 });
 
 task('pm2:start', function () {
