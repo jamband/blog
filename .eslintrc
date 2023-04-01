@@ -7,6 +7,7 @@
   ],
   "ignorePatterns": ["dist", "*.cjs", "env.d.ts"],
   "rules": {
+    "@typescript-eslint/consistent-type-imports": "error",
     "@typescript-eslint/no-unused-vars": [
       "warn",
       { "varsIgnorePattern": "^Props$" }
