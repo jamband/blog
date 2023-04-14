@@ -7,7 +7,7 @@
 }
 
 .post h2 {
-  @apply mt-16 mb-5 border-b border-gray-600 pb-1 text-3xl;
+  @apply mb-5 mt-16 border-b border-gray-600 pb-1 text-3xl;
 }
 
 .post ul {
