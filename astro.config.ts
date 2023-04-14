@@ -1,5 +1,4 @@
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
 import rehypePrettyCode from "rehype-pretty-code";
 import htmlMinify from "./integrations/html-minify";
@@ -9,11 +8,7 @@ export default defineConfig({
   site: "https://jamband.github.io/",
   base: "/blog",
   trailingSlash: "always",
-  integrations: [
-    htmlMinify(),
-    sitemap(),
-    tailwind({ config: { applyBaseStyles: false } }),
-  ],
+  integrations: [htmlMinify(), sitemap()],
   markdown: {
     rehypePlugins: [rehypeExternalLink, rehypePrettyCode],
     syntaxHighlight: false,
