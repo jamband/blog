@@ -8,6 +8,7 @@ export default defineConfig({
   site: "https://jamband.github.io/",
   base: "/blog",
   trailingSlash: "always",
+  scopedStyleStrategy: "class",
   integrations: [htmlMinify(), sitemap()],
   markdown: {
     rehypePlugins: [rehypeExternalLink, rehypePrettyCode],
