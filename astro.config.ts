@@ -1,7 +1,6 @@
 import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
 import rehypePrettyCode from "rehype-pretty-code";
-import htmlMinify from "./integrations/html-minify";
 import rehypeExternalLink from "./plugins/rehype-external-link";
 
 export default defineConfig({
@@ -9,7 +8,8 @@ export default defineConfig({
   base: "/blog",
   trailingSlash: "always",
   scopedStyleStrategy: "class",
-  integrations: [htmlMinify(), sitemap()],
+  compressHTML: true,
+  integrations: [sitemap()],
   markdown: {
     rehypePlugins: [rehypeExternalLink, rehypePrettyCode],
     syntaxHighlight: false,
