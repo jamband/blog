@@ -1,7 +1,7 @@
 ---
 title: SvelteKit で TanStack Query (FKA React Query) っぽい簡易的な Server State を作成する
-created_at: "2023-08-01"
-last_updated: "2023-08-01"
+created_at: "2023-07-31"
+last_updated: "2023-08-13"
 tags: [svelte, sveltekit]
 ---
 
