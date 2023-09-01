@@ -1,21 +1,20 @@
 ---
-import type { HTMLAttributes } from "astro/types";
-
 type Props = {
-  viewBox: HTMLAttributes<"svg">["viewBox"];
+  viewBox: string;
   class: string;
 };
 
-const { props } = Astro;
+const { viewBox, class: className, ...attributes } = Astro.props;
 ---
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  viewBox={props.viewBox}
+  viewBox={viewBox}
   fill="currentColor"
-  class={`inline-block ${props.class}`}
+  class:list={["inline-block", className]}
   role="img"
   aria-hidden={true}
+  {...attributes}
 >
   <slot />
 </svg>

@@ -1,26 +1,25 @@
 ---
 import { dateFormat } from "@/utils/format";
 import type { CollectionEntry } from "astro:content";
-import Link from "./Link.astro";
 
 type Props = {
   class?: string;
   posts: Array<CollectionEntry<"posts">>;
 };
 
-const { props } = Astro;
+const { class: className, posts } = Astro.props;
 ---
 
-<ul class={`flex flex-col gap-6 ${props.class || ""}`}>
+<ul class:list={["flex flex-col gap-6", className]}>
   {
-    props.posts.map((post) => (
+    posts.map((post) => (
       <li>
-        <Link
-          href={`/${post.slug}`}
+        <a
+          href={`/blog/${post.slug}/`}
           class="text-[1.125rem] font-bold text-gray-200 hover:text-pink-500"
         >
           {post.data.title}
-        </Link>
+        </a>
         <div class="text-xs text-gray-400">
           {dateFormat(post.data.created_at)}
         </div>

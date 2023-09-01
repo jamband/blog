@@ -7,10 +7,10 @@ type Props = {
   description?: string;
 };
 
-const { props, url } = Astro;
+const { title, description } = Astro.props;
 
-const title = props.title ? `${props.title} ･ ${APP_NAME}` : APP_NAME;
-const description = props.description ?? APP_DESCRIPTION;
+const _title = title ? `${title} ･ ${APP_NAME}` : APP_NAME;
+const _description = description ?? APP_DESCRIPTION;
 ---
 
 <head>
@@ -20,12 +20,12 @@ const description = props.description ?? APP_DESCRIPTION;
     name="google-site-verification"
     content="6aK91se27OEvK0J9CLA7PvKK6qO7BkcncLYKFIQz8rY"
   />
-  <meta name="description" content={description} />
+  <meta name="description" content={_description} />
   <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.ico`} />
-  <title>{title}</title>
+  <title>{_title}</title>
   <meta name="og:type" content="website" />
   <meta name="og:site_name" content={APP_NAME} />
-  <meta name="og:url" content={url} />
-  <meta name="og:title" content={title} />
-  <meta name="og:description" content={description} />
+  <meta name="og:url" content={Astro.url} />
+  <meta name="og:title" content={_title} />
+  <meta name="og:description" content={_description} />
 </head>

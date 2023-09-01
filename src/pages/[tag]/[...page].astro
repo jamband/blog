@@ -9,7 +9,7 @@ import type { GetStaticPaths, Page } from "astro";
 import type { CollectionEntry } from "astro:content";
 
 export const getStaticPaths: GetStaticPaths = ({ paginate }) => {
-  return getTags().map((tag) => {
+  return getTags().flatMap((tag) => {
     return paginate(getPostsByTag(tag), {
       params: { tag },
       pageSize: 10,
