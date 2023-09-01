@@ -19,20 +19,17 @@ type Props = {
   post: CollectionEntry<"posts">;
 };
 
-const { props } = Astro;
-const { Content } = await props.post.render();
+const { post } = Astro.props;
+const { Content } = await post.render();
 ---
 
-<Layout
-  title={props.post.data.title}
-  description={description(props.post.body)}
->
+<Layout title={post.data.title} description={description(post.body)}>
   <article class="mb-16">
     <PostHeader
-      title={props.post.data.title}
-      created_at={props.post.data.created_at}
-      last_updated={props.post.data.last_updated}
-      historyUrl={`${APP_REPOSITORY_URL}/commits/main/src/content/posts/${props.post.id}`}
+      title={post.data.title}
+      created_at={post.data.created_at}
+      last_updated={post.data.last_updated}
+      historyUrl={`${APP_REPOSITORY_URL}/commits/main/src/content/posts/${post.id}`}
     />
     <div class="post"><Content /></div>
   </article>

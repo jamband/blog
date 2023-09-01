@@ -18,7 +18,7 @@ type Props = {
   page: Page<CollectionEntry<"posts">>;
 };
 
-const { props } = Astro;
+const { page } = Astro.props;
 ---
 
 <Layout>
@@ -27,9 +27,9 @@ const { props } = Astro;
   <PaginationInformation
     class="mb-12"
     label="latest"
-    currentPage={props.page.currentPage}
-    lastPage={props.page.lastPage}
+    currentPage={page.currentPage}
+    lastPage={page.lastPage}
   />
-  <PostCollection posts={props.page.data} class="mb-16" />
-  <Pagination url={props.page.url} />
+  <PostCollection posts={page.data} class="mb-16" />
+  <Pagination url={page.url} />
 </Layout>

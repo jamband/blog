@@ -21,18 +21,18 @@ type Props = {
   page: Page<CollectionEntry<"posts">>;
 };
 
-const { props, params } = Astro;
+const { page } = Astro.props;
 ---
 
-<Layout title={`#${params.tag}`}>
+<Layout title={`#${Astro.params.tag}`}>
   <TagLinks tags={getTags()} class="mb-14" />
   <h1 class="text-center">Posts</h1>
   <PaginationInformation
     class="mb-12"
-    label={params.tag || ""}
-    currentPage={props.page.currentPage}
-    lastPage={props.page.lastPage}
+    label={Astro.params.tag || ""}
+    currentPage={page.currentPage}
+    lastPage={page.lastPage}
   />
-  <PostCollection posts={props.page.data} class="mb-16" />
-  <Pagination url={props.page.url} />
+  <PostCollection posts={page.data} class="mb-16" />
+  <Pagination url={page.url} />
 </Layout>
