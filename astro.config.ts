@@ -5,10 +5,8 @@ import rehypeExternalLink from "./plugins/rehype-external-link";
 
 export default defineConfig({
   site: "https://jamband.github.io/",
-  base: "/blog",
+  base: "blog/",
   trailingSlash: "always",
-  scopedStyleStrategy: "class",
-  compressHTML: true,
   integrations: [sitemap()],
   markdown: {
     rehypePlugins: [rehypeExternalLink, rehypePrettyCode],

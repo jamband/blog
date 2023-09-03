@@ -3,7 +3,7 @@ import { getPosts } from "@/utils/api";
 import { description } from "@/utils/meta";
 import rss from "@astrojs/rss";
 
-export async function get() {
+export async function GET() {
   return rss({
     title: APP_NAME,
     description: APP_DESCRIPTION,
