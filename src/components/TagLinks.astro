@@ -9,7 +9,8 @@ const { class: className, tags } = Astro.props;
 
 <ul
   class:list={[
-    "flex max-h-[10.5rem] flex-wrap gap-x-5 gap-y-6 overflow-y-scroll p-1",
+    "flex max-h-40 flex-wrap gap-x-5 gap-y-6 overflow-y-scroll py-3 pb-8 md:max-h-60",
+    "[mask-image:linear-gradient(to_top,#0000,#000_20%)]",
     className,
   ]}
 >
