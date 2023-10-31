@@ -29,7 +29,7 @@ const { page } = Astro.props;
   <h1 class="text-center">Posts</h1>
   <PaginationInformation
     class="mb-12"
-    label={Astro.params.tag || ""}
+    label={`${Astro.params.tag || ""}`}
     currentPage={page.currentPage}
     lastPage={page.lastPage}
   />
