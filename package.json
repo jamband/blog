@@ -7,7 +7,7 @@
     "preview": "astro preview --open",
     "typecheck": "astro check && tsc",
     "lint": "eslint --ext .astro,.ts .",
-    "format": "prettier --check --plugin prettier-plugin-astro .",
+    "format": "prettier --check .",
     "test": "vitest",
     "clear": "node scripts/clear.js",
     "clean": "node scripts/clean.js"
