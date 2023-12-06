@@ -30,11 +30,11 @@
   @apply pl-3;
 }
 
-.post div[data-rehype-pretty-code-fragment] {
+.post figure[data-rehype-pretty-code-figure] {
   @apply -mt-2 mb-8 rounded bg-gray-700;
 }
 
-.post div[data-rehype-pretty-code-title] {
+.post figcaption[data-rehype-pretty-code-title] {
   @apply overflow-x-scroll rounded-t bg-gray-600/40 px-3 py-1 font-mono text-xxs text-[#d8dee9ff] md:text-xs;
 }
 
@@ -42,7 +42,7 @@
   @apply -mt-2 mb-8 overflow-y-scroll rounded bg-gray-700 p-3 md:p-4;
 }
 
-.post div[data-rehype-pretty-code-fragment] pre {
+.post figure[data-rehype-pretty-code-figure] pre {
   @apply my-0 overflow-y-scroll border-none;
 }
 
