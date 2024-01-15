@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-22.04
 
     steps:
@@ -30,8 +30,24 @@ jobs:
       - name: build
         run: pnpm build
 
-      - name: deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: upload artifacts
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist
+          path: "dist/"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-22.04
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
