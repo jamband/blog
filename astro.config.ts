@@ -8,6 +8,7 @@ export default defineConfig({
   base: "blog/",
   trailingSlash: "always",
   integrations: [sitemap()],
+  devToolbar: { enabled: false },
   markdown: {
     rehypePlugins: [rehypeExternalLink, rehypePrettyCode],
     syntaxHighlight: false,
