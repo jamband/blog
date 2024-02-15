@@ -16,9 +16,11 @@
 
 .link {
   align-items: center;
+  box-shadow: 0 1px 0 0 rgb(var(--pink-500) / 60%);
   color: rgb(var(--pink-500));
   display: inline-flex;
   gap: 0.25rem;
+  line-height: 1.4;
 }
 
 .linkIcon {

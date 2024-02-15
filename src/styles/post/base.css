@@ -13,14 +13,20 @@
   margin: 1.5rem 0 0;
 }
 
+.post a {
+  box-shadow: 0 1px 0 0 rgb(var(--gray-400));
+}
+
 @media (hover: hover) and (pointer: fine) {
   .post a:hover {
+    box-shadow: 0 1px 0 0 rgb(var(--pink-500) / 70%);
     color: rgb(var(--pink-500));
   }
 }
 
 .post a:active,
 .post a:focus-visible {
+  box-shadow: 0 1px 0 0 rgb(var(--pink-500) / 70%);
   color: rgb(var(--pink-500));
 }
 

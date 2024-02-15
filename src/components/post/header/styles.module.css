@@ -19,18 +19,22 @@
 
 .historyLink {
   align-items: center;
+  box-shadow: 0 1px 0 0 rgb(var(--gray-400));
   display: inline-flex;
   gap: 0.25rem;
+  line-height: 1.4;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .historyLink:hover {
+    box-shadow: 0 1px 0 0 rgb(var(--pink-500) / 70%);
     color: rgb(var(--pink-500));
   }
 }
 
 .historyLink:active,
 .historyLink:focus-visible {
+  box-shadow: 0 1px 0 0 rgb(var(--pink-500) / 70%);
   color: rgb(var(--pink-500));
 }
 

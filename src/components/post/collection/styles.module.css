@@ -5,6 +5,7 @@
 }
 
 .link {
+  box-shadow: 0 1px 0 0 rgb(var(--gray-400));
   color: rgb(var(--gray-200));
   font-size: 1.2rem;
   font-weight: 700;
@@ -12,12 +13,14 @@
 
 @media (hover: hover) and (pointer: fine) {
   .link:hover {
+    box-shadow: 0 1px 0 0 rgb(var(--pink-500) / 70%);
     color: rgb(var(--pink-500));
   }
 }
 
 .link:active,
 .link:focus-visible {
+  box-shadow: 0 1px 0 0 rgb(var(--pink-500) / 70%);
   color: rgb(var(--pink-500));
 }
 
