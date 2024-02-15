@@ -6,7 +6,7 @@
 
 .link {
   color: rgb(var(--gray-200));
-  font-size: 1.125rem;
+  font-size: 1.2rem;
   font-weight: 700;
 }
 
@@ -23,5 +23,5 @@
 
 .date {
   color: rgb(var(--gray-400));
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
 }

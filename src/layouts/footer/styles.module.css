@@ -1,6 +1,6 @@
 .information {
   display: flex;
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   gap: 1.25rem;
   justify-content: center;
 }

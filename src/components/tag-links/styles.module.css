@@ -39,6 +39,6 @@
 .symbol::before {
   color: rgb(var(--gray-400));
   content: "#";
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   margin: 0 0.125rem 0 0;
 }

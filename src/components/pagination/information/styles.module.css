@@ -8,7 +8,7 @@
 .symbol::before {
   color: rgb(var(--pink-500) / 80%);
   content: "#";
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   margin: 0 0.25rem 0 0;
 }
 
