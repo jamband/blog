@@ -10,7 +10,7 @@ export default defineConfig({
   integrations: [sitemap()],
   devToolbar: { enabled: false },
   markdown: {
-    rehypePlugins: [rehypeExternalLink, rehypePrettyCode],
+    rehypePlugins: [rehypeExternalLink, [rehypePrettyCode, { theme: "nord" }]],
     syntaxHighlight: false,
   },
   vite: {
