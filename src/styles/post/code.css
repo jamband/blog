@@ -18,6 +18,10 @@
   }
 }
 
+.post figure:has(> pre) {
+  margin: 1.5rem 0 0;
+}
+
 .post figcaption:has(+ pre) {
   background: rgb(var(--gray-600) / 75%);
   border-top-left-radius: var(--rounded);
