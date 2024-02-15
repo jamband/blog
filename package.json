@@ -17,7 +17,7 @@
     "@astrojs/rss": "4.0.5",
     "@astrojs/sitemap": "3.0.5",
     "@types/hast": "3.0.4",
-    "astro": "4.3.7",
+    "astro": "4.4.0",
     "prettier": "3.2.5",
     "prettier-plugin-astro": "0.13.0",
     "rehype-pretty-code": "0.13.0",
