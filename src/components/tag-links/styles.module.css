@@ -22,7 +22,6 @@
   background: rgb(var(--gray-700));
   border-radius: var(--rounded);
   padding: 0.5rem 1rem;
-  text-decoration: none;
 }
 
 @media (hover: hover) and (pointer: fine) {

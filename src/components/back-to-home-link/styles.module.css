@@ -8,7 +8,6 @@
   border-radius: var(--rounded);
   color: rgb(var(--gray-400));
   padding: 0.375rem 1rem;
-  text-decoration: none;
 }
 
 @media (hover: hover) and (pointer: fine) {

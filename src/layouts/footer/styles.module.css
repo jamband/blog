@@ -3,6 +3,7 @@
   font-size: var(--text-sm);
   gap: 1.25rem;
   justify-content: center;
+  line-height: 1.2;
 }
 
 .navigation {
@@ -18,7 +19,6 @@
 .link {
   border-radius: var(--rounded);
   padding: 0.25rem 1.25rem;
-  text-decoration: none;
 }
 
 @media (hover: hover) and (pointer: fine) {

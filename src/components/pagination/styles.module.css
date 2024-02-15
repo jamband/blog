@@ -13,7 +13,6 @@
   border-radius: var(--rounded);
   color: rgb(var(--gray-400));
   padding: 0.5rem 0;
-  text-decoration: none;
   width: 100%;
 }
 
