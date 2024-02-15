@@ -1,26 +1,8 @@
-.copyright {
+.information {
   display: flex;
   font-size: var(--text-xs);
   gap: 1.25rem;
   justify-content: center;
-  margin: 0 0 0.75rem;
-}
-
-.rss {
-  align-items: center;
-  display: inline-flex;
-  gap: 0.25rem;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .rss:hover {
-    color: rgb(var(--pink-500));
-  }
-}
-
-.rssIcon {
-  height: 0.75rem;
-  width: 0.75rem;
 }
 
 .navigation {
@@ -29,6 +11,7 @@
   font-size: var(--text-sm);
   gap: 1.25rem;
   justify-content: center;
+  margin: 0.75rem 0 0;
   padding: 0.75rem 0;
 }
 

@@ -1,0 +1,16 @@
+.container {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.25rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .container:hover {
+    color: rgb(var(--pink-500));
+  }
+}
+
+.icon {
+  height: 0.75rem;
+  width: 0.75rem;
+}

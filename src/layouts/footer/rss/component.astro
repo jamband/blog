@@ -1,0 +1,12 @@
+---
+import { APP_URL } from "@/constants/app";
+import { IconRss } from "@/icons/rss";
+import styles from "./styles.module.css";
+---
+
+<a
+  href={`${APP_URL}rss.xml`}
+  class={styles.container}
+  target="_blank"
+  rel="noreferrer">RSS <IconRss class={styles.icon} /></a
+>
