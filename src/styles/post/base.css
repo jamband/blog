@@ -35,5 +35,6 @@
 }
 
 .post li {
-  margin: 0.4rem 0 0;
+  margin: 0.4rem 0 0 1.45rem;
+  text-indent: -1.45rem;
 }
