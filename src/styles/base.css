@@ -1,4 +1,5 @@
 html {
+  background-color: rgb(var(--gray-800));
   font-size: var(--text-base);
   line-height: 1.85;
   scrollbar-gutter: stable;
@@ -31,8 +32,4 @@ a {
   text-decoration: underline;
   text-decoration-thickness: 0.05em;
   text-underline-offset: 0.25em;
-}
-
-a:active {
-  color: rgb(var(--pink-500));
 }

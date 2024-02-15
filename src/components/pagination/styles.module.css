@@ -2,12 +2,6 @@
   text-align: center;
 }
 
-@media (min-width: 768px) {
-  .container {
-    font-size: var(--text-base);
-  }
-}
-
 .containerInner {
   display: flex;
   gap: 1rem;
@@ -30,7 +24,8 @@
   }
 }
 
-.link:active {
+.link:active,
+.link:focus-visible {
   background: rgb(var(--gray-700));
   color: rgb(var(--gray-100));
 }

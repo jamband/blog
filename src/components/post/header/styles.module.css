@@ -29,6 +29,11 @@
   }
 }
 
+.historyLink:active,
+.historyLink:focus-visible {
+  color: rgb(var(--pink-500));
+}
+
 .historyLinkIcon {
   color: rgb(var(--gray-400) / 70%);
   height: 0.875rem;
@@ -41,6 +46,7 @@
   }
 }
 
-.historyLink:active .historyLinkIcon {
+.historyLink:active .historyLinkIcon,
+.historyLink:focus-visible .historyLinkIcon {
   color: rgb(var(--pink-500) / 70%);
 }

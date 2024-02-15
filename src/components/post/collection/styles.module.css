@@ -16,6 +16,11 @@
   }
 }
 
+.link:active,
+.link:focus-visible {
+  color: rgb(var(--pink-500));
+}
+
 .date {
   color: rgb(var(--gray-400));
   font-size: var(--text-xs);

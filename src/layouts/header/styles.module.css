@@ -22,8 +22,9 @@
   }
 }
 
-.link:active {
-  background: rgb(var(--gray-600));
+.link:active,
+.link:focus-visible {
+  background: rgb(var(--gray-600) / 50%);
 }
 
 .account {

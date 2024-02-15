@@ -19,22 +19,22 @@
   }
 }
 
-.post a:active {
+.post a:active,
+.post a:focus-visible {
   color: rgb(var(--pink-500));
 }
 
 .post ul {
   line-height: 1.7;
-  list-style: disc inside;
+  list-style: disc outside;
   margin: 1rem 0 0 1rem;
 }
 
 .post ol {
-  list-style: decimal inside;
+  list-style: decimal outside;
   margin: 1rem 0 0 1rem;
 }
 
 .post li {
-  margin: 0.4rem 0 0 1.45rem;
-  text-indent: -1.45rem;
+  margin: 0.4rem 0 0 1rem;
 }

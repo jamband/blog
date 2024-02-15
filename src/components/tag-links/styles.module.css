@@ -31,7 +31,8 @@
   }
 }
 
-.link:active {
+.link:active,
+.link:focus-visible {
   color: rgb(var(--gray-100));
 }
 

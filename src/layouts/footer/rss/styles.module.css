@@ -10,6 +10,11 @@
   }
 }
 
+.container:active,
+.container:focus-visible {
+  color: rgb(var(--pink-500));
+}
+
 .icon {
   height: 0.75rem;
   width: 0.75rem;
