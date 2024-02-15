@@ -1,0 +1,17 @@
+---
+import styles from "./styles.module.css";
+
+type Props = {
+  class?: string;
+  currentPage: number;
+  lastPage: number;
+  label: string;
+};
+
+const { class: className, currentPage, lastPage, label } = Astro.props;
+---
+
+<div class:list={[styles.container, className]} aria-label="Page information">
+  <span class={styles.symbol}>{label}</span>
+  <span class={styles.information}>{currentPage}/{lastPage}</span>
+</div>

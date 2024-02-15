@@ -1,0 +1,29 @@
+---
+import { Footer } from "../footer";
+import { Head } from "../head";
+import { Header } from "../header";
+import styles from "./styles.module.css";
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const { props } = Astro;
+---
+
+<!doctype html>
+<html lang="ja">
+  <Head title={props.title} description={props.description} />
+  <body class={styles.body}>
+    <Header />
+    <main class={styles.main}>
+      <slot />
+    </main>
+    <Footer />
+    <script is:inline>
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+      document.addEventListener("touchstart", () => {}, { passive: true });
+    </script>
+  </body>
+</html>

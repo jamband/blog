@@ -1,0 +1,29 @@
+---
+import type { Page } from "astro";
+import styles from "./styles.module.css";
+
+type Props = {
+  url: Page["url"];
+};
+
+const { url } = Astro.props;
+const _parts = ["prev", "next"] as const;
+---
+
+<nav class={styles.container} aria-label="Page navigation">
+  <div class={styles.containerInner}>
+    {
+      _parts.map((part) => (
+        <a
+          href={`/blog${url[part]}`}
+          class={styles.link}
+          aria-disabled={!url[part]}
+          tabindex={!url[part] ? -1 : 0}
+        >
+          {part === "prev" ? "←" : "→"}
+          <div>{part === "prev" ? "Previous" : "Next"}</div>
+        </a>
+      ))
+    }
+  </div>
+</nav>

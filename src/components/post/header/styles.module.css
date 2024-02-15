@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.title {
+  font-size: var(--text-4xl);
+  text-align: center;
+}
+
+.information {
+  align-items: flex-end;
+  color: rgb(var(--gray-400));
+  display: flex;
+  flex-direction: column;
+  font-size: var(--text-sm);
+}
+
+.historyLink {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.25rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .historyLink:hover {
+    color: rgb(var(--pink-500));
+  }
+}
+
+.historyLinkIcon {
+  color: rgb(var(--gray-400) / 70%);
+  height: 0.875rem;
+  width: 0.875rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .historyLink:hover .historyLinkIcon {
+    color: rgb(var(--pink-500) / 70%);
+  }
+}
+
+.historyLink:active .historyLinkIcon {
+  color: rgb(var(--pink-500) / 70%);
+}

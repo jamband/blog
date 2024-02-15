@@ -1,0 +1,43 @@
+.post pre {
+  background: rgb(var(--gray-700));
+  border-radius: var(--rounded);
+  color: rgb(var(--gray-200));
+  line-height: 1.7;
+  overflow: scroll;
+  padding: 0.75rem 1rem;
+}
+
+.post code {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+}
+
+@media (min-width: 768px) {
+  .post code {
+    font-size: var(--text-sm);
+  }
+}
+
+.post figcaption:has(+ pre) {
+  background: rgb(var(--gray-600) / 75%);
+  border-top-left-radius: var(--rounded);
+  border-top-right-radius: var(--rounded);
+  color: rgb(var(--gray-200));
+  font-size: var(--text-xs);
+  margin: 1.5rem 0 0;
+  overflow: scroll;
+  padding: 0.2rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .post figcaption:has(+ pre) {
+    font-size: var(--text-sm);
+  }
+}
+
+.post figure pre {
+  background: rgb(var(--gray-700)) !important;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin: 0;
+}

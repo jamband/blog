@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 1.25rem;
+  mask-image: linear-gradient(to top, #0000, #000 20%);
+  max-height: 10rem;
+  overflow: scroll;
+  padding: 0.75rem 0 2rem;
+}
+
+.tag {
+  padding: 0.25rem 0 0;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-height: 15rem;
+  }
+}
+
+.link {
+  background: rgb(var(--gray-700));
+  border-radius: var(--rounded);
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:hover {
+    color: rgb(var(--gray-100));
+  }
+}
+
+.link:active {
+  color: rgb(var(--gray-100));
+}
+
+.symbol::before {
+  color: rgb(var(--gray-400));
+  content: "#";
+  font-size: var(--text-xs);
+  margin: 0 0.125rem 0 0;
+}

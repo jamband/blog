@@ -1,0 +1,28 @@
+:root {
+  /* font size */
+  --text-xxs: 0.675rem;
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-3xl: 1.65rem;
+  --text-4xl: 2rem;
+  --text-5xl: 2.75rem;
+
+  /* font family */
+  --font-sans: system-ui, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace; /* stylelint-disable-line value-keyword-case */
+
+  /* border radius */
+  --rounded: 0.25rem;
+
+  /* color */
+  --pink-500: 236 72 153;
+  --gray-100: 236 239 244;
+  --gray-200: 219 222 229;
+  --gray-300: 200 197 216;
+  --gray-400: 183 180 199;
+  --gray-600: 70 68 77;
+  --gray-700: 36 34 43;
+  --gray-800: 19 17 26;
+  --gray-900: 2 0 9;
+}

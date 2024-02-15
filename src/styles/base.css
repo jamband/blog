@@ -1,0 +1,38 @@
+html {
+  font-size: var(--text-base);
+  line-height: 1.85;
+  scrollbar-gutter: stable;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: rgb(var(--gray-800));
+  color: rgb(var(--gray-300));
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: inherit;
+}
+
+h1 {
+  color: rgb(var(--gray-100));
+  font-size: var(--text-5xl);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+h2 {
+  color: rgb(var(--gray-100));
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+a {
+  text-decoration: underline;
+  text-decoration-thickness: 0.05em;
+  text-underline-offset: 0.25em;
+}
+
+a:active {
+  color: rgb(var(--pink-500));
+}

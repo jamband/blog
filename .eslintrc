@@ -5,12 +5,19 @@
     "plugin:astro/jsx-a11y-recommended",
     "plugin:astro/recommended"
   ],
-  "ignorePatterns": ["dist", "*.cjs", "env.d.ts"],
+  "ignorePatterns": [
+    "dist",
+    "*.cjs",
+    "env.d.ts"
+  ],
   "rules": {
+    "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/consistent-type-imports": "error",
     "@typescript-eslint/no-unused-vars": [
       "warn",
-      { "varsIgnorePattern": "^Props$" }
+      {
+        "varsIgnorePattern": "^Props$"
+      }
     ]
   }
 }

@@ -1,12 +1,15 @@
 ---
-import Pagination from "@/components/Pagination.astro";
-import PaginationInformation from "@/components/PaginationInformation.astro";
-import PostCollection from "@/components/PostCollection.astro";
-import TagLinks from "@/components/TagLinks.astro";
-import Layout from "@/layouts/Layout.astro";
+import "@/styles/app.css";
+
+import { Pagination } from "@/components/pagination";
+import { PaginationInformation } from "@/components/pagination/information";
+import { PostCollection } from "@/components/post/collection";
+import { TagLinks } from "@/components/tag-links";
+import { Layout } from "@/layouts/layout";
 import { getPostsByTag, getTags } from "@/utils/api";
 import type { GetStaticPaths, Page } from "astro";
 import type { CollectionEntry } from "astro:content";
+import styles from "./_styles.module.css";
 
 export const getStaticPaths: GetStaticPaths = ({ paginate }) => {
   return getTags().flatMap((tag) => {
@@ -25,14 +28,17 @@ const { page } = Astro.props;
 ---
 
 <Layout title={`#${Astro.params.tag}`}>
-  <TagLinks tags={getTags()} class="mb-14" />
-  <h1 class="text-center">Posts</h1>
-  <PaginationInformation
-    class="mb-12"
-    label={`${Astro.params.tag || ""}`}
-    currentPage={page.currentPage}
-    lastPage={page.lastPage}
-  />
-  <PostCollection posts={page.data} class="mb-16" />
-  <Pagination url={page.url} />
+  <div class={styles.container}>
+    <TagLinks tags={getTags()} />
+    <div>
+      <h1 class={styles.title}>Posts</h1>
+      <PaginationInformation
+        label={`${Astro.params.tag || ""}`}
+        currentPage={page.currentPage}
+        lastPage={page.lastPage}
+      />
+    </div>
+    <PostCollection posts={page.data} />
+    <Pagination url={page.url} />
+  </div>
 </Layout>

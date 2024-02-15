@@ -1,13 +1,11 @@
-/*!
- * Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com
- * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
- * Copyright 2022 Fonticons, Inc.
- */
+@charset "utf-8";
 
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+/* general */
+@import url("./license.css");
+@import url("./reset.css");
+@import url("./root.css");
+@import url("./base.css");
 
-@import "./layers/base.css";
-
-@import "./post.css";
+/* post */
+@import url("./post/base.css");
+@import url("./post/code.css");

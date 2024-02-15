@@ -1,0 +1,34 @@
+---
+import { IconUpRightFromSquare } from "@/icons/up-right-from-square";
+import { dateFormat } from "@/utils/format";
+import styles from "./styles.module.css";
+
+type Props = {
+  title: string;
+  created_at: string;
+  last_updated: string;
+  historyUrl: string;
+};
+
+const { title, created_at, last_updated, historyUrl } = Astro.props;
+---
+
+<header class={styles.container}>
+  <h1 class={styles.title}>{title}</h1>
+  <ul class={styles.information}>
+    <li>作成日: {dateFormat(created_at)}</li>
+    <li>
+      <time datetime={last_updated}>最終更新日: {dateFormat(last_updated)}</time
+      >
+    </li>
+    <li>
+      <a
+        href={historyUrl}
+        class={styles.historyLink}
+        target="_blank"
+        rel="noreferrer"
+        >更新履歴<IconUpRightFromSquare class={styles.historyLinkIcon} /></a
+      >
+    </li>
+  </ul>
+</header>

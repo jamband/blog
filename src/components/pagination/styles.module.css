@@ -1,0 +1,41 @@
+.container {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .container {
+    font-size: var(--text-base);
+  }
+}
+
+.containerInner {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+  line-height: 1.5;
+}
+
+.link {
+  border-radius: var(--rounded);
+  color: rgb(var(--gray-400));
+  padding: 0.5rem 0;
+  text-decoration: none;
+  width: 100%;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:hover {
+    background: rgb(var(--gray-700));
+    color: rgb(var(--gray-100));
+  }
+}
+
+.link:active {
+  background: rgb(var(--gray-700));
+  color: rgb(var(--gray-100));
+}
+
+.link[aria-disabled="true"] {
+  color: rgb(var(--gray-400) / 50%);
+  pointer-events: none;
+}

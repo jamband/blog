@@ -1,0 +1,36 @@
+.navigation {
+  background: rgb(var(--gray-700));
+  font-weight: 700;
+  padding: 0.75rem 0;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 20;
+}
+
+.link {
+  border-radius: var(--rounded);
+  font-family: var(--font-mono);
+  letter-spacing: -0.025em;
+  padding: 0.625rem 1.25rem;
+  text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:hover {
+    background: rgb(var(--gray-600) / 50%);
+  }
+}
+
+.link:active {
+  background: rgb(var(--gray-600));
+}
+
+.account {
+  color: rgb(var(--gray-100));
+  font-size: var(--text-sm);
+}
+
+.repository {
+  color: rgb(var(--pink-500));
+}

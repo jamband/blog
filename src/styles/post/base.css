@@ -1,0 +1,39 @@
+.post h2 {
+  border-bottom: 1px solid rgb(var(--gray-600));
+  font-size: var(--text-3xl);
+  margin: 5rem 0 0;
+  padding: 0 0 0.125rem;
+}
+
+.post h2:has(+ ul, + ol) {
+  margin: 5rem 0 1.5rem;
+}
+
+.post p {
+  margin: 1.5rem 0 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .post a:hover {
+    color: rgb(var(--pink-500));
+  }
+}
+
+.post a:active {
+  color: rgb(var(--pink-500));
+}
+
+.post ul {
+  line-height: 1.7;
+  list-style: disc inside;
+  margin: 1rem 0 0 1rem;
+}
+
+.post ol {
+  list-style: decimal inside;
+  margin: 1rem 0 0 1rem;
+}
+
+.post li {
+  margin: 0.4rem 0 0;
+}

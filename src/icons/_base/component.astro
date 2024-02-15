@@ -1,0 +1,20 @@
+---
+type Props = {
+  viewBox: string;
+  class: string;
+};
+
+const { viewBox, class: className, ...attributes } = Astro.props;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox={viewBox}
+  fill="currentColor"
+  class={className}
+  role="img"
+  aria-hidden={true}
+  {...attributes}
+>
+  <slot />
+</svg>

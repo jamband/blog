@@ -1,0 +1,25 @@
+---
+import { dateFormat } from "@/utils/format";
+import type { CollectionEntry } from "astro:content";
+import styles from "./styles.module.css";
+
+type Props = {
+  class?: string;
+  posts: Array<CollectionEntry<"posts">>;
+};
+
+const { class: className, posts } = Astro.props;
+---
+
+<ul class:list={[styles.container, className]}>
+  {
+    posts.map((post) => (
+      <li>
+        <a href={`/blog/${post.slug}/`} class={styles.link}>
+          {post.data.title}
+        </a>
+        <div class={styles.date}>{dateFormat(post.data.created_at)}</div>
+      </li>
+    ))
+  }
+</ul>

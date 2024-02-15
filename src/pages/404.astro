@@ -1,14 +1,17 @@
 ---
-import BackToHomeLink from "@/components/BackToHomeLink.astro";
-import Layout from "@/layouts/Layout.astro";
+import "@/styles/app.css";
+
+import { BackToHomeLink } from "@/components/back-to-home-link";
+import { Layout } from "@/layouts/layout";
+import styles from "./_styles/404.module.css";
 ---
 
 <Layout title="Not Found">
-  <article class="flex h-[70vh] items-center justify-center">
-    <section class="text-center">
+  <div class={styles.container}>
+    <div>
       <h1>Not Found</h1>
-      <p class="mb-8">Page not found.</p>
-      <BackToHomeLink class="flex justify-center" />
-    </section>
-  </article>
+      <p>Page not found.</p>
+    </div>
+    <BackToHomeLink />
+  </div>
 </Layout>

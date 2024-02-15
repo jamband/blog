@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.link {
+  background: rgb(var(--gray-700));
+  border-radius: var(--rounded);
+  color: rgb(var(--gray-400));
+  padding: 0.375rem 1rem;
+  text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:hover {
+    color: rgb(var(--gray-100));
+  }
+}
+
+.link:active {
+  color: rgb(var(--gray-100));
+}

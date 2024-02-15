@@ -1,0 +1,27 @@
+---
+import { APP_REPOSITORY_URL, APP_URL } from "@/constants/app";
+import { IconRss } from "@/icons/rss";
+import styles from "./styles.module.css";
+---
+
+<footer>
+  <div class={styles.copyright}>
+    <div>© {new Date().getFullYear()} Tomoki Morita</div>
+    <a
+      href={`${APP_URL}rss.xml`}
+      class={styles.rss}
+      target="_blank"
+      rel="noreferrer">RSS <IconRss class={styles.rssIcon} /></a
+    >
+  </div>
+  <nav class={styles.navigation} aria-label="Footer navigation">
+    <a href="/blog/about/" class={styles.link}>About</a>
+    <a href="/blog/contact/" class={styles.link}>Contact</a>
+    <a
+      href={APP_REPOSITORY_URL}
+      class={styles.link}
+      target="_blank"
+      rel="noreferrer">GitHub</a
+    >
+  </nav>
+</footer>

@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.link {
+  color: rgb(var(--gray-200));
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:hover {
+    color: rgb(var(--pink-500));
+  }
+}
+
+.date {
+  color: rgb(var(--gray-400));
+  font-size: var(--text-xs);
+}

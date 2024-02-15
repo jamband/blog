@@ -1,24 +1,31 @@
 ---
-import BackToHomeLink from "@/components/BackToHomeLink.astro";
+import "@/styles/app.css";
+
+import { BackToHomeLink } from "@/components/back-to-home-link";
 import { APP_DESCRIPTION, APP_NAME, APP_REPOSITORY_URL } from "@/constants/app";
-import IconUpRightFromSquare from "@/icons/IconUpRightFromSquare.astro";
-import Layout from "@/layouts/Layout.astro";
+import { IconUpRightFromSquare } from "@/icons/up-right-from-square";
+import { Layout } from "@/layouts/layout";
+import styles from "./_styles.module.css";
 ---
 
 <Layout title="About">
-  <h1 class="mb-12 text-center">About</h1>
-  <p>{APP_DESCRIPTION}</p>
-  <p class="mb-16">
-    また、このウェブサイトはオープンソースなプロジェクトです。詳細については
-    <a
-      href={APP_REPOSITORY_URL}
-      class="inline-flex items-center text-pink-500"
-      target="_blank"
-      rel="noreferrer"
-      >GitHub: {APP_NAME}<IconUpRightFromSquare
-        class="ml-1 h-3.5 w-3.5 text-pink-500/70"
-      /></a
-    > をご覧ください。
-  </p>
-  <BackToHomeLink class="flex justify-center" />
+  <div class={styles.container}>
+    <h1 class={styles.title}>About</h1>
+    <div class={styles.description}>
+      <p>{APP_DESCRIPTION}</p>
+      <p>
+        また、このウェブサイトはオープンソースなプロジェクトです。詳細については
+        <a
+          href={APP_REPOSITORY_URL}
+          class={styles.link}
+          target="_blank"
+          rel="noreferrer"
+          >GitHub: {APP_NAME}<IconUpRightFromSquare
+            class={styles.linkIcon}
+          /></a
+        > をご覧ください。
+      </p>
+    </div>
+    <BackToHomeLink />
+  </div>
 </Layout>

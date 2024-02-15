@@ -1,0 +1,51 @@
+.copyright {
+  display: flex;
+  font-size: var(--text-xs);
+  gap: 1.25rem;
+  justify-content: center;
+  margin: 0 0 0.75rem;
+}
+
+.rss {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.25rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .rss:hover {
+    color: rgb(var(--pink-500));
+  }
+}
+
+.rssIcon {
+  height: 0.75rem;
+  width: 0.75rem;
+}
+
+.navigation {
+  background: rgb(var(--gray-700));
+  display: flex;
+  font-size: var(--text-sm);
+  gap: 1.25rem;
+  justify-content: center;
+  padding: 0.75rem 0;
+}
+
+.link {
+  border-radius: var(--rounded);
+  padding: 0.25rem 1.25rem;
+  text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:hover {
+    background: rgb(var(--gray-600) / 50%);
+    color: rgb(var(--gray-100));
+  }
+}
+
+.link:active {
+  background: rgb(var(--gray-600));
+  color: rgb(var(--gray-100));
+}

@@ -1,0 +1,17 @@
+.container {
+  color: rgb(var(--pink-500));
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.symbol::before {
+  color: rgb(var(--pink-500) / 80%);
+  content: "#";
+  font-size: var(--text-xs);
+  margin: 0 0.25rem 0 0;
+}
+
+.information {
+  font-family: var(--font-mono);
+}
