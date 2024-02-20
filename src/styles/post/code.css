@@ -31,6 +31,7 @@
   margin: 1.5rem 0 0;
   overflow: scroll;
   padding: 0.2rem 1rem;
+  white-space: nowrap;
 }
 
 @media (min-width: 768px) {
