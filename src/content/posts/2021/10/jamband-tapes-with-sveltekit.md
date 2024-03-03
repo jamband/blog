@@ -1,7 +1,7 @@
 ---
 title: SvelteKit を使って jamband/tapes を作った
 created_at: "2021-10-16"
-last_updated: "2023-01-29"
+last_updated: "2024-03-03"
 tags: [github, svelte, sveltekit]
 ---
 
@@ -38,7 +38,7 @@ Jamstack 構成で気になるのはまず更新頻度とコンテンツの量�
 
 ## JSON 形式によるデータ (テープ) の生成について
 
-JSON 形式によるテープのデータは PlusArchive の [バックエンドのコマンド](https://github.com/jamband/api.plusarchive.com/blob/main/commands/TapeController.php) で自動生成する。生成された JSON 形式のファイルを jamband/tapes の特定のディレクトリに置き、若干の目視を加えながら修正をする (言語によっては slug の生成が完璧ではないため) 。
+JSON 形式によるテープのデータは PlusArchive の [バックエンドのコマンド](https://github.com/jamband/api.plusarchive.com/blob/main/app/Console/Commands/Tape/Generate.php) で自動生成する。生成された JSON 形式のファイルを jamband/tapes の特定のディレクトリに置き、若干の目視を加えながら修正をする (言語によっては slug の生成が完璧ではないため) 。
 
 結果として半自動になるわけだが、そこは潔く諦めつつ、少しずつ改善していく。
 
