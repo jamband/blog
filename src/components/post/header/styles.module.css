@@ -17,6 +17,18 @@
   font-size: var(--text-sm);
 }
 
+.tableOfContents {
+  position: fixed;
+  top: 2px;
+  z-index: 30;
+}
+
+@media (min-width: 768px) {
+  .tableOfContents {
+    top: 0;
+  }
+}
+
 .historyLink {
   align-items: center;
   box-shadow: 0 1px 0 0 rgb(var(--gray-400));

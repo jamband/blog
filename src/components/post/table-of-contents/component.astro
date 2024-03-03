@@ -1,0 +1,57 @@
+---
+import { IconList } from "@/icons/list";
+import { IconXMark } from "@/icons/xmark";
+import type { MarkdownHeading } from "astro";
+import styles from "./styles.module.css";
+
+type Props = {
+  headings: Array<MarkdownHeading>;
+};
+
+const { headings } = Astro.props;
+---
+
+<button id="button" class={styles.show}
+  ><IconList class={styles.showIcon} />目次</button
+>
+<dialog id="dialog">
+  <form method="dialog" class={styles.form}>
+    <div class={styles.header}>
+      <h3 class={styles.title}>
+        <IconList class={styles.titleIcon} />目次
+      </h3>
+      <button id="close" class={styles.close} aria-label="閉じる"
+        ><IconXMark class={styles.closeIcon} /></button
+      >
+    </div>
+    <ol class={styles.contents}>
+      {
+        headings.map((heading) => (
+          <li>
+            <a href={`#${heading.slug}`} class={styles.link}>
+              {heading.text}
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </form>
+</dialog>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>("#button");
+  if (!button) throw Error("#button element does not exists.");
+
+  const dialog = document.querySelector<HTMLDialogElement>("#dialog");
+  if (!dialog) throw Error("#dialog element does not exists.");
+
+  button.addEventListener("click", () => {
+    dialog.showModal();
+  });
+
+  dialog.addEventListener("click", (event) => {
+    if (["A", "DIALOG"].includes((event.target as HTMLElement).nodeName)) {
+      dialog.close();
+    }
+  });
+</script>

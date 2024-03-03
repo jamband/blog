@@ -23,7 +23,7 @@ type Props = {
 };
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
 ---
 
 <Layout title={post.data.title} description={description(post.body)}>
@@ -33,6 +33,7 @@ const { Content } = await post.render();
         title={post.data.title}
         created_at={post.data.created_at}
         last_updated={post.data.last_updated}
+        headings={headings}
         historyUrl={`${APP_REPOSITORY_URL}/commits/main/src/content/posts/${post.id}`}
       />
       <div class="post"><Content /></div>

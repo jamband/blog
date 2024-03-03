@@ -1,16 +1,19 @@
 ---
 import { IconUpRightFromSquare } from "@/icons/up-right-from-square";
 import { dateFormat } from "@/utils/format";
+import type { MarkdownHeading } from "astro";
+import { PostTableOfContents } from "../table-of-contents";
 import styles from "./styles.module.css";
 
 type Props = {
   title: string;
   created_at: string;
   last_updated: string;
+  headings: Array<MarkdownHeading>;
   historyUrl: string;
 };
 
-const { title, created_at, last_updated, historyUrl } = Astro.props;
+const { title, created_at, last_updated, headings, historyUrl } = Astro.props;
 ---
 
 <header class={styles.container}>
@@ -20,6 +23,9 @@ const { title, created_at, last_updated, historyUrl } = Astro.props;
     <li>
       <time datetime={last_updated}>最終更新日: {dateFormat(last_updated)}</time
       >
+    </li>
+    <li class={styles.tableOfContents}>
+      <PostTableOfContents headings={headings} />
     </li>
     <li>
       <a

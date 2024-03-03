@@ -2,6 +2,7 @@ html {
   background-color: rgb(var(--gray-800));
   font-size: var(--text-base);
   line-height: 1.85;
+  scroll-padding-top: 6em;
   scrollbar-gutter: stable;
   -webkit-text-size-adjust: 100%;
 }
@@ -26,4 +27,27 @@ h2 {
   font-size: var(--text-4xl);
   font-weight: 700;
   line-height: 1.45;
+}
+
+dialog {
+  background: rgb(var(--gray-700));
+  border: 1px solid rgb(var(--gray-600));
+  border-radius: var(--rounded);
+  color: rgb(var(--gray-400));
+  width: 90%;
+}
+
+@media (min-width: 768px) {
+  dialog {
+    width: 35rem;
+  }
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+dialog::backdrop {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
