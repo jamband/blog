@@ -40,10 +40,10 @@ const { headings } = Astro.props;
 
 <script>
   const button = document.querySelector<HTMLButtonElement>("#button");
-  if (!button) throw Error("#button element does not exists.");
+  if (!button) throw new Error("#button element does not exists.");
 
   const dialog = document.querySelector<HTMLDialogElement>("#dialog");
-  if (!dialog) throw Error("#dialog element does not exists.");
+  if (!dialog) throw new Error("#dialog element does not exists.");
 
   button.addEventListener("click", () => {
     dialog.showModal();
