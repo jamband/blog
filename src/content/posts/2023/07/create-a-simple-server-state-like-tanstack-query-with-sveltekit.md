@@ -1,7 +1,7 @@
 ---
 title: SvelteKit で TanStack Query (FKA React Query) っぽい簡易的な Server State を作成する
 created_at: "2023-07-31"
-last_updated: "2023-08-13"
+last_updated: "2024-03-03"
 tags: [svelte, sveltekit]
 ---
 
@@ -21,7 +21,7 @@ SvelteKit を使っているプロジェクトに簡易的な Server State が�
 
 ここで言う Server State とは バックエンドの Web API からのレスポンスを一時的にフロントエンドでキャッシュし管理することを言う。
 
-React だと [TanStack Query](https://tanstack.com/query/latest) や [SWR](https://swr.vercel.app/) が有名で、Svelte にも [TanStack Query の Svelte 版](https://tanstack.com/query/latest/docs/svelte/overview) があるのだが、Server State 系のライブラリはけっこう高機能でかつ API が複雑なものが多く、導入のハードルも高く、保守もそこまで容易ではない。
+React だと [TanStack Query](https://tanstack.com/query/latest) や [SWR](https://swr.vercel.app/) が有名で、Svelte にも [TanStack Query の Svelte 版](https://tanstack.com/query/latest/docs/framework/svelte/overview) があるのだが、Server State 系のライブラリはけっこう高機能でかつ API が複雑なものが多く、導入のハードルも高く、保守もそこまで容易ではない。
 
 そのため、簡単な要件を満たす簡易的な Server State を Svelte のカスタムストアで作ることにした。
 
@@ -502,9 +502,9 @@ test("no cache", async () => {
 ## まとめ
 
 今回は SvelteKit で簡易的な Server State を作ってみた。Svelte には [TanStack Query の Svelte 版](
-https://tanstack.com/query/latest/docs/svelte/overview) があるので、それを使えばより高機能ものを実装できる。が、それらのライブラリをしっかりと理解したうえで使用し、長期的に保守できるかと自問すると「けっこう大変」という答えになる。
+https://tanstack.com/query/latest/docs/framework/svelte/overview) があるので、それを使えばより高機能ものを実装できる。が、それらのライブラリをしっかりと理解したうえで使用し、長期的に保守できるかと自問すると「けっこう大変」という答えになる。
 
-React 版の [TanStack Query](https://tanstack.com/query/latest/docs/react/overview) も React の Server Component や Next.js の App Router が出てきたあたりから、どのように使い分ければいいんだろう？と迷うことがよくある。この問題は現在進行中であり、Next.js の [Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions) が stable にならない限り解決できない問題ではあるが、いずれにせよ、便利なライブラリを長期に渡って使い続けていくのがより難しくなってきているなぁと最近よく感じる。
+React 版の [TanStack Query](https://tanstack.com/query/latest/docs/framework/react/overview) も React の Server Component や Next.js の App Router が出てきたあたりから、どのように使い分ければいいんだろう？と迷うことがよくある。この問題は現在進行中であり、Next.js の [Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions) が stable にならない限り解決できない問題ではあるが、いずれにせよ、便利なライブラリを長期に渡って使い続けていくのがより難しくなってきているなぁと最近よく感じる。
 
 そのような理由から、今回は何かしらのライブラリを利用するのを避けて、自作するという選択をした。もちろん、要件が多く複雑である場合は、結果的に自作するほうがいろいろ大変になることもあるので注意する。
 
@@ -512,4 +512,4 @@ React 版の [TanStack Query](https://tanstack.com/query/latest/docs/react/overv
 
 - [Stores / Custom stores • Svelte Tutorial](https://learn.svelte.dev/tutorial/custom-stores)
 - [TanStack Query](https://tanstack.com/query/latest)
-- [@tanstack/svelte-query](https://tanstack.com/query/latest/docs/svelte/overview)
+- [@tanstack/svelte-query](https://tanstack.com/query/latest/docs/framework/svelte/overview)
