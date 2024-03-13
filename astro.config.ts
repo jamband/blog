@@ -13,13 +13,4 @@ export default defineConfig({
     rehypePlugins: [rehypeExternalLink, rehypePrettyCode],
     syntaxHighlight: false,
   },
-  vite: {
-    build: {
-      rollupOptions: {
-        output: {
-          assetFileNames: "assets/[hash][extname]",
-        },
-      },
-    },
-  },
 });
