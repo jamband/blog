@@ -1,13 +1,17 @@
 ---
 title: Nuxt.js と Bootstrap 5
 created_at: "2020-08-03"
-last_updated: "2023-01-29"
+last_updated: "2024-03-23"
 tags: [nuxt, css]
 ---
 
 ## はじめに
 
 Bootstrap 5 もそろそろ安定版がリリースされそうな雰囲気なので (2020.08.03 現在の最新は 5.0.0-alpha1) 、最近よく触っている Nuxt.js と組み合わせて使ってみた感想を書いていく。
+
+## 補足
+
+2024 年 03 月 23 日現在、この記事のために作成した GitHub リポジトリはアーカイブ化され、公開していた Web サイトも停止しました。詳しくは「[Bootstrap 関連の GitHub リポジトリをアーカイブ化する](https://jamband.github.io/blog/2024/03/archive-bootstrap-related-github-repositories/)」をご覧ください。
 
 ## 環境
 
