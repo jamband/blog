@@ -2,7 +2,7 @@
 title: SvelteKit を使った HTML/CSS 再入門
 created_at: "2022-02-20"
 last_updated: "2023-01-29"
-tags: [css, html, sveltekit, astro]
+tags: [astro, css, html, ssg, sveltekit]
 ---
 
 ## はじめに

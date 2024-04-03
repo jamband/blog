@@ -2,7 +2,7 @@
 title: サイトをリニューアルした
 created_at: "2021-07-31"
 last_updated: "2023-01-29"
-tags: [info, next, nuxt]
+tags: [info, next, nuxt, ssg]
 ---
 
 ## はじめに
