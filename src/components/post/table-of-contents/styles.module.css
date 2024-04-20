@@ -43,7 +43,7 @@
 
 .form {
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
   gap: 1rem;
 }
 
@@ -103,7 +103,7 @@
 
 .contents {
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
   gap: 0.5rem;
   line-height: 1.7;
   list-style: disc outside;

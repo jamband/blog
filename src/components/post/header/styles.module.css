@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
   gap: 3rem;
 }
 
@@ -13,7 +13,7 @@
   align-items: flex-end;
   color: rgb(var(--gray-400));
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
   font-size: var(--text-sm);
 }
 
