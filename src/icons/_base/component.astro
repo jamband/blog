@@ -4,7 +4,7 @@ type Props = {
   class: string;
 };
 
-const { viewBox, class: className, ...attributes } = Astro.props;
+const { viewBox, class: className } = Astro.props;
 ---
 
 <svg
@@ -13,8 +13,5 @@ const { viewBox, class: className, ...attributes } = Astro.props;
   fill="currentColor"
   class={className}
   role="img"
-  aria-hidden={true}
-  {...attributes}
+  aria-hidden={true}><slot /></svg
 >
-  <slot />
-</svg>
