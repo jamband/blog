@@ -47,14 +47,17 @@
   margin: 0 0.075rem 0 0;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .link[aria-current="page"] .symbol::before {
-    color: rgb(var(--pink-500) / 75%);
-  }
+.link[aria-current="page"] .symbol::before {
+  color: rgb(var(--pink-500) / 75%);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .link:hover .symbol::before {
     color: rgb(var(--pink-500) / 75%);
   }
+}
+
+.link:active .symbol::before,
+.link:focus-visible .symbol::before {
+  color: rgb(var(--pink-500) / 75%);
 }
