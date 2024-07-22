@@ -25,15 +25,19 @@
   padding: 0.5rem 1rem;
 }
 
+.link[aria-current="page"] {
+  color: rgb(var(--pink-500));
+}
+
 @media (hover: hover) and (pointer: fine) {
   .link:hover {
-    color: rgb(var(--gray-100));
+    color: rgb(var(--pink-500));
   }
 }
 
 .link:active,
 .link:focus-visible {
-  color: rgb(var(--gray-100));
+  color: rgb(var(--pink-500));
 }
 
 .symbol::before {
@@ -41,4 +45,16 @@
   content: "#";
   font-size: var(--text-sm);
   margin: 0 0.075rem 0 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link[aria-current="page"] .symbol::before {
+    color: rgb(var(--pink-500) / 75%);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:hover .symbol::before {
+    color: rgb(var(--pink-500) / 75%);
+  }
 }

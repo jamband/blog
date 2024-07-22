@@ -7,13 +7,21 @@ type Props = {
 };
 
 const { class: className, tags } = Astro.props;
+
+const _current = (pathname: string) => {
+  return Astro.url.pathname === pathname ? "page" : undefined;
+};
 ---
 
 <ul class:list={[styles.container, className]}>
   {
     tags.map((tag) => (
       <li class={styles.tag}>
-        <a href={`/blog/${tag}/`} class={styles.link}>
+        <a
+          href={`/blog/${tag}/`}
+          class={styles.link}
+          aria-current={_current(`/blog/${tag}/`)}
+        >
           <span class={styles.symbol}>{tag}</span>
         </a>
       </li>
