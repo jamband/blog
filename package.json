@@ -21,12 +21,12 @@
     "prettier": "3.3.3",
     "prettier-plugin-astro": "0.14.1",
     "rehype-pretty-code": "0.13.2",
-    "shiki": "1.11.0",
+    "shiki": "1.11.1",
     "stylelint": "16.7.0",
     "stylelint-config-standard": "36.0.1",
     "stylelint-order": "6.0.4",
     "the-new-css-reset": "1.11.2",
-    "typescript": "5.5.3",
+    "typescript": "5.5.4",
     "unist-util-visit": "5.0.0",
     "vitest": "2.0.4"
   }
