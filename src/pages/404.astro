@@ -1,17 +1,10 @@
 ---
 import "@/styles/app.css";
 
-import { BackToHomeLink } from "@/components/back-to-home-link";
+import { NotFound } from "@/components/not-found";
 import { Layout } from "@/layouts/layout";
-import styles from "./_styles/404.module.css";
 ---
 
 <Layout title="Not Found">
-  <div class={styles.container}>
-    <div>
-      <h1>Not Found</h1>
-      <p>Page not found.</p>
-    </div>
-    <BackToHomeLink />
-  </div>
+  <NotFound />
 </Layout>

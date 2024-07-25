@@ -1,0 +1,28 @@
+---
+import { BackToHomeLink } from "@/components/back-to-home-link";
+import { PostHeader } from "@/components/post/header";
+import { APP_REPOSITORY_URL } from "@/constants/app";
+import type { CollectionEntry } from "astro:content";
+import styles from "./styles.module.css";
+
+type Props = {
+  post: CollectionEntry<"posts">;
+};
+
+const { post } = Astro.props;
+const { Content, headings } = await post.render();
+---
+
+<div class={styles.container}>
+  <article>
+    <PostHeader
+      title={post.data.title}
+      created_at={post.data.created_at}
+      last_updated={post.data.last_updated}
+      headings={headings}
+      historyUrl={`${APP_REPOSITORY_URL}/commits/main/src/content/posts/${post.id}`}
+    />
+    <div class="post"><Content /></div>
+  </article>
+  <BackToHomeLink />
+</div>

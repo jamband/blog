@@ -1,0 +1,30 @@
+---
+import { Pagination } from "@/components/pagination";
+import { PaginationInformation } from "@/components/pagination/information";
+import { PostCollection } from "@/components/post/collection";
+import { TagLinks } from "@/components/tag-links";
+import type { Page } from "astro";
+import type { CollectionEntry } from "astro:content";
+import styles from "./styles.module.css";
+
+type Props = {
+  tags: Array<string>;
+  page: Page<CollectionEntry<"posts">>;
+};
+
+const { tags, page } = Astro.props;
+---
+
+<div class={styles.container}>
+  <TagLinks tags={tags} />
+  <div>
+    <h1 class={styles.title}>Posts</h1>
+    <PaginationInformation
+      label="latest"
+      currentPage={page.currentPage}
+      lastPage={page.lastPage}
+    />
+  </div>
+  <PostCollection posts={page.data} />
+  <Pagination url={page.url} />
+</div>
