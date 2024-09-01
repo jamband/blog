@@ -3,20 +3,26 @@
   flex-flow: row wrap;
   gap: 1.5rem 1.25rem;
   margin: 0 -0.5rem;
-  mask-image: linear-gradient(to top, #0000, #000 20%);
   max-height: 10rem;
   overflow: scroll;
-  padding: 0.75rem 0.25rem 2rem;
+  overscroll-behavior: contain;
+  padding: 0.25rem;
+}
+
+.containerMask {
+  mask-image: linear-gradient(to top, #0000, #000 20%, #000 80%, #0000);
+}
+
+.containerMaskTop {
+  mask-image: linear-gradient(to bottom, #0000, #000 20%);
+}
+
+.containerMaskBottom {
+  mask-image: linear-gradient(to top, #0000, #000 20%);
 }
 
 .tag {
   padding: 0.25rem 0 0;
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-height: 15rem;
-  }
 }
 
 .link {

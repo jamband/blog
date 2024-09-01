@@ -13,7 +13,7 @@ const _current = (pathname: string) => {
 };
 ---
 
-<ul class:list={[styles.container, className]}>
+<ul class:list={[styles.container, styles.containerMaskBottom, className]}>
   {
     tags.map((tag) => (
       <li class={styles.tag}>
@@ -28,3 +28,33 @@ const _current = (pathname: string) => {
     ))
   }
 </ul>
+
+<script>
+  import styles from "./styles.module.css";
+
+  const container = document.querySelector(`.${styles.container}`);
+  if (!container) throw new Error(`.${styles.container} does not exists.`);
+
+  container.addEventListener("scroll", () => {
+    const scrollTop = container.scrollTop;
+    const scrollHeight = container.scrollHeight;
+    const clientHeight = container.clientHeight;
+
+    if (scrollTop === 0) {
+      container.classList.remove(styles.containerMask, styles.containerMaskTop);
+      container.classList.add(styles.containerMaskBottom);
+    } else if (scrollTop + clientHeight >= scrollHeight) {
+      container.classList.remove(
+        styles.containerMask,
+        styles.containerMaskBottom,
+      );
+      container.classList.add(styles.containerMaskTop);
+    } else {
+      container.classList.remove(
+        styles.containerMaskTop,
+        styles.containerMaskBottom,
+      );
+      container.classList.add(styles.containerMask);
+    }
+  });
+</script>
