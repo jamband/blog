@@ -3,6 +3,7 @@ import { BackToHomeLink } from "@/components/back-to-home-link";
 import { PostHeader } from "@/components/post/header";
 import { APP_REPOSITORY_URL } from "@/constants/app";
 import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
 import styles from "./styles.module.css";
 
 type Props = {
@@ -10,7 +11,7 @@ type Props = {
 };
 
 const { post } = Astro.props;
-const { Content, headings } = await post.render();
+const { Content, headings } = await render(post);
 ---
 
 <div class={styles.container}>

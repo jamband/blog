@@ -10,7 +10,7 @@ import type { CollectionEntry } from "astro:content";
 
 export const getStaticPaths: GetStaticPaths = () => {
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { id: post.id },
     props: { post },
   }));
 };
@@ -22,6 +22,6 @@ type Props = {
 const { post } = Astro.props;
 ---
 
-<Layout title={post.data.title} description={description(post.body)}>
+<Layout title={post.data.title} description={description(post.body || "")}>
   <Post post={post} />
 </Layout>

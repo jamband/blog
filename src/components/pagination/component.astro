@@ -15,7 +15,7 @@ const _parts = ["prev", "next"] as const;
     {
       _parts.map((part) => (
         <a
-          href={`/blog${url[part]}`}
+          href={url[part]}
           class={styles.link}
           aria-disabled={!url[part]}
           tabindex={!url[part] ? -1 : 0}

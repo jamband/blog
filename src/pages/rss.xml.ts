@@ -11,8 +11,8 @@ export async function GET() {
     items: getPosts().map((post) => ({
       title: post.data.title,
       pubDate: new Date(post.data.created_at),
-      description: description(post.body),
-      link: `${import.meta.env.BASE_URL}${post.slug}/`,
+      description: description(post.body || ""),
+      link: `${import.meta.env.BASE_URL}${post.id}/`,
     })),
   });
 }

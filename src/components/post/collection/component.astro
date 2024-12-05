@@ -15,7 +15,7 @@ const { class: className, posts } = Astro.props;
   {
     posts.map((post) => (
       <li>
-        <a href={`/blog/${post.slug}/`} class={styles.link}>
+        <a href={`/blog/${post.id}/`} class={styles.link}>
           {post.data.title}
         </a>
         <div class={styles.date}>{dateFormat(post.data.created_at)}</div>
