@@ -17,17 +17,17 @@
     "@astrojs/rss": "4.0.9",
     "@astrojs/sitemap": "3.2.1",
     "@types/hast": "3.0.4",
-    "astro": "4.16.13",
-    "prettier": "3.3.3",
+    "astro": "5.0.2",
+    "prettier": "3.4.2",
     "prettier-plugin-astro": "0.14.1",
     "rehype-pretty-code": "0.14.0",
-    "shiki": "1.23.1",
-    "stylelint": "16.10.0",
+    "shiki": "1.24.0",
+    "stylelint": "16.11.0",
     "stylelint-config-standard": "36.0.1",
     "stylelint-order": "6.0.4",
     "the-new-css-reset": "1.11.3",
-    "typescript": "5.6.3",
+    "typescript": "5.7.2",
     "unist-util-visit": "5.0.0",
-    "vitest": "2.1.5"
+    "vitest": "2.1.8"
   }
 }
