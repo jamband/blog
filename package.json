@@ -8,7 +8,7 @@
     "typecheck": "astro check && tsc",
     "stylelint": "stylelint \"src/**/*.css\"",
     "format": "prettier --check .",
-    "test": "vitest",
+    "test": "vitest --run",
     "clear": "node scripts/clear.js",
     "clean": "node scripts/clean.js"
   },
