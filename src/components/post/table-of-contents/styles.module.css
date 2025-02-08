@@ -41,6 +41,20 @@
   }
 }
 
+.dialog {
+  background: rgb(var(--gray-700));
+  border: 1px solid rgb(var(--gray-600));
+  border-radius: var(--rounded);
+  color: rgb(var(--gray-400));
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .dialog {
+    width: 35rem;
+  }
+}
+
 .form {
   display: flex;
   flex-flow: column;

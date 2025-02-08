@@ -15,27 +15,29 @@ const { headings } = Astro.props;
   ><IconList class={styles.showIcon} />目次</button
 >
 <dialog id="dialog">
-  <form method="dialog" class={styles.form}>
-    <div class={styles.header}>
-      <h3 class={styles.title}>
-        <IconList class={styles.titleIcon} />目次
-      </h3>
-      <button id="close" class={styles.close} aria-label="閉じる"
-        ><IconXMark class={styles.closeIcon} /></button
-      >
-    </div>
-    <ol class={styles.contents}>
-      {
-        headings.map((heading) => (
-          <li>
-            <a href={`#${heading.slug}`} class={styles.link}>
-              {heading.text}
-            </a>
-          </li>
-        ))
-      }
-    </ol>
-  </form>
+  <div class={styles.dialog}>
+    <form method="dialog" class={styles.form}>
+      <div class={styles.header}>
+        <h3 class={styles.title}>
+          <IconList class={styles.titleIcon} />目次
+        </h3>
+        <button class={styles.close} aria-label="閉じる" autofocus
+          ><IconXMark class={styles.closeIcon} /></button
+        >
+      </div>
+      <ol class={styles.contents}>
+        {
+          headings.map((heading) => (
+            <li>
+              <a href={`#${heading.slug}`} class={styles.link}>
+                {heading.text}
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </form>
+  </div>
 </dialog>
 
 <script>
