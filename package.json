@@ -29,5 +29,11 @@
     "typescript": "5.7.3",
     "unist-util-visit": "5.0.0",
     "vitest": "3.0.5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
   }
 }
