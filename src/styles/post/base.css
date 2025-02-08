@@ -17,7 +17,7 @@
   box-shadow: 0 1px 0 0 rgb(var(--gray-400));
 }
 
-@media (hover: hover) and (pointer: fine) {
+@media (any-hover: hover) {
   .post a:hover {
     box-shadow: 0 1px 0 0 rgb(var(--pink-500) / 70%);
     color: rgb(var(--pink-500));

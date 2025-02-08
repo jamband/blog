@@ -35,7 +35,7 @@
   color: rgb(var(--pink-500));
 }
 
-@media (hover: hover) and (pointer: fine) {
+@media (any-hover: hover) {
   .link:hover {
     color: rgb(var(--pink-500));
   }
@@ -57,7 +57,7 @@
   color: rgb(var(--pink-500) / 75%);
 }
 
-@media (hover: hover) and (pointer: fine) {
+@media (any-hover: hover) {
   .link:hover .symbol::before {
     color: rgb(var(--pink-500) / 75%);
   }
