@@ -10,8 +10,10 @@
   --code-base: 0.85em;
 
   /* font family */
-  --font-sans: system-ui, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace; /* stylelint-disable-line value-keyword-case */
+  /* stylelint-disable-next-line value-keyword-case */
+  --font-sans: system-ui, Arial, sans-serif;
+  /* stylelint-disable-next-line value-keyword-case */
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 
   /* border radius */
   --rounded: 0.25rem;
