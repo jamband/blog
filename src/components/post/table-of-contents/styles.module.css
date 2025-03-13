@@ -1,3 +1,13 @@
+.container {
+  width: 90%;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 35rem;
+  }
+}
+
 .show {
   align-items: center;
   background: rgb(var(--gray-600) / 50%);
@@ -47,12 +57,6 @@
   border-radius: var(--rounded);
   color: rgb(var(--gray-400));
   padding: 1rem;
-}
-
-@media (min-width: 768px) {
-  .dialog {
-    width: 35rem;
-  }
 }
 
 .form {
