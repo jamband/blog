@@ -106,10 +106,10 @@ chmod +x hex2rgb.ts
 238 238 238
 ```
 
-.ts が邪魔な場合はファイル名を hex2rgb.ts から hex2rgb にリネームして ext=js オプションを与えてあげればいい:
+.ts が邪魔な場合はファイル名を hex2rgb.ts から hex2rgb にリネームして ext=ts オプションを与えてあげればいい:
 
 ```ts title="hex2rgb"
-#!/usr/bin/env -S deno --ext=js
+#!/usr/bin/env -S deno --ext=ts
 // ...
 ```
 
