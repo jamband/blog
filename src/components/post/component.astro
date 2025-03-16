@@ -21,7 +21,7 @@ const { Content, headings } = await render(post);
       created_at={post.data.created_at}
       last_updated={post.data.last_updated}
       headings={headings}
-      historyUrl={`${APP_REPOSITORY_URL}/commits/main/src/content/posts/${post.id}`}
+      historyUrl={`${APP_REPOSITORY_URL}/commits/main/${post.filePath}`}
     />
     <div class="post"><Content /></div>
   </article>
