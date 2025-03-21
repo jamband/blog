@@ -1,4 +1,5 @@
 .container {
+  border-radius: var(--rounded);
   width: 90%;
 }
 
