@@ -1,7 +1,7 @@
 ---
 title: Deno で CLI ツールを作成する
 created_at: "2025-03-15"
-last_updated: "2025-03-15"
+last_updated: "2025-08-03"
 tags: [deno, node]
 ---
 
