@@ -210,12 +210,12 @@ package.json を編集する:
   "private": true,
   "scripts": {
     "check": "tsc --noEmit && biome check .",
-    "test": "node --test --experimental-strip-types"
+    "test": "node --test"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@types/node": "22.13.10",
-    "typescript": "5.8.2"
+    "@biomejs/biome": "2.1.3",
+    "@types/node": "22.17.0",
+    "typescript": "5.9.2"
   }
 }
 ```
@@ -227,13 +227,8 @@ Biome と TypeScript の設定は以下:
 ```json title="biome.json"
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "linter": {
-    "rules": {
-      "correctness": {
-        "noUnusedImports": "error",
-        "noUnusedVariables": "error"
-      }
-    }
+  "files": {
+    "includes": ["**"]
   }
 }
 ```
@@ -257,7 +252,7 @@ Deno と比較すると開発環境を構築する手間が少し発生するが
 コマンドを作成する:
 
 ```ts title="hex2rgb.ts"
-#!/usr/bin/env node --experimental-strip-types
+#!/usr/bin/env node
 
 const args = process.argv.slice(2);
 
