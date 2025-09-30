@@ -2,9 +2,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "astro dev --open",
+    "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview --open",
+    "preview": "astro preview",
     "typecheck": "astro check && tsc",
     "stylelint": "stylelint \"src/**/*.css\"",
     "format": "prettier --check .",
