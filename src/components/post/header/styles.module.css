@@ -52,8 +52,9 @@
 
 .historyLinkIcon {
   color: rgb(var(--gray-400) / 70%);
-  height: 0.875rem;
-  width: 0.875rem;
+  height: 1.125rem;
+  margin: -0.2rem 0 0;
+  width: 1.125rem;
 }
 
 @media (any-hover: hover) {

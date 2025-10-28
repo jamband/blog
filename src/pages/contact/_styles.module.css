@@ -19,12 +19,12 @@
   box-shadow: 0 1px 0 0 rgb(var(--pink-500) / 60%);
   color: rgb(var(--pink-500));
   display: inline-flex;
-  gap: 0.25rem;
+  gap: 0.125rem;
   line-height: 1.4;
 }
 
 .linkIcon {
   color: rgb(var(--pink-500) / 70%);
-  height: 0.875rem;
-  width: 0.875rem;
+  height: 1.125rem;
+  width: 1.125rem;
 }
