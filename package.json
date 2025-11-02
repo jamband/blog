@@ -28,6 +28,6 @@
     "the-new-css-reset": "1.11.3",
     "typescript": "5.9.3",
     "unist-util-visit": "5.0.0",
-    "vitest": "3.2.4"
+    "vitest": "4.0.6"
   }
 }
