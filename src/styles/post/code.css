@@ -12,7 +12,7 @@
   font-size: var(--code-sm);
 }
 
-@media (width >= 768px) {
+@media (width >= 48rem) {
   .post code {
     font-size: var(--code-base);
   }
@@ -34,7 +34,7 @@
   white-space: nowrap;
 }
 
-@media (width >= 768px) {
+@media (width >= 48rem) {
   .post figcaption:has(+ pre) {
     font-size: var(--code-base);
   }

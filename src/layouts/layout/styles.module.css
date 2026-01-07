@@ -11,8 +11,8 @@
   width: 100%;
 }
 
-@media (width >= 768px) {
+@media (width >= 48rem) {
   .main {
-    width: 768px;
+    width: 48rem;
   }
 }

@@ -23,7 +23,7 @@
   z-index: 30;
 }
 
-@media (width >= 768px) {
+@media (width >= 48rem) {
   .tableOfContents {
     top: 0;
   }
