@@ -3,7 +3,7 @@
   width: 90%;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .container {
     width: 35rem;
   }
@@ -22,7 +22,7 @@
   padding: 0.5rem 1rem;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .show {
     font-size: var(--text-sm);
     gap: 0.4rem;
@@ -45,7 +45,7 @@
   width: 0.925rem;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .showIcon {
     height: 1.125rem;
     width: 1.125rem;
