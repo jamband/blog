@@ -851,7 +851,7 @@ async function http(input: `/${string}`, init?: RequestInit) {
       credentials: "include",
     });
     if (refreshRes.ok) {
-      res = await fetch(input, init);
+      res = await fetch(`${API_URL}${input}`, init);
     } else {
       console.log(await refreshRes.json());
     }
