@@ -33,13 +33,13 @@ dialog {
   background: none;
   border: none;
   padding: 0;
+
+  &::backdrop {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
 }
 
-html:has(dialog[open]) {
+:root:has(:modal) {
   overflow: hidden;
-}
-
-dialog::backdrop {
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
 }

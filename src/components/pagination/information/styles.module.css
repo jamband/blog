@@ -5,11 +5,13 @@
   text-align: center;
 }
 
-.symbol::before {
-  color: rgb(var(--pink-500) / 80%);
-  content: "#";
-  font-size: var(--text-sm);
-  margin: 0 0.075rem 0 0;
+.symbol {
+  &::before {
+    color: rgb(var(--pink-500) / 80%);
+    content: "#";
+    font-size: var(--text-sm);
+    margin: 0 0.075rem 0 0;
+  }
 }
 
 .information {

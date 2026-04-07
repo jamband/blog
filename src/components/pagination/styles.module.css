@@ -14,22 +14,22 @@
   color: rgb(var(--gray-400));
   padding: 0.5rem 0;
   width: 100%;
-}
 
-@media (any-hover: hover) {
-  .link:hover {
+  @media (any-hover: hover) {
+    &:hover {
+      background: rgb(var(--gray-700));
+      color: rgb(var(--gray-100));
+    }
+  }
+
+  &:active,
+  &:focus-visible {
     background: rgb(var(--gray-700));
     color: rgb(var(--gray-100));
   }
-}
 
-.link:active,
-.link:focus-visible {
-  background: rgb(var(--gray-700));
-  color: rgb(var(--gray-100));
-}
-
-.link[aria-disabled="true"] {
-  color: rgb(var(--gray-400) / 50%);
-  pointer-events: none;
+  &[aria-disabled="true"] {
+    color: rgb(var(--gray-400) / 50%);
+    pointer-events: none;
+  }
 }

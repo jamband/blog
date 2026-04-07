@@ -20,17 +20,17 @@
 .link {
   border-radius: var(--rounded);
   padding: 0.25rem 1.25rem;
-}
 
-@media (any-hover: hover) {
-  .link:hover {
+  @media (any-hover: hover) {
+    &:hover {
+      background: rgb(var(--gray-600) / 50%);
+      color: rgb(var(--gray-100));
+    }
+  }
+
+  &:active,
+  &:focus-visible {
     background: rgb(var(--gray-600) / 50%);
     color: rgb(var(--gray-100));
   }
-}
-
-.link:active,
-.link:focus-visible {
-  background: rgb(var(--gray-600) / 50%);
-  color: rgb(var(--gray-100));
 }

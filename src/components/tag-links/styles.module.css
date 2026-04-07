@@ -29,41 +29,40 @@
   background: rgb(var(--gray-700));
   border-radius: var(--rounded);
   padding: 0.5rem 1rem;
-}
 
-.link[aria-current="page"] {
-  color: rgb(var(--pink-500));
-}
+  @media (any-hover: hover) {
+    &:hover {
+      color: rgb(var(--pink-500));
 
-@media (any-hover: hover) {
-  .link:hover {
+      .symbol::before {
+        color: rgb(var(--pink-500) / 75%);
+      }
+    }
+  }
+
+  &:active,
+  &:focus-visible {
     color: rgb(var(--pink-500));
+
+    .symbol::before {
+      color: rgb(var(--pink-500) / 75%);
+    }
+  }
+
+  &[aria-current="page"] {
+    color: rgb(var(--pink-500));
+
+    .symbol::before {
+      color: rgb(var(--pink-500) / 75%);
+    }
   }
 }
 
-.link:active,
-.link:focus-visible {
-  color: rgb(var(--pink-500));
-}
-
-.symbol::before {
-  color: rgb(var(--gray-400));
-  content: "#";
-  font-size: var(--text-sm);
-  margin: 0 0.075rem 0 0;
-}
-
-.link[aria-current="page"] .symbol::before {
-  color: rgb(var(--pink-500) / 75%);
-}
-
-@media (any-hover: hover) {
-  .link:hover .symbol::before {
-    color: rgb(var(--pink-500) / 75%);
+.symbol {
+  &::before {
+    color: rgb(var(--gray-400));
+    content: "#";
+    font-size: var(--text-sm);
+    margin: 0 0.075rem 0 0;
   }
-}
-
-.link:active .symbol::before,
-.link:focus-visible .symbol::before {
-  color: rgb(var(--pink-500) / 75%);
 }

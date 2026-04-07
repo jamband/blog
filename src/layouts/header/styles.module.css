@@ -14,17 +14,17 @@
   font-family: var(--font-mono);
   letter-spacing: -0.025em;
   padding: 0.625rem 1.25rem;
-}
 
-@media (any-hover: hover) {
-  .link:hover {
+  @media (any-hover: hover) {
+    &:hover {
+      background: rgb(var(--gray-600) / 50%);
+    }
+  }
+
+  &:active,
+  &:focus-visible {
     background: rgb(var(--gray-600) / 50%);
   }
-}
-
-.link:active,
-.link:focus-visible {
-  background: rgb(var(--gray-600) / 50%);
 }
 
 .account {
