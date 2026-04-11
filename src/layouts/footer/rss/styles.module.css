@@ -11,8 +11,7 @@
     }
   }
 
-  &:active,
-  &:focus-visible {
+  &:is(:active, :focus-visible) {
     box-shadow: 0 1px 0 0 rgb(var(--pink-500) / 60%);
     color: rgb(var(--pink-500));
   }
@@ -28,8 +27,7 @@
     }
   }
 
-  .container:active &,
-  .container:focus-visible & {
+  .container:is(:active, :focus-visible) & {
     color: rgb(var(--pink-500) / 70%);
   }
 }

@@ -36,8 +36,7 @@
     }
   }
 
-  &:active,
-  &:focus-visible {
+  &:is(:active, :focus-visible) {
     color: rgb(var(--pink-500));
   }
 
@@ -60,8 +59,7 @@
     }
   }
 
-  .link:active &::before,
-  .link:focus-visible &::before {
+  .link:is(:active, :focus-visible) &::before {
     color: rgb(var(--pink-500) / 75%);
   }
 

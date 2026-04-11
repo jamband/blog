@@ -30,8 +30,7 @@
     }
   }
 
-  &:active,
-  &:focus-visible {
+  &:is(:active, :focus-visible) {
     color: rgb(var(--gray-200));
   }
 }
@@ -101,9 +100,7 @@
     }
   }
 
-  &:active,
-  &:focus,
-  &:focus-visible {
+  &:is(:active, :focus, :focus-visible) {
     background: rgb(var(--gray-600));
     color: rgb(var(--gray-200));
   }
@@ -134,8 +131,7 @@
     }
   }
 
-  &:active,
-  &:focus-visible {
+  &:is(:active, :focus-visible) {
     box-shadow: 0 1px 0 0 rgb(var(--pink-500) / 70%);
     color: rgb(var(--pink-500));
   }
