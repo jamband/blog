@@ -15,19 +15,19 @@
 
 .post a {
   box-shadow: 0 1px 0 0 rgb(var(--gray-400));
-}
 
-@media (any-hover: hover) {
-  .post a:hover {
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: 0 1px 0 0 rgb(var(--pink-500) / 70%);
+      color: rgb(var(--pink-500));
+    }
+  }
+
+  &:active,
+  &:focus-visible {
     box-shadow: 0 1px 0 0 rgb(var(--pink-500) / 70%);
     color: rgb(var(--pink-500));
   }
-}
-
-.post a:active,
-.post a:focus-visible {
-  box-shadow: 0 1px 0 0 rgb(var(--pink-500) / 70%);
-  color: rgb(var(--pink-500));
 }
 
 .post ul {

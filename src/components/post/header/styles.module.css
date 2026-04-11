@@ -46,17 +46,6 @@
     box-shadow: 0 1px 0 0 rgb(var(--pink-500) / 70%);
     color: rgb(var(--pink-500));
   }
-
-  @media (any-hover: hover) {
-    &:hover .historyLinkIcon {
-      color: rgb(var(--pink-500) / 70%);
-    }
-  }
-
-  &:active .historyLinkIcon,
-  &:focus-visible .historyLinkIcon {
-    color: rgb(var(--pink-500) / 70%);
-  }
 }
 
 .historyLinkIcon {
@@ -64,4 +53,15 @@
   height: 1.125rem;
   margin: -0.2rem 0 0;
   width: 1.125rem;
+
+  @media (any-hover: hover) {
+    .historyLink:hover & {
+      color: rgb(var(--pink-500) / 70%);
+    }
+  }
+
+  .historyLink:active &,
+  .historyLink:focus-visible & {
+    color: rgb(var(--pink-500) / 70%);
+  }
 }

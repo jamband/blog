@@ -1,18 +1,15 @@
 html {
-  background-color: rgb(var(--gray-800));
-  font-size: var(--text-base);
-  line-height: 1.85;
   scroll-padding-top: 6em;
   scrollbar-gutter: stable;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background-color: rgb(var(--gray-800));
+  background: rgb(var(--gray-800));
   color: rgb(var(--gray-300));
   font-family: var(--font-sans);
   font-size: var(--text-base);
-  line-height: inherit;
+  line-height: 1.85;
 }
 
 h1 {
@@ -29,6 +26,10 @@ h2 {
   line-height: 1.45;
 }
 
+button {
+  cursor: pointer;
+}
+
 dialog {
   background: none;
   border: none;
@@ -42,4 +43,9 @@ dialog {
 
 :root:has(:modal) {
   overflow: hidden;
+}
+
+:focus {
+  outline: 2px solid rgb(var(--gray-400));
+  outline-offset: 0.1rem;
 }
