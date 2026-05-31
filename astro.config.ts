@@ -2,6 +2,7 @@ import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
 import rehypeExternalLink from "./plugins/rehype-external-link";
 import rehypePrettyCode from "./plugins/rehype-pretty-code";
+import { unified } from "@astrojs/markdown-remark";
 
 export default defineConfig({
   site: "https://jamband.github.io/",
@@ -10,7 +11,9 @@ export default defineConfig({
   integrations: [sitemap()],
   devToolbar: { enabled: false },
   markdown: {
-    rehypePlugins: [rehypeExternalLink, rehypePrettyCode],
     syntaxHighlight: false,
+    processor: unified({
+      rehypePlugins: [rehypeExternalLink, rehypePrettyCode],
+    }),
   },
 });
