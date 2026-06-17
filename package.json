@@ -17,7 +17,6 @@
     "@astrojs/markdown-satteri": "0.3.0",
     "@astrojs/rss": "4.0.18",
     "@astrojs/sitemap": "3.7.3",
-    "@types/hast": "3.0.4",
     "astro": "6.4.6",
     "prettier": "3.8.4",
     "prettier-plugin-astro": "0.14.1",
