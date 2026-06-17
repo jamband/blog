@@ -1,8 +1,9 @@
+import { satteri } from "@astrojs/markdown-satteri";
 import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
-import rehypeExternalLink from "./plugins/rehype-external-link";
-import rehypePrettyCode from "./plugins/rehype-pretty-code";
-import { unified } from "@astrojs/markdown-remark";
+import hastExternalLink from "./plugins/hast-external-link";
+import shikiCodeTitle from "./plugins/shiki-code-title";
+import shikiRemoveBackground from "./plugins/shiki-remove-background";
 
 export default defineConfig({
   site: "https://jamband.github.io/",
@@ -11,9 +12,14 @@ export default defineConfig({
   integrations: [sitemap()],
   devToolbar: { enabled: false },
   markdown: {
-    syntaxHighlight: false,
-    processor: unified({
-      rehypePlugins: [rehypeExternalLink, rehypePrettyCode],
+    syntaxHighlight: "shiki",
+    shikiConfig: {
+      theme: "nord",
+      transformers: [shikiRemoveBackground(), shikiCodeTitle()],
+    },
+    processor: satteri({
+      hastPlugins: [hastExternalLink()],
+      features: { directive: true },
     }),
   },
 });

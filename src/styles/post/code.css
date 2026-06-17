@@ -2,7 +2,7 @@
   background: rgb(var(--gray-700));
   border-radius: var(--rounded);
   color: rgb(var(--gray-200));
-  line-height: 1.7;
+  line-height: 1.45;
   overflow: scroll;
   padding: 0.75rem 1rem;
 }
@@ -21,14 +21,15 @@
 }
 
 .post figcaption:has(+ pre) {
-  background: rgb(var(--gray-600) / 75%);
+  background: rgb(var(--gray-700));
+  border-bottom: 1px solid rgb(var(--gray-600));
   border-top-left-radius: var(--rounded);
   border-top-right-radius: var(--rounded);
-  color: rgb(var(--gray-200));
+  color: rgb(var(--gray-100));
   font-size: var(--code-sm);
   margin: 1.5rem 0 0;
   overflow: scroll;
-  padding: 0.2rem 1rem;
+  padding: 0.5rem 1rem;
   white-space: nowrap;
 
   @media (width >= 48rem) {
