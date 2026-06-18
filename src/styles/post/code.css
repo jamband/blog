@@ -9,11 +9,6 @@
 
 .post code {
   font-family: var(--font-mono);
-  font-size: var(--code-sm);
-
-  @media (width >= 48rem) {
-    font-size: var(--code-base);
-  }
 }
 
 .post figure:has(> pre) {
@@ -26,15 +21,10 @@
   border-top-left-radius: var(--rounded);
   border-top-right-radius: var(--rounded);
   color: rgb(var(--gray-400));
-  font-size: var(--code-sm);
   margin: 1.5rem 0 0;
   overflow: scroll;
   padding: 0.5rem 1rem;
   white-space: nowrap;
-
-  @media (width >= 48rem) {
-    font-size: var(--code-base);
-  }
 }
 
 .post figure figcaption + pre {

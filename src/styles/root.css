@@ -6,14 +6,10 @@
   --text-3xl: 1.65rem;
   --text-4xl: 2rem;
   --text-5xl: 2.75rem;
-  --code-sm: 0.8125em;
-  --code-base: 0.85em;
 
   /* font family */
-  /* stylelint-disable-next-line value-keyword-case */
-  --font-sans: system-ui, Arial, sans-serif;
-  /* stylelint-disable-next-line value-keyword-case */
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans: var(--font-ubuntu);
+  --font-mono: var(--font-ubuntu-mono);
 
   /* border radius */
   --rounded: 0.25rem;

@@ -15,14 +15,12 @@ body {
 h1 {
   color: rgb(var(--gray-100));
   font-size: var(--text-5xl);
-  font-weight: 700;
   line-height: 1.45;
 }
 
 h2 {
   color: rgb(var(--gray-100));
   font-size: var(--text-4xl);
-  font-weight: 700;
   line-height: 1.45;
 }
 

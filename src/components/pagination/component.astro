@@ -1,4 +1,5 @@
 ---
+import { IconArrowLeft } from "@/icons/arrow-left";
 import type { Page } from "astro";
 import styles from "./styles.module.css";
 
@@ -20,7 +21,11 @@ const _parts = ["prev", "next"] as const;
           aria-disabled={!url[part]}
           tabindex={!url[part] ? -1 : 0}
         >
-          {part === "prev" ? "←" : "→"}
+          {part === "prev" ? (
+            <IconArrowLeft class={styles.iconLeft} />
+          ) : (
+            <IconArrowLeft class={styles.iconRight} />
+          )}
           <div>{part === "prev" ? "Previous" : "Next"}</div>
         </a>
       ))

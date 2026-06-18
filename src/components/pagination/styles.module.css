@@ -32,3 +32,14 @@
     pointer-events: none;
   }
 }
+
+.iconLeft {
+  height: 1rem;
+  width: 1rem;
+}
+
+.iconRight {
+  height: 1rem;
+  rotate: 180deg;
+  width: 1rem;
+}

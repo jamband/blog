@@ -1,7 +1,6 @@
 .container {
   color: rgb(var(--pink-500));
   font-size: 1.2rem;
-  font-weight: 700;
   text-align: center;
 }
 

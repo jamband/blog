@@ -1,6 +1,6 @@
 import { satteri } from "@astrojs/markdown-satteri";
 import sitemap from "@astrojs/sitemap";
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import hastExternalLink from "./plugins/hast-external-link";
 import shikiCodeTitle from "./plugins/shiki-code-title";
 import shikiRemoveBackground from "./plugins/shiki-remove-background";
@@ -11,6 +11,22 @@ export default defineConfig({
   trailingSlash: "always",
   integrations: [sitemap()],
   devToolbar: { enabled: false },
+  fonts: [
+    {
+      name: "Ubuntu",
+      cssVariable: "--font-ubuntu",
+      provider: fontProviders.google(),
+      weights: [400],
+      styles: ["normal"],
+    },
+    {
+      name: "Ubuntu Mono",
+      cssVariable: "--font-ubuntu-mono",
+      provider: fontProviders.google(),
+      weights: [400],
+      styles: ["normal"],
+    },
+  ],
   markdown: {
     syntaxHighlight: "shiki",
     shikiConfig: {
