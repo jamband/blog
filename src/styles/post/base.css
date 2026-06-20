@@ -2,7 +2,7 @@
   border-bottom: 1px solid rgb(var(--gray-600));
   font-size: var(--text-3xl);
   margin: 5rem 0 0;
-  padding: 0 0 0.125rem;
+  padding: 0 0 0.25rem;
 }
 
 .post h2:has(+ ul, + ol) {
