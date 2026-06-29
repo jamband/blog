@@ -14,22 +14,33 @@ import styles from "./_styles.module.css";
     <div class={styles.description}>
       <p>
         何かしらの問い合わせに関しては
+        {" "}
         <a
           href="https://twitter.com/livejam_db"
           class={styles.link}
           target="_blank"
-          rel="noreferrer">X<IconUpRightFromSquare class={styles.linkIcon} /></a
-        > のダイレクトメッセージからお願いします。
+          rel="noreferrer"
+        >
+          X
+          <IconUpRightFromSquare class={styles.linkIcon} />
+        </a>
+        {" "}
+        のダイレクトメッセージからお願いします。
       </p>
       <p class="mb-16">
         また、プログラムのバグなどを発見した場合は
+        {" "}
         <a
           href={`${APP_REPOSITORY_URL}/issues`}
           class={styles.link}
           target="_blank"
           rel="noreferrer"
-          >GitHub Issues<IconUpRightFromSquare class={styles.linkIcon} /></a
-        > から報告してもらえると助かります。
+        >
+          GitHub Issues
+          <IconUpRightFromSquare class={styles.linkIcon} />
+        </a>
+        {" "}
+        から報告してもらえると助かります。
       </p>
     </div>
     <BackToHomeLink />

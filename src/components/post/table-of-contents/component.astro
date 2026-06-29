@@ -11,9 +11,10 @@ type Props = {
 const { headings } = Astro.props;
 ---
 
-<button id="button" class={styles.show}
-  ><IconList class={styles.showIcon} />目次</button
->
+<button id="button" class={styles.show}>
+  <IconList class={styles.showIcon} />
+  目次
+</button>
 <dialog id="dialog" class={styles.container}>
   <div class={styles.dialog}>
     <form method="dialog" class={styles.form}>
@@ -21,9 +22,9 @@ const { headings } = Astro.props;
         <h3 class={styles.title}>
           <IconList class={styles.titleIcon} />目次
         </h3>
-        <button class={styles.close} aria-label="閉じる" autofocus
-          ><IconXMark class={styles.closeIcon} /></button
-        >
+        <button class={styles.close} aria-label="閉じる" autofocus>
+          <IconXMark class={styles.closeIcon} />
+        </button>
       </div>
       <ol class={styles.contents}>
         {

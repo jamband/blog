@@ -15,15 +15,18 @@ import styles from "./_styles.module.css";
       <p>{APP_DESCRIPTION}</p>
       <p>
         また、このウェブサイトはオープンソースなプロジェクトです。詳細については
+        {" "}
         <a
           href={APP_REPOSITORY_URL}
           class={styles.link}
           target="_blank"
           rel="noreferrer"
-          >GitHub: {APP_NAME}<IconUpRightFromSquare
-            class={styles.linkIcon}
-          /></a
-        > をご覧ください。
+        >
+          GitHub: {APP_NAME}
+          <IconUpRightFromSquare class={styles.linkIcon} />
+        </a>
+        {" "}
+        をご覧ください。
       </p>
     </div>
     <BackToHomeLink />

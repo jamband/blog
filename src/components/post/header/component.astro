@@ -21,8 +21,9 @@ const { title, created_at, last_updated, headings, historyUrl } = Astro.props;
   <ul class={styles.information}>
     <li>作成日: {dateFormat(created_at)}</li>
     <li>
-      <time datetime={last_updated}>最終更新日: {dateFormat(last_updated)}</time
-      >
+      <time datetime={last_updated}>
+        最終更新日: {dateFormat(last_updated)}
+      </time>
     </li>
     <li class={styles.tableOfContents}>
       <PostTableOfContents headings={headings} />
@@ -33,8 +34,10 @@ const { title, created_at, last_updated, headings, historyUrl } = Astro.props;
         class={styles.historyLink}
         target="_blank"
         rel="noreferrer"
-        >更新履歴<IconUpRightFromSquare class={styles.historyLinkIcon} /></a
       >
+        更新履歴
+        <IconUpRightFromSquare class={styles.historyLinkIcon} />
+      </a>
     </li>
   </ul>
 </header>
