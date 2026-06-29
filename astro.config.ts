@@ -28,7 +28,6 @@ export default defineConfig({
     },
   ],
   markdown: {
-    syntaxHighlight: "shiki",
     shikiConfig: {
       theme: "nord",
       transformers: [shikiRemoveBackground(), shikiCodeTitle()],
