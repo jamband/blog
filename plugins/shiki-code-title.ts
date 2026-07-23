@@ -2,10 +2,23 @@ import type { ShikiTransformer } from "shiki";
 
 export default function shikiCodeTitle(): ShikiTransformer {
   return {
-    postprocess(html, options) {
-      const title = options.meta?.__raw?.match(/title="([^"]+)"/)?.[1];
+    pre(node) {
+      const title = this.options.meta?.__raw?.match(/title="([^"]+)"/)?.[1];
       if (!title) return;
-      return `<figure><figcaption>${title}</figcaption>${html}</figure>`;
+      return {
+        type: "element",
+        tagName: "figure",
+        properties: {},
+        children: [
+          {
+            type: "element",
+            tagName: "figcaption",
+            properties: {},
+            children: [{ type: "text", value: title }],
+          },
+          node,
+        ],
+      };
     },
   };
 }
