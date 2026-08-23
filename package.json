@@ -13,20 +13,20 @@
     "clean": "node scripts/clean.js"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.9",
-    "@astrojs/markdown-satteri": "0.3.4",
+    "@astrojs/check": "0.9.10",
+    "@astrojs/markdown-satteri": "0.3.7",
     "@astrojs/rss": "4.0.19",
     "@astrojs/sitemap": "3.7.3",
-    "astro": "7.1.1",
-    "prettier": "3.9.5",
+    "astro": "7.2.4",
+    "prettier": "3.9.6",
     "prettier-plugin-astro": "0.14.1",
-    "satteri": "0.9.5",
-    "shiki": "4.3.1",
+    "satteri": "0.10.5",
+    "shiki": "4.4.3",
     "stylelint": "17.14.1",
     "stylelint-config-standard": "40.0.0",
     "stylelint-order": "8.1.1",
     "the-new-css-reset": "1.11.3",
     "typescript": "6.0.3",
-    "vitest": "4.1.10"
+    "vitest": "4.1.11"
   }
 }
