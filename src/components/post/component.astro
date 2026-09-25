@@ -23,7 +23,9 @@ const { Content, headings } = await render(post);
       headings={headings}
       historyUrl={`${APP_REPOSITORY_URL}/commits/main/${post.filePath}`}
     />
-    <div class="post"><Content /></div>
+    <div class="post">
+      <Content />
+    </div>
   </article>
   <BackToHomeLink />
 </div>

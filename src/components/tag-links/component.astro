@@ -14,19 +14,17 @@ const _current = (pathname: string) => {
 ---
 
 <ul class:list={[styles.container, styles.containerMaskBottom, className]}>
-  {
-    tags.map((tag) => (
-      <li class={styles.tag}>
-        <a
-          href={`/blog/${tag}/`}
-          class={styles.link}
-          aria-current={_current(`/blog/${tag}/`)}
-        >
-          <span class={styles.symbol}>{tag}</span>
-        </a>
-      </li>
-    ))
-  }
+  {tags.map((tag) => (
+    <li class={styles.tag}>
+      <a
+        href={`/blog/${tag}/`}
+        class={styles.link}
+        aria-current={_current(`/blog/${tag}/`)}
+      >
+        <span class={styles.symbol}>{tag}</span>
+      </a>
+    </li>
+  ))}
 </ul>
 
 <script>

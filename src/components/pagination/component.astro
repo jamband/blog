@@ -13,22 +13,20 @@ const _parts = ["prev", "next"] as const;
 
 <nav class={styles.container} aria-label="Page navigation">
   <div class={styles.containerInner}>
-    {
-      _parts.map((part) => (
-        <a
-          href={url[part]}
-          class={styles.link}
-          aria-disabled={!url[part]}
-          tabindex={!url[part] ? -1 : 0}
-        >
-          {part === "prev" ? (
-            <IconArrowLeft class={styles.iconLeft} />
-          ) : (
-            <IconArrowLeft class={styles.iconRight} />
-          )}
-          <div>{part === "prev" ? "Previous" : "Next"}</div>
-        </a>
-      ))
-    }
+    {_parts.map((part) => (
+      <a
+        href={url[part]}
+        class={styles.link}
+        aria-disabled={!url[part]}
+        tabindex={!url[part] ? -1 : 0}
+      >
+        {part === "prev" ? (
+          <IconArrowLeft class={styles.iconLeft} />
+        ) : (
+          <IconArrowLeft class={styles.iconRight} />
+        )}
+        <div>{part === "prev" ? "Previous" : "Next"}</div>
+      </a>
+    ))}
   </div>
 </nav>
