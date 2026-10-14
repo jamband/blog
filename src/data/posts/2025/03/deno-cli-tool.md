@@ -1,13 +1,22 @@
 ---
 title: Deno で CLI ツールを作成する
 created_at: "2025-03-15"
-last_updated: "2025-08-03"
+last_updated: "2026-10-14"
 tags: [deno, node]
 ---
 
 ## はじめに
 
 Deno で簡単な CLI ツールを作成する。同じような環境を Node.js でも構築し Deno との比較をする。
+
+## 補足
+
+2026 年 10 月に [Deno is joining Cloudflare](https://blog.cloudflare.com/deno-joins-cloudflare) というアナウンスがありました。詳しい内容については公式のブログを確認してください。
+
+- [Deno is joining Cloudflare | Deno](https://deno.com/blog/cloudflare)
+- [Deno is joining Cloudflare | Cloudflare Blog](https://blog.cloudflare.com/deno-joins-cloudflare)
+
+個人的には Deno を使用したいくつかのプロジェクトを Node.js に移行しました。この記事は残しておきますが、これ以上の修正・更新などは一旦終了とします。あらかじめご了承ください。
 
 ## 環境
 
